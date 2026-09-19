@@ -1,0 +1,27 @@
+digit order on the chain's rows: 45/45 facts
+learned proposer loaded from results/proposer/proposer_holdout_sumd.pt (held out: sumd), temperature 1.0
+seeded with add: init []  body [LOAD 0>3, LOAD 1>4, BIND 3,4, BIND 3,2, READ 3, SETD 5, SETC 2, WRITE 5]  outro []  stop 0
+target sumd: input-output pairs only, seeded, 6 slots, 1416 instructions, callable ['add', 'cmp', 'mul', 'muld', 'sub', 'triple'], any-slot credit True, typed proposals True, learned proposer True, worked-example intermediates True
+  gen 1/120  best 1.554 (exact 0.375)  mean 0.857  candidates 200  elapsed 23s  ETA 2791s  | best so far: init []  body [LOAD 0>3, CALL triple 1,0>5, BIND 3,4, BIND 3,2, READ 3, SETD 5, SETC 2, WRITE 5]  outro []  st
+  gen 2/120  best 1.708 (exact 0.375)  mean 1.079  candidates 400  elapsed 64s  ETA 3772s  | best so far: init []  body [COPY 0>1, LOAD 1>4, BIND 3,4, BIND 3,2, READ 3, SETD 5, SETC 2, WRITE 5]  outro []  stop 2
+  gen 3/120  best 2.225 (exact 0.625)  mean 1.802  candidates 600  elapsed 136s  ETA 5318s  | best so far: init [SET 2<0]  body [BIND 3,2, LOAD 1>4, BIND 3,4, LOAD 0>3, READ 3, SETD 5, CALL triple 0,1>1, LOAD 0>2, WRI
+  gen 4/120  best 1.840 (exact 0.375)  mean 1.500  candidates 800  elapsed 188s  ETA 5450s  | best so far: init [SET 2<0]  body [BIND 3,2, LOAD 1>4, BIND 3,4, LOAD 0>3, READ 3, SETD 5, CALL triple 0,1>1, LOAD 0>2, WRI
+  gen 5/120  best 2.719 (exact 0.875)  mean 2.204  candidates 1000  elapsed 220s  ETA 5064s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 6/120  best 1.881 (exact 0.375)  mean 1.415  candidates 1200  elapsed 259s  ETA 4917s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 7/120  best 1.738 (exact 0.375)  mean 1.342  candidates 1400  elapsed 307s  ETA 4959s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 8/120  best 2.433 (exact 0.750)  mean 2.123  candidates 1600  elapsed 331s  ETA 4629s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 9/120  best 1.865 (exact 0.375)  mean 1.534  candidates 1800  elapsed 349s  ETA 4302s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 10/120  best 2.075 (exact 0.500)  mean 1.747  candidates 2000  elapsed 380s  ETA 4185s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 11/120  best 2.188 (exact 0.500)  mean 1.858  candidates 2200  elapsed 415s  ETA 4109s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 12/120  best 2.287 (exact 0.625)  mean 1.954  candidates 2400  elapsed 468s  ETA 4208s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 13/120  best 1.881 (exact 0.375)  mean 1.610  candidates 2600  elapsed 494s  ETA 4069s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 14/120  best 1.763 (exact 0.375)  mean 1.485  candidates 2800  elapsed 545s  ETA 4125s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 15/120  best 1.981 (exact 0.375)  mean 1.678  candidates 3000  elapsed 604s  ETA 4228s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 16/120  best 2.325 (exact 0.625)  mean 1.894  candidates 3200  elapsed 795s  ETA 5169s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 17/120  best 2.594 (exact 0.750)  mean 2.264  candidates 3400  elapsed 891s  ETA 5396s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 18/120  best 1.850 (exact 0.375)  mean 1.602  candidates 3600  elapsed 931s  ETA 5278s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 19/120  best 2.719 (exact 0.875)  mean 2.118  candidates 3800  elapsed 968s  ETA 5147s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 20/120  best 1.675 (exact 0.250)  mean 1.385  candidates 4000  elapsed 1044s  ETA 5222s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 21/120  best 2.113 (exact 0.500)  mean 1.610  candidates 4200  elapsed 1104s  ETA 5205s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 22/120  best 1.938 (exact 0.500)  mean 1.452  candidates 4400  elapsed 1283s  ETA 5717s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro
+  gen 23/120  best 2.075 (exact 0.500)  mean 1.574  candidates 4600  elapsed 1329s  ETA 5606s  | best so far: init []  body [LOAD 0>3, LOAD 1>4, LOAD 0>2, BIND 3,2, READ 3, CALL sub 0,1>2, SETD 5, SETC 2, WRITE 5]  outro

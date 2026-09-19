@@ -1,0 +1,35 @@
+{
+ "double": {
+  "found": true,
+  "generation": 9,
+  "program": {
+   "kind": "number",
+   "init": [
+    "CALL sub 0,1>5"
+   ],
+   "body": [
+    "CALL sub 3,1>2",
+    "CALL add 0,1>2",
+    "ANSWER 5",
+    "CALL add 0,2>5"
+   ],
+   "outro": [
+    "COPY 0>3"
+   ],
+   "stop": 1
+  },
+  "verify": {
+   "1": 0.11666667461395264,
+   "2": 0.06666667014360428,
+   "3": 0.03333333507180214,
+   "4": 0.01666666753590107,
+   "6": 0.0,
+   "8": 0.01666666753590107,
+   "reg": 1.0
+  },
+  "seeded": "",
+  "any_slot": true,
+  "typed": true,
+  "slots": 6
+ }
+}

@@ -98,5 +98,19 @@
   ],
   "outro": [],
   "stop": 3
+ },
+ "digitsum": {
+  "kind": "number",
+  "init": [
+   "SET 2<0"
+  ],
+  "body": [
+   "LOAD 0>3",
+   "CALL add 2,3>2"
+  ],
+  "outro": [
+   "ANSWER 2"
+  ],
+  "stop": 1
  }
 }

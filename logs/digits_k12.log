@@ -1,0 +1,7 @@
+digit order on the chain's rows: 45/45 facts
+found add  on the digit chain (k=12, train lengths 1–24), unchanged: 1d 1.00 2d 1.00 3d 1.00 4d 1.00 5d 1.00 6d 1.00 7d 1.00 8d 1.00 9d 1.00 10d 1.00 11d 1.00 12d 1.00 13d 1.00 14d 1.00 15d 1.00 16d 1.00 17d 1.00 18d 1.00 19d 1.00 20d 1.00 21d 1.00 22d 1.00 23d 1.00 24d 1.00 regression 1.00
+found sub  on the digit chain (k=12, train lengths 1–24), unchanged: 1d 1.00 2d 1.00 3d 1.00 4d 1.00 5d 1.00 6d 1.00 7d 1.00 8d 1.00 9d 1.00 10d 1.00 11d 1.00 12d 1.00 13d 1.00 14d 1.00 15d 1.00 16d 1.00 17d 1.00 18d 1.00 19d 1.00 20d 1.00 21d 1.00 22d 1.00 23d 1.00 24d 1.00 regression 1.00
+found cmp  on the digit chain (k=12, train lengths 1–24), unchanged: 1d 1.00 2d 1.00 3d 1.00 4d 1.00 5d 1.00 6d 1.00 7d 1.00 8d 1.00 9d 1.00 10d 1.00 11d 1.00 12d 1.00 13d 1.00 14d 1.00 15d 1.00 16d 1.00 17d 1.00 18d 1.00 19d 1.00 20d 1.00 21d 1.00 22d 1.00 23d 1.00 24d 1.00 regression 1.00
+found muld on the digit chain (k=12, train lengths 1–24), unchanged: 1d 1.00 2d 1.00 3d 1.00 4d 1.00 5d 1.00 6d 1.00 7d 1.00 8d 1.00 9d 1.00 10d 1.00 11d 1.00 12d 1.00 13d 1.00 14d 1.00 15d 1.00 16d 1.00 17d 1.00 18d 1.00 19d 1.00 20d 1.00 21d 1.00 22d 1.00 23d 1.00 24d 1.00 regression 1.00
+found mul  on the digit chain (k=12, train lengths 1–24), unchanged: 1d 1.00 2d 1.00 3d 1.00 4d 1.00 5d 1.00 6d 1.00 7d 1.00 8d 1.00 9d 1.00 10d 1.00 11d 1.00 12d 1.00 13d 1.00 14d 1.00 15d 1.00 16d 1.00 17d 1.00 18d 1.00 19d 1.00 20d 1.00 21d 1.00 22d 1.00 23d 1.00 24d 0.98 regression 1.00
+saved results/digits_k12 (659s)

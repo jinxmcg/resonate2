@@ -1,0 +1,32 @@
+{
+ "triple": {
+  "found": true,
+  "generation": 2,
+  "program": {
+   "kind": "number",
+   "init": [],
+   "body": [
+    "COPY 0>1",
+    "SET 3<0",
+    "CALL add 0,1>2",
+    "ANSWER 2"
+   ],
+   "outro": [
+    "CALL add 0,2>2"
+   ],
+   "stop": 2
+  },
+  "verify": {
+   "1": 1.0,
+   "2": 1.0,
+   "3": 1.0,
+   "4": 1.0,
+   "6": 1.0,
+   "8": 1.0,
+   "reg": 1.0
+  },
+  "seeded": "results/discover_io/seed_double.json",
+  "any_slot": true,
+  "slots": 6
+ }
+}

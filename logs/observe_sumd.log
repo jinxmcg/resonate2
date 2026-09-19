@@ -1,0 +1,33 @@
+digit order on the chain's rows: 45/45 facts
+observer: alphabet 300 (named callables ['add'] + plumbing), examples shown [123, 90, 5]
+
+== playing sumd(123) = 6
+  event ('value', 0): 4 derived moves realise it, beam keeps 4, first ['SET 2<0']   [0s]
+  event ('digit', 3): 16 derived moves realise it, beam keeps 8, first ['LOAD 0>3']   [0s]
+  event ('add', 0, 3): 48 derived moves realise it, beam keeps 8, first ['CALL add 2,3>2']   [3s]
+  event ('digit', 2): 24 derived moves realise it, beam keeps 8, first ['LOAD 0>3']   [4s]
+  event ('add', 3, 2): 64 derived moves realise it, beam keeps 8, first ['CALL add 2,3>2']   [6s]
+  event ('digit', 1): 19 derived moves realise it, beam keeps 8, first ['LOAD 0>3']   [8s]
+  event ('add', 5, 1): 54 derived moves realise it, beam keeps 8, first ['CALL add 2,3>2']   [11s]
+  event ('answer', 6): 8 derived moves realise it, beam keeps 8, first ['ANSWER 2']   [13s]
+  trace (8 moves): ['SET 2<0', 'LOAD 0>3', 'CALL add 2,3>2', 'LOAD 0>3', 'CALL add 2,3>2', 'LOAD 0>3', 'CALL add 2,3>2', 'ANSWER 2']
+
+== playing sumd(90) = 9
+  event ('value', 0): 4 derived moves realise it, beam keeps 4, first ['SET 2<0']   [0s]
+  event ('digit', 0): 16 derived moves realise it, beam keeps 8, first ['LOAD 0>3']   [0s]
+  event ('add', 0, 0): 48 derived moves realise it, beam keeps 8, first ['CALL add 2,3>2']   [2s]
+  event ('digit', 9): 24 derived moves realise it, beam keeps 8, first ['LOAD 0>3']   [3s]
+  event ('add', 0, 9): 138 derived moves realise it, beam keeps 8, first ['CALL add 2,3>2']   [6s]
+  event ('answer', 9): 15 derived moves realise it, beam keeps 8, first ['ANSWER 2']   [8s]
+  trace (6 moves): ['SET 2<0', 'LOAD 0>3', 'CALL add 2,3>2', 'LOAD 0>3', 'CALL add 2,3>2', 'ANSWER 2']
+
+== playing sumd(5) = 5
+  event ('value', 0): 4 derived moves realise it, beam keeps 4, first ['SET 2<0']   [0s]
+  event ('digit', 5): 16 derived moves realise it, beam keeps 8, first ['LOAD 0>3']   [0s]
+  event ('add', 0, 5): 116 derived moves realise it, beam keeps 8, first ['CALL add 2,3>2']   [3s]
+  event ('answer', 5): 13 derived moves realise it, beam keeps 8, first ['ANSWER 2']   [4s]
+  trace (4 moves): ['SET 2<0', 'LOAD 0>3', 'CALL add 2,3>2', 'ANSWER 2']
+  search gen 1/60  best 2.000 (exact 1.000)  mean 0.342  candidates 150  [52s]
+  FOUND at generation 1 (150 candidates): init [SET 2<0]  body [LOAD 0>3, CALL add 2,3>2]  outro [ANSWER 2]  stop 1
+  sumd by digits (>3 never shown): 1d 1.000 2d 1.000 3d 1.000 4d 1.000 6d 1.000 8d 1.000 12d 1.000 13d 1.000 regression 1.000
+saved (90s)

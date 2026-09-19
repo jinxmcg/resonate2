@@ -1,0 +1,1 @@
+{"double": {"found": true, "program": {"kind": "number", "init": [], "body": ["COPY 0>1", "SET 3<0", "CALL add 0,1>2", "ANSWER 2"], "outro": [], "stop": 1}}}

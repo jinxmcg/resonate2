@@ -8,6 +8,9 @@ src = open("read_math.py").read(); src = src[:src.index("with torch.no_grad():\n
 g = {"__name__": "__main__"}; exec(compile(src, "read_math.py", "exec"), g)
 V, VOCAB, vid, NF, LM, M, E, chain, cnorm, dev, execute, answers_of, State, LT, GT, EQ = [g[k] for k in ("V", "VOCAB", "vid", "NF", "LM", "M", "E", "chain", "cnorm", "dev", "execute", "answers_of", "State", "LT", "GT", "EQ")]
 READER = json.load(open("results/read_math_ladder/read_math.json"))["reader"]["program"]
+LABELS = {"digitsum": ("digitsum", ["ARG", 0])}                                                                     # names given by worked examples, bound to found programs (a label is a write)
+for n_, p_ in json.load(open("results/places/found_programs.json")).items():
+    if n_ not in g["PROGRAMS"]: g["PROGRAMS"][n_] = p_
 def tokenize(text):
     """words on spaces; a numeral is its digit characters; punctuation split off"""
     out = []
@@ -27,7 +30,8 @@ class Session:
         return ids
     def say(self, text):
         toks = tokenize(text); ids = self.ids(toks); self.st = State(1)
-        for t in ids:
+        for t, w in zip(ids, toks):
+            if w in LABELS and t >= V and t not in self.defs: self.defs[t] = LABELS[w]
             if t in self.defs: self.st.def_name[0] = t; self.st.def_cmd[0], self.st.def_ops[0] = self.defs[t]
         class Ep: pass
         ep = Ep(); ep.B = 1; ep.cand = torch.cat([E()[None], self.fresh[None]], 1); ep.cmask = torch.ones(1, V + NF, dtype=torch.bool, device=dev); ep.sents = [[ids]]

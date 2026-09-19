@@ -403,3 +403,64 @@ give. 113 solved, 4 wrong ever.
 513 s, three new anchors, everything 1.000 at 1–12 digits, and the five found programs execute unchanged on the new
 table (mul limited by range at 12 digits). For the paper: the growth claim (Part 10) and the program-generalisation
 claim (Part 14) compose — knowledge added by continuation is immediately usable by programs found before it existed.
+
+### 2026-09-19 — ARC: the evaluation set through recognition alone — zero, and the reason
+Validation, nothing learned: 120 evaluation tasks, recognition only (dreamed procedures, experts' whole reads, complete families):
+0 exact, 0 wrong, 120 abstain. The readers name a domain on 74 of 81 same-size tasks — the same domains as training — yet not one
+task admits a single-stage exact program: every evaluation task is a composition. The pieces are perceived; their assembly is not
+read. This is the unproven step in ResonatE's own words, now measured as the whole of the gap on the set that matters.
+
+### 2026-09-19 — the digit chain (README Part 23)
+Place rows removed: eleven rows, one move, self-supervised; the five found programs unchanged at 1.00 for 1–24 digits
+on k = 12 and k = 20. For the paper this replaces Parts 4/10/22's anchored table as the numbers representation, with
+those parts kept as the path that led here (and as the "depth lives in the operator" evidence). Ceiling = trained
+depth, not width; state it as such.
+
+### 2026-09-19 — ARC: the composition sweep — what the machine can and cannot yet assemble; 117 solved
+Over 661 same-size training tasks a bounded beam applied the readers' clean stages, re-read each residual, and kept every path
+that closed exactly: 29 test-exact (the test as judge only), one wrong held by the pipeline's tiny-evidence gate, four new solves
+gated into the ledger. But only six compositions were multi-stage, and nearly all the same expert on successive object classes;
+genuinely cross-domain sequences were not found. The lesson is precise: the assembly is not the bottleneck now — the STAGES are.
+The proposers offer whole-object recolours and moves; the tasks need stage shapes the readers do not yet produce (cell-level,
+region-level, causal — a colour that comes from a covering or a crossing). The order reader waits for its training set; the next
+lesson is the causal stage vocabulary, taught as dreamed families, judged by the sweep. 117 solved (1 assisted), 4 wrong ever.
+
+### 2026-09-19 — ARC: relations as places, the ladder, correspondence; 123 solved
+The review named the missing part of the substrate: every place was a single object's property; the tasks the readers name and cannot
+close are relations. The relation bank (partner fields in the object place bank, partner sources and amounts, partner dream families,
+relational signature fields) passed its gates (retention 117/117, prior voted every field up) and forms partner bundles on 11/55 census
+tasks; the gated run over 70 relational-census tasks gave 6 solves, 0 wrong — none by a partner primitive, 64 at the wall. Dream
+hierarchy refit with effect-family labels (77 % top-3 held-out; product place beats sum place; fine labels split same-effect variants).
+Two pipeline faults found in the logs and fixed (GPU pickle on CPU workers; unbounded matrix pass). The ladder (bases reader: 27 per-base
+holographic yes/no readers labelled by every dream's and every solve's own bases; read bases searched first, rung 2 without cursor moves,
+votes as training signal) is built behind a flag; its A/B on the 64 wall-hits is running. Correspondence (Hungarian input<->output object
+match) labels every object where the move reader left 3,464 unlabelled; census says 382 of 584 unsolved same-size tasks are fully
+keep/move/recol/delete. For the paper: the substrate now carries places, relations, outcomes, readings and votes; the claim to test is
+that reading-directed search (ladder) plus correspondence-labelled outcomes converts recognition into solves — the A/B is that test.
+123 solved (1 assisted), 4 wrong ever.
+
+### 2026-09-19 — ARC: the seven stages as a pass; three faults from the logs; wrong #5 and its rule; 123 solved
+The user's procedure — read what is at play, what changed, the mechanism repeated over objects, try it per object and read each
+object's PECULIARITY, compare, hand the residual on with the same destination — is now a pass (`mechanism.py`) and a debugging table
+(`stage_report.py`). Its per-object deviation read (no-act / early-stop with the blocker / colour-diff / what it did instead) turns
+mechanism + exceptions into one program; class-exact scoring handles mixtures; learned mechanisms are simulated leave-one-out. Three
+tasks fall in seconds where the full pipeline never closed. Reading the run logs exposed three faults: device-bound holographic codes
+(GPU measurements vs CPU pipeline), reading-based proposals cut by a cap before the search, and a memorised colour table that answered
+wrong on the test (wrong #5). The fifth wrong gave the never-wrong rule its next clause: a fact taught by one demo of four is not
+evidence. Retention 123/123. The census by stage over the unsolved names what is missing — mechanisms on the drawn side (repeat, tile,
+move-onto-marker), and exception forms for the select — rather than domains. 123 solved (1 assisted), 5 wrong ever.
+
+### 2026-09-19 — discovery from I/O pairs (README Part 24): stopped as brute force
+triple found from (x, 3x) in 2 generations with double callable and no trace — the library effect is real and cheap to
+show. Digit sum from add's program climbed to 0.75 exact but was stopped: random mutation with typed alphabets is still
+a lottery. For the paper: keep the ladder results as "reuse compounds"; do NOT claim discovery. Owed if we return: the
+learned proposer (controller reads slot kinds + failing place → instruction), scored as candidates-to-acceptance.
+
+### 2026-09-19 — program by observation (README Part 25)
+digitsum found from three worked examples in ~1 min / 150 candidates: the example is played as events (value, digit,
+add(a,b), answer), moves derived from the lights (which slot holds what), a beam over the few genuine choices, then
+Part-14's search over the recorded traces picks the loop. Brute force with everything else equal: not found at 7,800
+candidates. Labelled 'digitsum' in the library; callable by name from a sentence. For the paper this is the learning
+chapter's centrepiece: worked example → trace → program, values as variables and named operations as functions; the
+given parts are the event vocabulary and the acceptance test. Owed: a second task (e.g. product of digits: multiply
+named), and one where the named callable is itself a found program (triple via double) to show the library compounds.

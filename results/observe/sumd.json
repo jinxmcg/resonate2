@@ -1,0 +1,63 @@
+{
+ "target": "sumd",
+ "shown": [
+  123,
+  90,
+  5
+ ],
+ "alphabet": 300,
+ "traces": {
+  "123": [
+   "SET 2<0",
+   "LOAD 0>3",
+   "CALL add 2,3>2",
+   "LOAD 0>3",
+   "CALL add 2,3>2",
+   "LOAD 0>3",
+   "CALL add 2,3>2",
+   "ANSWER 2"
+  ],
+  "90": [
+   "SET 2<0",
+   "LOAD 0>3",
+   "CALL add 2,3>2",
+   "LOAD 0>3",
+   "CALL add 2,3>2",
+   "ANSWER 2"
+  ],
+  "5": [
+   "SET 2<0",
+   "LOAD 0>3",
+   "CALL add 2,3>2",
+   "ANSWER 2"
+  ]
+ },
+ "found": true,
+ "generation": 1,
+ "candidates": 150,
+ "program": {
+  "kind": "number",
+  "init": [
+   "SET 2<0"
+  ],
+  "body": [
+   "LOAD 0>3",
+   "CALL add 2,3>2"
+  ],
+  "outro": [
+   "ANSWER 2"
+  ],
+  "stop": 1
+ },
+ "verify": {
+  "1": 1.0,
+  "2": 1.0,
+  "3": 1.0,
+  "4": 1.0,
+  "6": 1.0,
+  "8": 1.0,
+  "12": 1.0,
+  "13": 1.0,
+  "reg": 1.0
+ }
+}

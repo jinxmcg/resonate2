@@ -1,0 +1,15 @@
+step 1/12000  loss 2.5339  lr 3.0e-03  tau 10.0  elapsed 1s
+step 1000/12000  loss 0.0726  lr 2.9e-03  tau 43.2  elapsed 116s
+step 2000/12000  loss 0.0136  lr 2.8e-03  tau 73.0  elapsed 239s
+step 3000/12000  loss 0.0022  lr 2.6e-03  tau 95.6  elapsed 341s
+step 4000/12000  loss 0.0001  lr 2.3e-03  tau 113.3  elapsed 438s
+step 5000/12000  loss 0.0047  lr 1.9e-03  tau 126.7  elapsed 541s
+step 6000/12000  loss 0.0004  lr 1.5e-03  tau 135.1  elapsed 652s
+step 7000/12000  loss 0.0001  lr 1.1e-03  tau 143.1  elapsed 761s
+step 8000/12000  loss 0.0002  lr 7.5e-04  tau 146.1  elapsed 867s
+step 9000/12000  loss 0.0000  lr 4.4e-04  tau 151.9  elapsed 975s
+step 10000/12000  loss 0.0000  lr 2.0e-04  tau 154.3  elapsed 1083s
+step 11000/12000  loss 0.0000  lr 5.1e-05  tau 155.4  elapsed 1188s
+step 12000/12000  loss 0.0001  lr 0.0e+00  tau 155.6  elapsed 1290s
+digit chain k=12 (M=144): read-back exact by length (train 1–24): 1:1.000 2:1.000 3:1.000 4:1.000 5:1.000 6:1.000 7:1.000 8:1.000 9:1.000 10:1.000 11:1.000 12:1.000 13:1.000 14:1.000 15:1.000 16:1.000 17:1.000 18:1.000 19:1.000 20:1.000 21:1.000 22:0.998 23:1.000 24:0.993 26:0.150 28:0.002 32:0.000 40:0.000
+saved results/digit_chain_k12 (1290s)

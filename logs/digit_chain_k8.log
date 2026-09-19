@@ -1,0 +1,9 @@
+step 1/6000  loss 2.7457  exact read-back (batch, 1–24 digits) 0.000  lr 3.0e-03  tau 10.0  elapsed 1s  ETA 7734s
+step 1000/6000  loss 0.3310  exact read-back (batch, 1–24 digits) 0.582  lr 2.8e-03  tau 35.8  elapsed 112s  ETA 562s
+step 2000/6000  loss 0.1139  exact read-back (batch, 1–24 digits) 0.746  lr 2.3e-03  tau 63.7  elapsed 210s  ETA 421s
+step 3000/6000  loss 0.0302  exact read-back (batch, 1–24 digits) 0.922  lr 1.5e-03  tau 94.3  elapsed 371s  ETA 371s
+step 4000/6000  loss 0.0117  exact read-back (batch, 1–24 digits) 0.961  lr 7.5e-04  tau 126.4  elapsed 534s  ETA 267s
+step 5000/6000  loss 0.0078  exact read-back (batch, 1–24 digits) 0.977  lr 2.0e-04  tau 144.4  elapsed 671s  ETA 134s
+step 6000/6000  loss 0.0044  exact read-back (batch, 1–24 digits) 0.984  lr 0.0e+00  tau 147.8  elapsed 782s  ETA 0s
+digit chain k=8 (M=64): read-back exact by length (train 1–24): 1:1.000 2:1.000 3:1.000 4:1.000 5:1.000 6:1.000 7:1.000 8:1.000 9:1.000 10:1.000 11:1.000 12:1.000 13:1.000 14:0.995 15:1.000 16:0.993 17:0.990 18:0.982 19:0.977 20:0.967 21:0.960 22:0.945 23:0.905 24:0.700 26:0.035 28:0.000 32:0.000 40:0.000
+saved results/digit_chain_k8 (783s)

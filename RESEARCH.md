@@ -766,3 +766,113 @@ had to be re-fitted was the ten-symbol digit-order light (`Q`), because the digi
 `places.py` and `compare.py` now take the number of places from the checkpoint. 10¹⁵ is the same step again. The
 unbounded version — a number as a chain of its digits under one repeated move, no place rows — is Part 23's candidate;
 its ceiling would be the depth at which the walk stays exact rather than a row count.
+
+# Part 23 — the digit chain: ten symbols, one move, no place rows (2026-09-19, `digit_chain.py`, `digits.py`)
+
+The last hand-placed structure in the numbers track was the place rows (`10 … 10¹¹`) and the fixed chain length they
+imply. Removed: a number is now a chain of its digits under **one repeated move**, `NEXT`, built onto an END symbol —
+eleven rows in all (the alphabet), no row per magnitude, no length. Reading it back is the same move in reverse, one
+digit per step, until END lights. The move is trained self-supervised on random digit strings of 1–24 digits (walk-back
+objective: no labels, nothing arithmetic; 12k steps, ~20 min at k = 20 on the 1080 Ti sharing the GPU). The places
+machine of Part 14 runs on it with four primitives re-based on the chain (`LOAD` walks one digit; `SHIFT` appends a
+zero; "anything left?" peeks to END; a number is built by the move) — the executor, the other primitives and the
+**found programs are byte-for-byte those of Part 14**, found on the anchored 10⁹ table from three-digit examples. The
+value code shrinks to the digit and carry phases (the programs never used more); the digit-order light is re-fitted on
+the chain's rows (45 facts, seconds).
+
+| digit chain, train lengths 1–24 | k = 12 (M = 144) | k = 20 (M = 400) | k = 32 (M = 1024) |
+|---|---|---|---|
+| read-back exact, lengths 1–24 | ≥ 0.993 (1.000 at 21 of 24) | 1.000 at every length | 1.000 at every length |
+| read-back at 26 / 28 / 32 digits (never trained) | 0.15 / 0.00 / 0.00 | 0.29 / 0.07 / 0.00 | 0.75 / 0.22 / 0.01 |
+| found `add`, `sub`, `cmp`, `muld`, unchanged, 1–24 digits | 1.00 at every length, regression 1.00 | 1.00 at every length, regression 1.00 | — |
+| found `mul`, unchanged | 1.00 to 23 digits, 0.98 at 24 | 1.00 to 23 digits, 0.99 at 24 | — |
+| `mul` at exactly 12 × 13 digits (products of 24 or 25 digits) | — | 24-digit products 11/11 exact; 25-digit products 0/47 — the answer is the product with its top digit dropped: the chain holds 24 |
+
+**A note on the tables' rows:** in every `verify` table (Parts 14, 22, 23) the row "L digits" samples operand lengths
+uniformly from 1 to L, so it reads "numbers of up to L digits"; 1.000 there covers every sampled length, and the
+read-back tests use exact lengths. So the numbers track reduces to: **ten symbols, one move, three worked examples per
+operation** — exact to 10²⁴ on a 144-dimensional memory. The honest ceiling: the range is the depth the move was *trained* at — all three widths are exact through 24 and fall off
+just beyond, width buying only a little extrapolation (26 digits: 0.15 / 0.29 / 0.75). Width does set a *capacity*: at
+k = 4 (16 dimensions, a single block) the 24-deep chain cannot be held (Part 23b), while CLUTRR's twenty operators fit
+in the same 16 dimensions — chains need width proportional to depth, operator algebras barely need any. "Unbounded"
+is therefore not a claim; "as deep as the move is trained, at a cost that is one row of training data per digit" is.
+Owed: the width-versus-depth curve (train to 40 digits at k = 12 and 32) to see where a small memory stops following.
+
+## Part 23b — a corner the random strings never showed (2026-09-19)
+
+The k = 12 digit chain reads random strings exactly to 24 digits and **misreads runs of nines from length 9**
+(`999999999 → 999999799`); runs of fives and alternating patterns are fine to 13, and k = 20 / 32 read every run
+correctly. Repeated addition of the same row along the move is a pattern with probability 10⁻⁹ in random training
+strings, and for one symbol the small memory loses its depth on it. Found while trying to discover a digit-sum program
+(its sums of all-nines came out wrong; the program was fine). Same lesson as Part 14b, on the memory side: **test the
+patterns that random sampling never produces.** The trainer now draws a tenth of its strings as runs of one digit and
+the read-back test includes runs of every digit at full length; the seed runs use the patched trainer.
+Small-width results (Part 23c, below) locate where width becomes the limit.
+
+## Part 23c — where width becomes the limit (2026-09-19)
+
+| width | dimensions | digit chain, read-back exact to | CLUTRR, ten hops (k = 8 setting otherwise) |
+|---|---|---|---|
+| k = 4 | 16 | 6 digits (0.53 at 7, 0.00 from 15) | **0.87** exact, 0.04 wrong (0.99 at 4–8 hops) |
+| k = 8 | 64 | 13 digits; ≥ 0.9 to 23; 0.70 at 24 | 0.99 (Part 19b) |
+| k = 12 | 144 | 24 (every trained length) | 0.99 |
+| k = 20 / 32 | 400 / 1024 | 24; beyond training 0.29 / 0.75 at 26 | 0.99 |
+
+Two regimes: an operator algebra (twenty relation words) needs almost no width — a single 16×16 block composes ten hops
+at 0.87 — while a chain needs width in proportion to its depth, roughly **depth ≈ dimension / 3** at this alphabet,
+until the trained length caps it. So the numbers track's ceiling is two-part: width sets the capacity, training sets
+the depth actually reached within it; the reasoning track's ceiling is neither — it is the objective.
+
+# Part 24 — discovery from input–output pairs: what worked, and why the search is wrong (2026-09-19, `discover_io.py`)
+
+No worked traces anywhere: the fitness sees only `(x, y) → answer` pairs; the found programs are callable; the population
+starts from random programs (blank slate) or from a neighbouring program (the ladder). Proposals can be *typed* by the
+lights — an instruction is proposed for a position only if the slots hold what it acts on (a walkable number, a digit, a
+verdict), read from the candidate's own execution on one example.
+
+| rung | start | proposals | result |
+|---|---|---|---|
+| `triple` from `(x, 3x)` | seeded with `double` | untyped | **found at generation 2**: double's body + one more `CALL add` — exact 1–8 digits and the regression set |
+| `double` from `(x, 2x)` | blank slate, library callable | typed | exact program at generation 9 (~10 min) — but it leaned on a constant second operand (the sampler's y = 0); with y random the honest run was stopped at gen 1 |
+| `digit sum` from `(x, Σ digits)` | seeded with `add`'s program | typed, y random | 0.75 exact by generation 10 and climbing (population mean 0.67 → 1.16 by gen 20), not found in the ~30 generations run |
+
+Two things stand: a **library effect** — the next program is cheap when a neighbour exists (triple in 2 generations) — and
+a **sampler lesson** (again): a unary task must get a random second operand or the search finds a program that uses it.
+And one thing does not stand, which is why the line was stopped: the search is brute force. Typing the proposals only
+shrinks the alphabet per position; the *choice* is still a random draw, and nothing the search observes — which output
+place is wrong, what the slots held when it went wrong — is used to pick the next candidate. That is the opposite of
+how every other part of this machine works. The right proposer is the Part-12 controller turned around: a stateless
+policy that reads (slot kinds, the failing output place) and emits an instruction, trained by imitation on the programs
+already found, then measured as candidates-to-acceptance with and without it. Not done; recorded as the next design.
+
+# Part 25 — program by observation: a worked example played on the machine (2026-09-19, `observe.py`)
+
+The search of Part 24 was brute force with a typed alphabet; this replaces the search with an **observer**. A worked
+example is a sequence of events in the machine's own terms — for `digitsum(123) = 6`, read units first with a zero to
+start: *a value 0 appears; the digit 3 appears; add(0, 3); the digit 2; add(3, 2); the digit 1; add(5, 1); the answer 6*.
+The numbers in it are variables, the named operation is a function. At each event the observer **derives** the moves
+from the event and the lights — which slot holds the named operands, which slot still holds the number being read,
+which slot lights the answer — a handful of candidates (`CALL add 2,3>2` with the result in one of a few slots; `LOAD`
+from the slot that holds the input), each verified by executing; a beam of 8 partial traces carries the genuine
+choices forward and an entry whose choice makes the next event impossible dies there, with no rule about which slots
+to spare. The recorded traces are then the worked examples of Part 14's search: slices of them as candidates, fitness
+= the machine's answers on fresh short numbers, acceptance = exact on numbers longer than any shown and on the
+all-nines regression cases. No rule folds the loop.
+
+| shown | trace recorded | found | exact on |
+|---|---|---|---|
+| `digitsum(123) = 6`, `(90) = 9`, `(5) = 5` | `SET 2<0` · (`LOAD 0>3`, `CALL add 2,3>2`) per digit · `ANSWER 2` — in 13 / 8 / 4 s | generation 1, **150 candidates**, ~1 min in all | 1–13 digits, all-nines to 13 digits (117): 1.000 |
+
+The found program: init `SET 2<0`; body `LOAD 0>3, CALL add 2,3>2`; outro `ANSWER 2`. It was then **labelled**
+`digitsum` in the library — a write — and answers by name through the language layer: `digitsum 12346 .` → 16,
+`digitsum 999999999 .` → 81 (`say.py`, on the 10⁹ table). The brute-force arm of Part 24 on the same task (named
+callables + plumbing, proposer, worked-example credit) was at 7,800 candidates without a find when stopped.
+
+What was learned on the way, each a closed leak in the machine: an empty slot read as the number 0 in a call (now a
+call needs two filled operands); a `LOAD` could walk a chain that was still underneath a digit tag written over it (now
+only a walkable slot can be walked); the second operand of a unary task must be random, or a program leans on it.
+Lessons for the write-up: (1) the worked example's *structure* — values as variables, named operations as functions —
+is the program's structure; reading it off the machine costs seconds where searching for it costs hours; (2) the
+observer is the controller's stance (read lights, choose moves) applied to *learning*, not just execution; (3) what is
+still given: the event grammar for each task (what counts as "the digit appears", "add happens") — the teacher's
+vocabulary — and the acceptance test. What is not: the program, the loop, the slots, the stop rule.

@@ -1,0 +1,15 @@
+digit order on the chain's rows: 45/45 facts
+  add: 41 variants, mean failing places 0.44, examples so far 328  (53s)
+  sub: 41 variants, mean failing places 0.28, examples so far 697  (69s)
+  cmp: 41 variants, mean failing places 0.77, examples so far 943  (89s)
+  muld: 41 variants, mean failing places 0.34, examples so far 1722  (126s)
+  mul: 41 variants, mean failing places 0.38, examples so far 2255  (174s)
+  double: 41 variants, mean failing places 0.45, examples so far 2419  (207s)
+  triple: 41 variants, mean failing places 0.56, examples so far 2624  (255s)
+training the proposer on 2624 examples from ['add', 'sub', 'cmp', 'muld', 'mul', 'double', 'triple'] (held out: sumd)
+  proposer step 1/4000  loss 11.627  opcode acc 0.142  arg acc 0.489
+  proposer step 1000/4000  loss 0.109  opcode acc 0.989  arg acc 0.997
+  proposer step 2000/4000  loss 0.019  opcode acc 0.998  arg acc 0.999
+  proposer step 3000/4000  loss 0.017  opcode acc 0.997  arg acc 1.000
+  proposer step 4000/4000  loss 0.010  opcode acc 0.998  arg acc 1.000
+saved /mnt/nvme990/latent/reasoning_ant/results/proposer/proposer_holdout_sumd.pt (266s)
