@@ -10,10 +10,10 @@ move used for the same kind of event before, so repetitions look alike). The rec
 of the search of Part 14: a population of slices of them, fitness = the machine's answers on fresh short numbers,
 acceptance = exact on numbers longer than any shown and on the regression cases. Cost: minutes."""
 import sys, json, time, numpy as np, torch
-ARGS = sys.argv[1:]; VALUED = ("--target", "--examples-shown"); FLAGS = ()
+ARGS = sys.argv[1:]; VALUED = ("--target", "--examples-shown", "--name"); FLAGS = ()
 sys.argv = [sys.argv[0]] + [x for i, x in enumerate(ARGS) if x not in VALUED and (i == 0 or ARGS[i - 1] not in VALUED)]
 def opt(name, default=None): return ARGS[ARGS.index(name) + 1] if name in ARGS else default
-TARGET = opt("--target", "sumd"); SHOWN = [int(v) for v in opt("--examples-shown", "123,90,5").split(",")]
+TARGET = opt("--target", "sumd"); SHOWN = [int(v) for v in opt("--examples-shown", "123,90,5").split(",")]; NAME = opt("--name", {"sumd": "digitsum", "double": "double", "triple": "triple"}.get(TARGET, TARGET))   # the word the worked example uses: the program's label
 src = open(__file__.replace("observe.py", "digits.py")).read(); src = src[:src.index("# ------------------------------------------------------------------ the five found programs")]
 g = {"__name__": "digits"}; exec(compile(src, "digits.py", "exec"), g); globals().update({k: v for k, v in g.items() if not k.startswith("__")})
 found = json.load(open(HERE / "results/places/found_programs.json")); PROGRAMS.update(found)
@@ -139,5 +139,8 @@ if demos:
         prog = found_p or best; v = verify(prog, TARGET, lengths=(1, 2, 3, 4, 6, 8, 12, 13), n=60)
         print(("  FOUND at generation %d (%d candidates): " % (gen, gen * 150) if found_p else "  not found; best: ") + show(prog), flush=True)
         print(f"  {TARGET} by digits (>3 never shown): " + " ".join(f"{L}d {e:.3f}" if L != "reg" else f"regression {e:.3f}" for L, e in v.items()), flush=True)
-        res.update({"found": found_p is not None, "generation": gen, "candidates": gen * 150, "program": prog, "verify": v})
+        res.update({"found": found_p is not None, "generation": gen, "candidates": gen * 150, "program": prog, "verify": v, "name": NAME})
+        if found_p is not None:                                                                                     # accepted -> labelled in the library, automatically: from here on it is a call, not a search
+            lib = json.load(open(HERE / "results/places/found_programs.json")); lib[NAME] = {**prog, "kind": "number", "arity": 1, "named_by": "worked example", "shown": SHOWN}
+            json.dump(lib, open(HERE / "results/places/found_programs.json", "w"), indent=1); print(f"  labelled '{NAME}' in the library ({len(lib)} programs); callable by name from now on", flush=True)
 (HERE / "results/observe").mkdir(parents=True, exist_ok=True); save_json(res, HERE / f"results/observe/{TARGET}.json"); print(f"saved ({time.time()-t0:.0f}s)", flush=True)

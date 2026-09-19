@@ -865,7 +865,7 @@ all-nines regression cases. No rule folds the loop.
 
 The found program: init `SET 2<0`; body `LOAD 0>3, CALL add 2,3>2`; outro `ANSWER 2`. It was then **labelled**
 `digitsum` in the library — a write — and answers by name through the language layer: `digitsum 12346 .` → 16,
-`digitsum 999999999 .` → **72** on the 10⁹ anchored table where 81 is right (`say.py`; exact on the digit chain — a difference between the two machines' loop/stop handling at the table's full width, under investigation). The brute-force arm of Part 24 on the same task (named
+`digitsum 999999999 .` → 72 where 81 is right — the program is exact on both machines (81 on the anchored table directly); the *reader* drops a digit at 9-digit numerals, one past the length it was verified to (7). The label step is automatic: the observer writes an accepted program into the library under the worked example's word, and the language layer labels every library program on load. The brute-force arm of Part 24 on the same task (named
 callables + plumbing, proposer, worked-example credit) was at 7,800 candidates without a find when stopped.
 
 What was learned on the way, each a closed leak in the machine: an empty slot read as the number 0 in a call (now a

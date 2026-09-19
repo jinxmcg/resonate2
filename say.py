@@ -8,9 +8,10 @@ src = open("read_math.py").read(); src = src[:src.index("with torch.no_grad():\n
 g = {"__name__": "__main__"}; exec(compile(src, "read_math.py", "exec"), g)
 V, VOCAB, vid, NF, LM, M, E, chain, cnorm, dev, execute, answers_of, State, LT, GT, EQ = [g[k] for k in ("V", "VOCAB", "vid", "NF", "LM", "M", "E", "chain", "cnorm", "dev", "execute", "answers_of", "State", "LT", "GT", "EQ")]
 READER = json.load(open("results/read_math_ladder/read_math.json"))["reader"]["program"]
-LABELS = {"digitsum": ("digitsum", ["ARG", 0])}                                                                     # names given by worked examples, bound to found programs (a label is a write)
+LABELS = {}                                                                                                          # every found program is callable by its label; unary ones (found from worked examples) take the sentence's number
 for n_, p_ in json.load(open("results/places/found_programs.json")).items():
     if n_ not in g["PROGRAMS"]: g["PROGRAMS"][n_] = p_
+    if p_.get("arity") == 1: LABELS[n_] = (n_, ["ARG", 0])
 def tokenize(text):
     """words on spaces; a numeral is its digit characters; punctuation split off"""
     out = []
