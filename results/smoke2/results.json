@@ -1,0 +1,252 @@
+{
+ "config": {
+  "k": 8,
+  "block": 16,
+  "n_gen": 16,
+  "buckets": "all",
+  "steps": 20,
+  "lr": 0.003,
+  "seed": 0,
+  "frozen": "results/bag_k8b16_operands/memory.pt",
+  "ops": "none",
+  "flat": false,
+  "out": "results/smoke2",
+  "report_every": 10
+ },
+ "train_records": 1513,
+ "reasoner_params": 56465,
+ "validation": {
+  "arithmetic_variation [B]": {
+   "n": 286,
+   "exact": 0.0,
+   "mrr": 0.012258878729950923
+  },
+  "arithmetic_variation+operator_change [B]": {
+   "n": 2,
+   "exact": 0.0,
+   "mrr": 0.017722473945468664
+  },
+  "grouping_change [B]": {
+   "n": 14,
+   "exact": 0.0,
+   "mrr": 0.007623126464230674
+  },
+  "place_value [B]": {
+   "n": 88,
+   "exact": 0.0,
+   "mrr": 0.02134922283320603
+  },
+  "grouping_change [C_validation]": {
+   "n": 214,
+   "n_same": 214,
+   "cos_same": 0.4516520976463211,
+   "cos_diff": 0.6279243695262436,
+   "purity": 0.34579439252336447
+  },
+  "operator_change [C_validation]": {
+   "n": 26,
+   "n_same": 25,
+   "cos_same": 0.8320465278625488,
+   "cos_diff": 0.844597733937777,
+   "purity": 0.5892307692307692
+  },
+  "strict_unseen_addition [C_validation]": {
+   "n": 30,
+   "n_same": 30,
+   "cos_same": 0.6257278839747111,
+   "cos_diff": 0.5693814744551976,
+   "purity": 0.48333333333333334
+  },
+  "strict_unseen_addition+operator_change [C_validation]": {
+   "n": 2,
+   "n_same": 2,
+   "cos_same": 0.8572958707809448,
+   "cos_diff": NaN,
+   "purity": NaN
+  },
+  "strict_unseen_place_value [C_validation]": {
+   "n": 138,
+   "n_same": 138,
+   "cos_same": 0.2612686947635982,
+   "cos_diff": 0.40730797390089085,
+   "purity": 0.4347826086956522
+  },
+  "strict_unseen_place_value+grouping_change [C_validation]": {
+   "n": 2,
+   "n_same": 2,
+   "cos_same": 0.3273443579673767,
+   "cos_diff": NaN,
+   "purity": NaN
+  },
+  "decompose [A]": {
+   "n": 37,
+   "exact_canonical": 0.0
+  },
+  "intermediate_anchor_hit": {
+   "n": 474,
+   "rate": 0.002109704641350211
+  }
+ },
+ "test": {
+  "arithmetic_variation [B]": {
+   "n": 257,
+   "exact": 0.0,
+   "mrr": 0.018319637663227573
+  },
+  "arithmetic_variation+operator_change [B]": {
+   "n": 3,
+   "exact": 0.0,
+   "mrr": 0.007200419747581084
+  },
+  "grouping_change [B]": {
+   "n": 6,
+   "exact": 0.0,
+   "mrr": 0.01449784388144811
+  },
+  "operator_change [B]": {
+   "n": 2,
+   "exact": 0.0,
+   "mrr": 0.007941009476780891
+  },
+  "place_value [B]": {
+   "n": 82,
+   "exact": 0.012195121951219513,
+   "mrr": 0.02191505272781885
+  },
+  "grouping_change [C_test]": {
+   "n": 174,
+   "n_same": 174,
+   "cos_same": 0.428044603302561,
+   "cos_diff": 0.6259791618962397,
+   "purity": 0.3247126436781609
+  },
+  "operator_change [C_test]": {
+   "n": 99,
+   "n_same": 99,
+   "cos_same": 0.8412504093815582,
+   "cos_diff": 0.858156043471712,
+   "purity": 0.43939393939393945
+  },
+  "strict_unseen_addition [C_test]": {
+   "n": 45,
+   "n_same": 44,
+   "cos_same": 0.7156401141123339,
+   "cos_diff": 0.7598306046591865,
+   "purity": 0.40454545454545454
+  },
+  "strict_unseen_place_value [C_test]": {
+   "n": 144,
+   "n_same": 144,
+   "cos_same": 0.2717921425226248,
+   "cos_diff": 0.41158122859067386,
+   "purity": 0.43402777777777773
+  },
+  "decompose [A]": {
+   "n": 50,
+   "exact_canonical": 0.0
+  },
+  "intermediate_anchor_hit": {
+   "n": 476,
+   "rate": 0.004201680672268907
+  }
+ },
+ "train": {
+  "arithmetic_variation [A]": {
+   "n": 561,
+   "exact": 0.0,
+   "mrr": 0.014641348469285245
+  },
+  "arithmetic_variation [G]": {
+   "n": 204,
+   "exact": 0.004901960784313725,
+   "mrr": 0.036918713797942974
+  },
+  "arithmetic_variation+operator_change [A]": {
+   "n": 2,
+   "exact": 0.0,
+   "mrr": 0.018357488326728344
+  },
+  "arithmetic_variation+operator_change [G]": {
+   "n": 4,
+   "exact": 0.0,
+   "mrr": 0.030209038639441133
+  },
+  "dense_basic [G]": {
+   "n": 203,
+   "exact": 0.024630541871921183,
+   "mrr": 0.09306090824039918
+  },
+  "dense_basic+operator_change [G]": {
+   "n": 112,
+   "exact": 0.0,
+   "mrr": 0.0769562063963219
+  },
+  "dense_basic+place_value [G]": {
+   "n": 19,
+   "exact": 0.05263157894736842,
+   "mrr": 0.20944065659453995
+  },
+  "dense_basic+place_value+operator_change [G]": {
+   "n": 4,
+   "exact": 0.0,
+   "mrr": 0.16405584244057536
+  },
+  "grouping_change [A]": {
+   "n": 16,
+   "exact": 0.0,
+   "mrr": 0.037016591464634985
+  },
+  "grouping_change [G]": {
+   "n": 128,
+   "exact": 0.0234375,
+   "mrr": 0.06507691210572375
+  },
+  "operator_change [A]": {
+   "n": 4,
+   "exact": 0.0,
+   "mrr": 0.02059803670272231
+  },
+  "operator_change [G]": {
+   "n": 8,
+   "exact": 0.0,
+   "mrr": 0.030681054922752082
+  },
+  "place_value [A]": {
+   "n": 174,
+   "exact": 0.0,
+   "mrr": 0.022581710838766277
+  },
+  "place_value [G]": {
+   "n": 60,
+   "exact": 0.0,
+   "mrr": 0.03780854855819295
+  },
+  "place_value+arithmetic_variation [G]": {
+   "n": 6,
+   "exact": 0.0,
+   "mrr": 0.03266220741594831
+  },
+  "place_value+arithmetic_variation+operator_change [G]": {
+   "n": 6,
+   "exact": 0.0,
+   "mrr": 0.02541751430059473
+  },
+  "place_value+operator_change [G]": {
+   "n": 2,
+   "exact": 0.0,
+   "mrr": 0.02223320212215185
+  },
+  "decompose [B]": {
+   "n": 85,
+   "exact_canonical": 0.0
+  },
+  "decompose [G]": {
+   "n": 49,
+   "exact_canonical": 0.0
+  },
+  "intermediate_anchor_hit": {
+   "n": 523,
+   "rate": 0.017208413001912046
+  }
+ }
+}

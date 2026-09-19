@@ -1,0 +1,27 @@
+{
+ "best": {
+  "init": [
+   "READ 1"
+  ],
+  "body": [
+   "LOAD_X>0",
+   "SETD 3",
+   "BIND 0,1",
+   "BIND 0,2",
+   "READ 0",
+   "LOAD_Y>1",
+   "SETC 2",
+   "WRITE 3"
+  ],
+  "stop": 2
+ },
+ "best_f": 0.5,
+ "history": [
+  {
+   "gen": 1,
+   "best_f": 0.5,
+   "best_exact": 0.2083333432674408,
+   "mean_f": 0.2942708432674408
+  }
+ ]
+}

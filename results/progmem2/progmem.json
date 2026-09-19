@@ -1,0 +1,73 @@
+{
+ "config": {
+  "k": 12,
+  "block": 16,
+  "steps": 0,
+  "max_terms": 64,
+  "programs": "results/places/found_programs.json",
+  "eval_only": true,
+  "seed": 0,
+  "out": "results/progmem2"
+ },
+ "symbols": 36,
+ "walk_len8": 1.0,
+ "walk_len32": 0.12333333492279053,
+ "walk_len64": 0.0,
+ "walk_len96": 0.0,
+ "walk_len128": 0.0,
+ "promote_add": {
+  "instructions": 13,
+  "pages": 3,
+  "walks_back_exactly": true
+ },
+ "promote_sub": {
+  "instructions": 13,
+  "pages": 3,
+  "walks_back_exactly": true
+ },
+ "promote_cmp": {
+  "instructions": 10,
+  "pages": 2,
+  "walks_back_exactly": true
+ },
+ "promote_muld": {
+  "instructions": 23,
+  "pages": 5,
+  "walks_back_exactly": true
+ },
+ "promote_mul": {
+  "instructions": 22,
+  "pages": 5,
+  "walks_back_exactly": true
+ },
+ "exec_from_memory_add": {
+  "1": 1.0,
+  "3": 1.0,
+  "5": 1.0,
+  "7": 1.0
+ },
+ "exec_from_memory_sub": {
+  "1": 1.0,
+  "3": 1.0,
+  "5": 1.0,
+  "7": 1.0
+ },
+ "exec_from_memory_cmp": {
+  "1": 1.0,
+  "3": 1.0,
+  "5": 1.0,
+  "7": 1.0
+ },
+ "exec_from_memory_muld": {
+  "1": 1.0,
+  "3": 1.0,
+  "5": 1.0,
+  "7": 1.0
+ },
+ "exec_from_memory_mul": {
+  "1": 1.0,
+  "3": 1.0,
+  "5": 1.0,
+  "7": 1.0
+ }
+}

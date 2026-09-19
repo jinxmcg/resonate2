@@ -1,0 +1,134 @@
+{
+ "config": {
+  "k": 12,
+  "block": 16,
+  "steps": 4000,
+  "batch": 1024,
+  "lr": 0.003,
+  "seed": 0,
+  "out": "results/equals_k12"
+ },
+ "facts_train": 524,
+ "facts_test": 131,
+ "numeral_walk_exact": 1.0,
+ "digit equations (trained)": {
+  "n": 524,
+  "exact": 0.25190839694656486,
+  "no_carry": 0.26490066225165565,
+  "carry": 0.23423423423423423
+ },
+ "digit equations (held out)": {
+  "n": 131,
+  "exact": 0.022900763358778626,
+  "no_carry": 0.03614457831325301,
+  "carry": 0.0
+ },
+ "sum_len2": {
+  "n": 600,
+  "exact": 0.006666666666666667,
+  "carries_0": {
+   "n": 368,
+   "exact": 0.002717391304347826
+  },
+  "carries_1": {
+   "n": 232,
+   "exact": 0.01293103448275862
+  }
+ },
+ "sum_len3": {
+  "n": 600,
+  "exact": 0.0016666666666666668,
+  "carries_0": {
+   "n": 181,
+   "exact": 0.0055248618784530384
+  },
+  "carries_1": {
+   "n": 296,
+   "exact": 0.0
+  },
+  "carries_2": {
+   "n": 123,
+   "exact": 0.0
+  }
+ },
+ "sum_len4": {
+  "n": 600,
+  "exact": 0.0,
+  "carries_0": {
+   "n": 125,
+   "exact": 0.0
+  },
+  "carries_1": {
+   "n": 209,
+   "exact": 0.0
+  },
+  "carries_2": {
+   "n": 191,
+   "exact": 0.0
+  },
+  "carries_3+": {
+   "n": 75,
+   "exact": 0.0
+  }
+ },
+ "sum_len5": {
+  "n": 600,
+  "exact": 0.0,
+  "carries_0": {
+   "n": 63,
+   "exact": 0.0
+  },
+  "carries_1": {
+   "n": 159,
+   "exact": 0.0
+  },
+  "carries_2": {
+   "n": 213,
+   "exact": 0.0
+  },
+  "carries_3+": {
+   "n": 165,
+   "exact": 0.0
+  }
+ },
+ "sum_len6": {
+  "n": 600,
+  "exact": 0.0,
+  "carries_0": {
+   "n": 23,
+   "exact": 0.0
+  },
+  "carries_1": {
+   "n": 118,
+   "exact": 0.0
+  },
+  "carries_2": {
+   "n": 182,
+   "exact": 0.0
+  },
+  "carries_3+": {
+   "n": 277,
+   "exact": 0.0
+  }
+ },
+ "sum_len7": {
+  "n": 600,
+  "exact": 0.0,
+  "carries_0": {
+   "n": 15,
+   "exact": 0.0
+  },
+  "carries_1": {
+   "n": 59,
+   "exact": 0.0
+  },
+  "carries_2": {
+   "n": 156,
+   "exact": 0.0
+  },
+  "carries_3+": {
+   "n": 370,
+   "exact": 0.0
+  }
+ }
+}

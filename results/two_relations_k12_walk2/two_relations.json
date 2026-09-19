@@ -1,0 +1,78 @@
+{
+ "config": {
+  "k": 12,
+  "block": 16,
+  "steps": 3000,
+  "batch": 2048,
+  "lr": 0.003,
+  "seed": 0,
+  "out": "results/two_relations_k12_walk2",
+  "walk": true
+ },
+ "train": {
+  "state light": {
+   "exact_set": 0.0,
+   "precision": 0.5957604488104489
+  },
+  "one hop +^-1 then light": {
+   "exact_set": 0.020666666666666667,
+   "precision": 0.8005654909904909
+  },
+  "one hop x^-1 then light": {
+   "exact_set": 0.0013333333333333333,
+   "precision": 0.654204711954712
+  },
+  "+^-1 then x^-1 then light": {
+   "exact_set": 0.0,
+   "precision": 0.6396523347023346
+  },
+  "reverse_walk": {
+   "exact_all_7_steps": 1.0,
+   "per_step": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  }
+ },
+ "test (never seen)": {
+  "state light": {
+   "exact_set": 0.0,
+   "precision": 0.5985554412143042
+  },
+  "one hop +^-1 then light": {
+   "exact_set": 0.02140468227424749,
+   "precision": 0.799653439277185
+  },
+  "one hop x^-1 then light": {
+   "exact_set": 0.001003344481605351,
+   "precision": 0.6545001728112096
+  },
+  "+^-1 then x^-1 then light": {
+   "exact_set": 0.00033444816053511704,
+   "precision": 0.6393349756894908
+  },
+  "reverse_walk": {
+   "exact_all_7_steps": 1.0,
+   "per_step": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  }
+ },
+ "cos_347_437": 0.9822049736976624,
+ "cos_347_743": 0.5062412023544312,
+ "cos_1234_4321": 0.5019330382347107,
+ "cos_5060_6050": 0.9833078384399414,
+ "cos_random_pairs": 0.5381403565406799,
+ "cos_digit_permutations": 0.5966794490814209
+}

@@ -1,0 +1,46 @@
+step 1/40000  loss 3.3883  exact 0.059  lr 3.00e-03  tau 10.0  elapsed 1s
+step 1000/40000  loss 0.0117  exact 0.996  lr 3.00e-03  tau 18.9  elapsed 21s
+step 2000/40000  loss 0.0110  exact 0.996  lr 2.98e-03  tau 20.2  elapsed 39s
+step 3000/40000  loss 0.0356  exact 0.984  lr 2.96e-03  tau 20.4  elapsed 58s
+step 4000/40000  loss 0.0008  exact 1.000  lr 2.93e-03  tau 20.1  elapsed 77s
+step 5000/40000  loss 0.0135  exact 0.992  lr 2.89e-03  tau 19.6  elapsed 96s
+step 6000/40000  loss 0.0039  exact 1.000  lr 2.84e-03  tau 19.3  elapsed 113s
+step 7000/40000  loss 0.0104  exact 0.996  lr 2.78e-03  tau 19.4  elapsed 127s
+step 8000/40000  loss 0.0110  exact 0.996  lr 2.71e-03  tau 19.7  elapsed 143s
+step 9000/40000  loss 0.0109  exact 0.996  lr 2.64e-03  tau 19.8  elapsed 159s
+step 10000/40000  loss 0.0127  exact 0.996  lr 2.56e-03  tau 19.9  elapsed 175s
+step 11000/40000  loss 0.0124  exact 0.988  lr 2.47e-03  tau 21.3  elapsed 192s
+step 12000/40000  loss 0.0005  exact 1.000  lr 2.38e-03  tau 21.1  elapsed 208s
+step 13000/40000  loss 0.0118  exact 0.996  lr 2.28e-03  tau 21.1  elapsed 222s
+step 14000/40000  loss 0.0028  exact 1.000  lr 2.18e-03  tau 21.3  elapsed 236s
+step 15000/40000  loss 0.0105  exact 0.996  lr 2.07e-03  tau 21.4  elapsed 251s
+step 16000/40000  loss 0.0061  exact 0.996  lr 1.96e-03  tau 21.8  elapsed 269s
+step 17000/40000  loss 0.0100  exact 0.996  lr 1.85e-03  tau 22.1  elapsed 284s
+step 18000/40000  loss 0.0122  exact 0.992  lr 1.73e-03  tau 22.5  elapsed 304s
+step 19000/40000  loss 0.0003  exact 1.000  lr 1.62e-03  tau 22.4  elapsed 324s
+step 20000/40000  loss 0.0009  exact 1.000  lr 1.50e-03  tau 22.7  elapsed 345s
+step 21000/40000  loss 0.0052  exact 0.996  lr 1.38e-03  tau 22.8  elapsed 362s
+step 22000/40000  loss 0.0143  exact 0.992  lr 1.27e-03  tau 22.6  elapsed 377s
+step 23000/40000  loss 0.0020  exact 1.000  lr 1.15e-03  tau 23.6  elapsed 395s
+step 24000/40000  loss 0.0080  exact 1.000  lr 1.04e-03  tau 23.5  elapsed 414s
+step 25000/40000  loss 0.0140  exact 0.992  lr 9.26e-04  tau 23.6  elapsed 433s
+step 26000/40000  loss 0.0022  exact 1.000  lr 8.19e-04  tau 23.6  elapsed 454s
+step 27000/40000  loss 0.0055  exact 1.000  lr 7.16e-04  tau 23.7  elapsed 477s
+step 28000/40000  loss 0.0058  exact 0.996  lr 6.18e-04  tau 24.1  elapsed 499s
+step 29000/40000  loss 0.0087  exact 0.992  lr 5.26e-04  tau 24.4  elapsed 521s
+step 30000/40000  loss 0.0095  exact 0.992  lr 4.39e-04  tau 24.4  elapsed 544s
+step 31000/40000  loss 0.0062  exact 1.000  lr 3.59e-04  tau 24.2  elapsed 562s
+step 32000/40000  loss 0.0063  exact 0.996  lr 2.86e-04  tau 24.6  elapsed 583s
+step 33000/40000  loss 0.0041  exact 0.996  lr 2.21e-04  tau 24.8  elapsed 597s
+step 34000/40000  loss 0.0097  exact 0.992  lr 1.63e-04  tau 24.9  elapsed 613s
+step 35000/40000  loss 0.0049  exact 0.996  lr 1.14e-04  tau 25.0  elapsed 633s
+step 36000/40000  loss 0.0075  exact 0.992  lr 7.34e-05  tau 25.0  elapsed 655s
+step 37000/40000  loss 0.0020  exact 1.000  lr 4.14e-05  tau 25.0  elapsed 671s
+step 38000/40000  loss 0.0012  exact 1.000  lr 1.85e-05  tau 25.0  elapsed 684s
+step 39000/40000  loss 0.0103  exact 0.992  lr 4.62e-06  tau 25.0  elapsed 698s
+step 40000/40000  loss 0.0036  exact 1.000  lr 0.00e+00  tau 25.0  elapsed 711s
+validation: exact 0.996; abstention margin threshold 0.036 (95th pct of wrong-answer margins)
+validation chain stories — exact/abstain/wrong by length: 2: 1.00/0.00/0.00 (n=1020)  3: 0.98/0.01/0.00 (n=1000)
+test chain stories — exact/abstain/wrong by length: 2: 1.00/0.00/0.00 (n=38)  3: 0.89/0.09/0.03 (n=105)  4: 0.99/0.00/0.01 (n=190)  5: 0.99/0.00/0.01 (n=174)  6: 0.98/0.00/0.02 (n=107)  7: 0.99/0.00/0.01 (n=144)  8: 0.99/0.01/0.00 (n=150)  9: 0.97/0.03/0.01 (n=119)  10: 0.99/0.01/0.00 (n=119)
+emergent algebra: 62/62 training length-2 compositions reproduced by operator products
+saved results/kin_full_k8_40k (713s)

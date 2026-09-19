@@ -1,0 +1,26 @@
+{
+ "best": {
+  "init": [
+   "BIND 1,5"
+  ],
+  "body": [
+   "WRITE 2",
+   "UNBIND 2,0",
+   "COPY 4>0",
+   "UNBIND 2,4",
+   "COPY 2>0",
+   "BIND 4,1",
+   "UNBIND 5,2"
+  ],
+  "stop": 1
+ },
+ "best_f": 0.0416666679084301,
+ "history": [
+  {
+   "gen": 1,
+   "best_f": 0.0416666679084301,
+   "best_exact": 0.0,
+   "mean_f": 0.0416666679084301
+  }
+ ]
+}

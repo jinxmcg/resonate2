@@ -1,0 +1,8 @@
+bags 1607  pairs 14392  rows 221  M=64  bag=equation
+step 1/2000  loss 9.9955  tau 10.0  1s
+step 500/2000  loss 3.9419  tau 9.3  5s
+step 1000/2000  loss 3.9374  tau 10.4  9s
+step 1500/2000  loss 3.9333  tau 11.9  13s
+step 2000/2000  loss 3.9300  tau 13.7  17s
+rows with any co-occurrence signal 221/221;  corr(row cosine, log|a-b|) = -0.370  (memory knows nothing of arithmetic by construction; this is a diagnostic)
+saved results/bag_k8b16_equation

@@ -1,0 +1,35 @@
+machine: 4 slots, 97 actions, 13 symbols
+teacher programs on the machine: 29696 episodes, exact on their own runs: add 1.000  cmp 1.000  mean length add 34 cmp 13  (59s)
+imitation epoch 10/60  imitation loss 0.0135  step accuracy 0.9994  lr 0.001  traces 116  elapsed 73s
+imitation epoch 20/60  imitation loss 0.0013  step accuracy 1.0000  lr 0.001  traces 116  elapsed 86s
+imitation epoch 30/60  imitation loss 0.0004  step accuracy 1.0000  lr 0.001  traces 116  elapsed 99s
+imitation epoch 40/60  imitation loss 0.0001  step accuracy 1.0000  lr 0.001  traces 116  elapsed 115s
+imitation epoch 50/60  imitation loss 0.0001  step accuracy 1.0000  lr 0.001  traces 116  elapsed 130s
+imitation epoch 60/60  imitation loss 0.0000  step accuracy 1.0000  lr 0.001  traces 116  elapsed 146s
+dagger 1 epoch 10/20  imitation loss 0.0000  step accuracy 1.0000  lr 0.001  traces 162  elapsed 190s
+dagger 1 epoch 20/20  imitation loss 0.0000  step accuracy 1.0000  lr 0.001  traces 162  elapsed 224s
+dagger 2 epoch 10/20  imitation loss 0.0000  step accuracy 1.0000  lr 0.001  traces 208  elapsed 276s
+dagger 2 epoch 20/20  imitation loss 0.0000  step accuracy 1.0000  lr 0.001  traces 208  elapsed 311s
+dagger 3 epoch 10/20  imitation loss 0.0000  step accuracy 1.0000  lr 0.001  traces 254  elapsed 369s
+dagger 3 epoch 20/20  imitation loss 0.0000  step accuracy 1.0000  lr 0.001  traces 254  elapsed 397s
+add      1-digit: n=500  exact 1.000
+add      2-digit: n=500  exact 1.000
+add      3-digit: n=500  exact 1.000
+add      4-digit: n=500  exact 1.000
+add      5-digit (length never seen): n=500  exact 1.000
+add      6-digit (length never seen): n=500  exact 1.000
+add      7-digit (length never seen): n=408  exact 1.000
+add      8-digit (length never seen): n=400  exact 1.000
+add      9-digit (length never seen): n=346  exact 1.000
+compare  1-digit: n=500  exact 1.000
+compare  2-digit: n=500  exact 1.000
+compare  3-digit: n=500  exact 1.000
+compare  4-digit: n=500  exact 1.000
+compare  5-digit (length never seen): n=500  exact 1.000
+compare  6-digit (length never seen): n=470  exact 1.000
+compare  7-digit (length never seen): n=424  exact 1.000
+compare  8-digit (length never seen): n=360  exact 1.000
+compare  9-digit (length never seen): n=346  exact 1.000
+promotion check on 200 sums (≤6 digits): validated by two routes agreeing 1.000; of the validated, correct 1.000; correct but rejected 0.000
+long-term memory now holds 20 validated sums as labelled rows; a single light from the place of 24994+61843 finds row '24994+61843'
+saved results/machine (409s)

@@ -1,0 +1,20 @@
+machine: 6 slots, 144 instructions
+hand-written sub program on the machine (ground truth only): fitness 2.000 exact 1.000
+gen 1/300  best fitness 0.278 (exact 0.083)  mean 0.226  best-so-far 0.278  elapsed 7s  ETA 2121s
+   best: init [UNBIND 4,2, SET 2<0]  body [LOAD_X>0, UNBIND 0,3, LOAD_Y>1, BIND 0,1, BIND 0,2, READ 0, SETD 3, SETC 2, WRITE 3]  stop-slot 2
+gen 10/300  best fitness 0.806 (exact 0.333)  mean 0.313  best-so-far 1.111  elapsed 89s  ETA 2569s
+   best: init [UNBIND 4,2, READN 4, SET 2<0]  body [LOAD_X>0, LOAD_Y>3, UNBIND 0,3, LOAD_Y>1, SETC 1, BIND 1,3, READ 0, SETD 3, BIND 4,0, WRITE 3]  stop-slot 2
+gen 20/300  best fitness 1.611 (exact 0.708)  mean 1.085  best-so-far 1.611  elapsed 178s  ETA 2486s
+   best: init [UNBIND 4,2, READN 4, SET 2<0]  body [LOAD_X>0, LOAD_Y>3, UNBIND 0,3, BIND 3,2, READ 0, BIND 4,0, READN 0, BIND 0,1, SETD 3, SETC 1, WRITE 3]  stop-slot 2
+found at generation 21: init [UNBIND 4,2, READN 4, BIND 3,2, SETC 3, SET 2<0]  body [LOAD_X>0, LOAD_Y>3, BIND 4,0, BIND 3,2, READ 0, UNBIND 0,3, READN 0, SETC 2, COPY 3>5, SETD 3, SETC 1, WRITE 3]  stop-slot 4
+winner on 1-digit sub: n=300  exact 1.000
+winner on 2-digit sub: n=104  exact 1.000
+winner on 3-digit sub: n= 65  exact 1.000
+winner on 4-digit sub (never seen in the search): n= 46  exact 1.000
+winner on 5-digit sub (never seen in the search): n= 45  exact 1.000
+winner on 6-digit sub (never seen in the search): n= 27  exact 1.000
+winner on 7-digit sub (never seen in the search): n= 44  exact 1.000
+winner on 8-digit sub (never seen in the search): n= 28  exact 1.000
+winner on 9-digit sub (never seen in the search): n= 32  exact 1.000
+winner: init [UNBIND 4,2, READN 4, BIND 3,2, SETC 3, SET 2<0]  body [LOAD_X>0, LOAD_Y>3, BIND 4,0, BIND 3,2, READ 0, UNBIND 0,3, READN 0, SETC 2, COPY 3>5, SETD 3, SETC 1, WRITE 3]  stop-slot 4
+saved results/discover_sub_seeded (222s)

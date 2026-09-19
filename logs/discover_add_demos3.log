@@ -1,0 +1,17 @@
+machine: 6 slots, 144 instructions
+hand-written add program on the machine (ground truth only): fitness 2.000 exact 1.000
+worked examples shown: 12+11 (17 steps); 383+47 (25 steps); 19+65 (17 steps)
+gen 1/300  best fitness 2.000 (exact 1.000)  mean 0.300  best-so-far 2.000  elapsed 10s  ETA 3073s
+   best: init [SET 2<0]  body [LOAD_X>0, LOAD_Y>1, BIND 0,1, BIND 0,2, READ 0, SETD 3, SETC 2, WRITE 3]  stop-slot 4
+found at generation 6: init [SET 2<0]  body [LOAD_X>0, LOAD_Y>1, BIND 0,1, BIND 0,2, READ 0, SETD 3, SETC 2, WRITE 3]  stop-slot 4
+winner on 1-digit add: n=300  exact 1.000
+winner on 2-digit add: n=156  exact 1.000
+winner on 3-digit add: n=100  exact 1.000
+winner on 4-digit add (never seen in the search): n= 87  exact 1.000
+winner on 5-digit add (never seen in the search): n= 62  exact 1.000
+winner on 6-digit add (never seen in the search): n= 58  exact 1.000
+winner on 7-digit add (never seen in the search): n= 40  exact 1.000
+winner on 8-digit add (never seen in the search): n= 34  exact 1.000
+winner on 9-digit add (never seen in the search): n= 31  exact 1.000
+winner: init [SET 2<0]  body [LOAD_X>0, LOAD_Y>1, BIND 0,1, BIND 0,2, READ 0, SETD 3, SETC 2, WRITE 3]  stop-slot 4
+saved results/discover_add_demos3 (82s)

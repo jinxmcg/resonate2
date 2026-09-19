@@ -1,0 +1,53 @@
+{
+ "config": {
+  "k": 12,
+  "block": 16,
+  "steps": 3000,
+  "batch": 2048,
+  "lr": 0.003,
+  "seed": 0,
+  "out": "results/two_relations_k12"
+ },
+ "train": {
+  "state light": {
+   "exact_set": 0.0,
+   "precision": 0.5569058793058793
+  },
+  "one hop +^-1 then light": {
+   "exact_set": 0.008333333333333333,
+   "precision": 0.7813243228993229
+  },
+  "one hop x^-1 then light": {
+   "exact_set": 0.0,
+   "precision": 0.648914023939024
+  },
+  "+^-1 then x^-1 then light": {
+   "exact_set": 0.0,
+   "precision": 0.5925022755022755
+  }
+ },
+ "test (never seen)": {
+  "state light": {
+   "exact_set": 0.0,
+   "precision": 0.5573234281511873
+  },
+  "one hop +^-1 then light": {
+   "exact_set": 0.008026755852842809,
+   "precision": 0.7811566044509188
+  },
+  "one hop x^-1 then light": {
+   "exact_set": 0.0,
+   "precision": 0.6493908488390093
+  },
+  "+^-1 then x^-1 then light": {
+   "exact_set": 0.0,
+   "precision": 0.5934217696090607
+  }
+ },
+ "cos_347_437": 0.9926543831825256,
+ "cos_347_743": 0.42787256836891174,
+ "cos_1234_4321": 0.41236427426338196,
+ "cos_5060_6050": 0.9963239431381226,
+ "cos_random_pairs": 0.4866448640823364,
+ "cos_digit_permutations": 0.5516192317008972
+}

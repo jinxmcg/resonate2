@@ -1,0 +1,17 @@
+{
+ "config": {
+  "k": 8,
+  "block": 16,
+  "steps": 0,
+  "bag": "operands",
+  "buckets": "all",
+  "lr": 0.005,
+  "seed": 0,
+  "out": "results/oracle_k8b16",
+  "oracle_line": true
+ },
+ "bags": 1492,
+ "pairs": 6888,
+ "rows_with_signal": 195,
+ "cos_vs_logdist_corr": -0.9046160286082022
+}

@@ -1,0 +1,37 @@
+path BEFORE continuation (2 new random rows, 9-term chains): walk-back exact by digits 1d 0.00 2d 0.00 3d 0.00 4d 0.00 5d 0.00 6d 0.00 7d 0.00 8d 0.05 9d 0.00
+path step 1/2000  walk loss 0.6338  lr 0.003  tau 33.7  elapsed 1s  ETA 2469s
+path step 250/2000  walk loss 0.3346  lr 0.003  tau 33.7  elapsed 12s  ETA 83s
+path step 500/2000  walk loss 0.3353  lr 0.003  tau 33.7  elapsed 23s  ETA 68s
+path step 750/2000  walk loss 0.3361  lr 0.003  tau 33.7  elapsed 34s  ETA 56s
+path step 1000/2000  walk loss 0.3354  lr 0.003  tau 33.7  elapsed 45s  ETA 45s
+path step 1250/2000  walk loss 0.3378  lr 0.003  tau 33.7  elapsed 56s  ETA 34s
+path step 1500/2000  walk loss 0.3323  lr 0.003  tau 33.7  elapsed 67s  ETA 22s
+path step 1750/2000  walk loss 0.3338  lr 0.003  tau 33.7  elapsed 78s  ETA 11s
+path step 2000/2000  walk loss 0.3372  lr 0.003  tau 33.7  elapsed 91s  ETA 0s
+path AFTER continuation: walk-back exact by digits 1d 0.000 2d 0.000 3d 0.000 4d 0.000 5d 0.000 6d 0.000 7d 0.000 8d 0.105 9d 0.000
+value BEFORE continuation: held-out equations satisfied by place p0 1.00 p1 1.00 p2 1.00 p3 1.00 p4 1.00 p5 1.00 p6 0.67 p7 0.27 p8 0.33
+value step 1/2000  equation loss 0.65727  distinctness 0.0665  lr 0.01  elapsed 91s  ETA 182214s
+value step 250/2000  equation loss 0.08828  distinctness 0.0003  lr 0.01  elapsed 96s  ETA 673s
+value step 500/2000  equation loss 0.05971  distinctness 0.0001  lr 0.01  elapsed 101s  ETA 302s
+value step 750/2000  equation loss 0.06343  distinctness 0.0000  lr 0.01  elapsed 106s  ETA 176s
+value step 1000/2000  equation loss 0.06154  distinctness 0.0000  lr 0.01  elapsed 110s  ETA 110s
+value step 1250/2000  equation loss 0.06740  distinctness 0.0000  lr 0.01  elapsed 115s  ETA 69s
+value step 1500/2000  equation loss 0.06406  distinctness 0.0000  lr 0.01  elapsed 120s  ETA 40s
+value step 1750/2000  equation loss 0.06161  distinctness 0.0000  lr 0.01  elapsed 126s  ETA 18s
+value step 2000/2000  equation loss 0.05926  distinctness 0.0000  lr 0.01  elapsed 131s  ETA 0s
+value AFTER continuation: held-out equations satisfied by place p0 1.000 p1 1.000 p2 1.000 p3 1.000 p4 1.000 p5 1.000 p6 0.667 p7 0.455 p8 0.867
+1-digit sums (never trained): exact 0.000
+2-digit sums (never trained): exact 0.000
+3-digit sums (never trained): exact 0.000
+4-digit sums (never trained): exact 0.000
+5-digit sums (never trained): exact 0.000
+6-digit sums (never trained): exact 0.000
+7-digit sums (never trained): exact 0.000
+8-digit sums (never trained): exact 0.094
+9-digit sums (never trained): exact 0.000
+compare on unseen pairs below 10^9: exact 0.854   by distance 10^0 0.980  10^1 0.958  10^2 0.938  10^3 0.962  10^4 0.939  10^5 0.886  10^6 0.465  10^7 0.534
+123456789 + 876543211 = 1000000000: read 680000000   123456789 vs 876543211: x < y
+999999999 + 0 = 999999999: read 389999999   999999999 vs 0: x < y
+500000000 + 499999999 = 999999999: read 89999999   500000000 vs 499999999: x > y
+347 + 437 = 784: read 80000784   347 vs 437: x < y
+saved results/grow_1e9 (132s)

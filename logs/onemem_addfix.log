@@ -1,0 +1,31 @@
+BEFORE continuation: numbers walk back exactly 1.000 (old rows and operators carried over; 36 symbol rows and 4 role relations added, random)
+step 1/3000  loss numbers 0.7979 programs 1.2770  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 44.6  elapsed 1s  ETA 3874s
+step 250/3000  loss numbers 0.0005 programs 0.0608  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 43.2  elapsed 25s  ETA 271s
+step 500/3000  loss numbers 0.0003 programs 0.0617  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 44.6  elapsed 47s  ETA 236s
+step 750/3000  loss numbers 0.0002 programs 0.0526  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 46.1  elapsed 67s  ETA 202s
+step 1000/3000  loss numbers 0.0001 programs 0.0048  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 47.6  elapsed 87s  ETA 173s
+step 1250/3000  loss numbers 0.0001 programs 0.0266  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 49.0  elapsed 107s  ETA 150s
+step 1500/3000  loss numbers 0.0001 programs 0.0207  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 50.5  elapsed 132s  ETA 132s
+step 1750/3000  loss numbers 0.0000 programs 0.0026  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 51.7  elapsed 159s  ETA 114s
+step 2000/3000  loss numbers 0.0000 programs 0.0001  exact: numbers(9d) 1.000  programs(6 instr) 0.005  lr 0.001  tau 52.8  elapsed 190s  ETA 95s
+step 2250/3000  loss numbers 0.0000 programs 0.0042  exact: numbers(9d) 1.000  programs(6 instr) 0.065  lr 0.001  tau 54.0  elapsed 214s  ETA 71s
+step 2500/3000  loss numbers 0.0000 programs 0.0175  exact: numbers(9d) 1.000  programs(6 instr) 0.095  lr 0.001  tau 55.0  elapsed 235s  ETA 47s
+step 2750/3000  loss numbers 0.0000 programs 0.0006  exact: numbers(9d) 1.000  programs(6 instr) 0.185  lr 0.001  tau 56.1  elapsed 261s  ETA 24s
+step 3000/3000  loss numbers 0.0000 programs 0.0018  exact: numbers(9d) 1.000  programs(6 instr) 0.285  lr 0.001  tau 57.3  elapsed 283s  ETA 0s
+numbers walk back exactly by digits: 1d 1.000 2d 1.000 3d 1.000 4d 1.000 5d 1.000 6d 1.000 7d 1.000 8d 1.000 9d 1.000
+random programs of 2 instructions: walk back exactly 1.000
+random programs of 4 instructions: walk back exactly 1.000
+random programs of 6 instructions: walk back exactly 0.323
+random programs of 8 instructions: walk back exactly 0.000
+program 'add' promoted into the one table as 4 pages; walked back -> identical
+program 'sub' promoted into the one table as 4 pages; walked back -> identical
+program 'cmp' promoted into the one table as 3 pages; walked back -> identical
+program 'muld' promoted into the one table as 8 pages; walked back -> identical
+program 'mul' promoted into the one table as 7 pages; walked back -> identical
+executing 'add' from the one memory: exact 1d 1.000 3d 1.000 5d 1.000 7d 1.000 regd 1.000
+executing 'sub' from the one memory: exact 1d 1.000 3d 1.000 5d 1.000 7d 1.000 regd 1.000
+executing 'cmp' from the one memory: exact 1d 1.000 3d 1.000 5d 1.000 7d 1.000 regd 1.000
+executing 'muld' from the one memory: exact 1d 1.000 3d 1.000 5d 1.000 7d 1.000 regd 1.000
+executing 'mul' from the one memory: exact 1d 1.000 3d 1.000 5d 1.000 7d 1.000 regd 1.000
+a new program name as a freshly appended random row, referenced by a CALL, read back through the existing role operators without training: yes (read: ['CALL', 'plus', 's0', 's1'])
+saved results/onemem (299s)

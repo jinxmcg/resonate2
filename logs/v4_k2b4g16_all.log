@@ -1,0 +1,64 @@
+M=4 block=4 gens=16  train records 1513 in 12 shapes  buckets=all  frozen=False  reasoner params 7024  rows 221x4
+decomposition train records 134
+step 1/3000  loss 10.3311  train compose exact 0.007  decompose exact 0.000  lr 3.00e-03  tau 10.0  1s
+step 500/3000  loss 1.8368  train compose exact 0.583  decompose exact 0.007  lr 2.80e-03  tau 10.6  58s
+step 1000/3000  loss 1.0045  train compose exact 0.779  decompose exact 0.060  lr 2.25e-03  tau 18.9  120s
+step 1500/3000  loss 0.6475  train compose exact 0.872  decompose exact 0.082  lr 1.50e-03  tau 28.0  185s
+step 2000/3000  loss 0.4881  train compose exact 0.920  decompose exact 0.082  lr 7.50e-04  tau 35.5  247s
+step 2500/3000  loss 0.4260  train compose exact 0.938  decompose exact 0.097  lr 2.01e-04  tau 39.4  316s
+step 3000/3000  loss 0.4156  train compose exact 0.939  decompose exact 0.097  lr 0.00e+00  tau 40.1  388s
+/mnt/nvme990/latent/reasoning_ant/common.py:148: RuntimeWarning: Mean of empty slice.
+  if len(k): diff.append(float(torch.real(z[i] @ z[k[rng.integers(len(k))]].conj())))
+/mnt/nvme990/latent/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/mnt/nvme990/latent/reasoning_ant/common.py:149: RuntimeWarning: Mean of empty slice.
+  if not same: return {"n_same": 0}
+/mnt/nvme990/latent/reasoning_ant/common.py:150: RuntimeWarning: Mean of empty slice.
+  same, diff = np.array(same), np.array(diff); thr = (same.mean() + diff.mean()) / 2
+== validation
+  arithmetic_variation [B]                                n= 286  exact 0.098  mrr 0.133
+  arithmetic_variation+operator_change [B]                n=   2  exact 0.000  mrr 0.029
+  grouping_change [B]                                     n=  14  exact 0.000  mrr 0.021
+  place_value [B]                                         n=  88  exact 0.000  mrr 0.017
+  grouping_change [C_validation]                          n= 214  spot: same 0.387 diff 0.226 purity 0.603
+  operator_change [C_validation]                          n=  26  spot: same 0.747 diff 0.272 purity 0.865
+  strict_unseen_addition [C_validation]                   n=  30  spot: same 0.569 diff 0.069 purity 0.717
+  strict_unseen_addition+operator_change [C_validation]   n=   2  spot: same 0.939 diff nan purity nan
+  strict_unseen_place_value [C_validation]                n= 138  spot: same 0.200 diff -0.023 purity 0.598
+  strict_unseen_place_value+grouping_change [C_validation] n=   2  spot: same 0.246 diff nan purity nan
+  decompose [A]                                           n=  37  exact canonical 0.000
+  intermediate_anchor_hit                                 n= 474  anchor-hit 0.544
+== test
+  arithmetic_variation [B]                                n= 257  exact 0.140  mrr 0.171
+  arithmetic_variation+operator_change [B]                n=   3  exact 0.000  mrr 0.015
+  grouping_change [B]                                     n=   6  exact 0.000  mrr 0.026
+  operator_change [B]                                     n=   2  exact 0.000  mrr 0.078
+  place_value [B]                                         n=  82  exact 0.000  mrr 0.016
+  grouping_change [C_test]                                n= 174  spot: same 0.373 diff 0.155 purity 0.629
+  operator_change [C_test]                                n=  99  spot: same 0.710 diff 0.289 purity 0.737
+  strict_unseen_addition [C_test]                         n=  45  spot: same 0.634 diff 0.125 purity 0.731
+  strict_unseen_place_value [C_test]                      n= 144  spot: same 0.291 diff 0.022 purity 0.660
+  decompose [A]                                           n=  50  exact canonical 0.000
+  intermediate_anchor_hit                                 n= 476  anchor-hit 0.525
+== train
+  arithmetic_variation [A]                                n= 561  exact 0.988  mrr 0.991
+  arithmetic_variation [G]                                n= 204  exact 0.931  mrr 0.960
+  arithmetic_variation+operator_change [A]                n=   2  exact 0.000  mrr 0.500
+  arithmetic_variation+operator_change [G]                n=   4  exact 0.750  mrr 0.875
+  dense_basic [G]                                         n= 203  exact 0.916  mrr 0.953
+  dense_basic+operator_change [G]                         n= 112  exact 0.875  mrr 0.922
+  dense_basic+place_value [G]                             n=  19  exact 0.895  mrr 0.947
+  dense_basic+place_value+operator_change [G]             n=   4  exact 0.750  mrr 0.781
+  grouping_change [A]                                     n=  16  exact 0.750  mrr 0.856
+  grouping_change [G]                                     n= 128  exact 0.938  mrr 0.967
+  operator_change [A]                                     n=   4  exact 0.750  mrr 0.833
+  operator_change [G]                                     n=   8  exact 0.750  mrr 0.806
+  place_value [A]                                         n= 174  exact 0.989  mrr 0.994
+  place_value [G]                                         n=  60  exact 0.783  mrr 0.861
+  place_value+arithmetic_variation [G]                    n=   6  exact 0.667  mrr 0.833
+  place_value+arithmetic_variation+operator_change [G]    n=   6  exact 0.667  mrr 0.833
+  place_value+operator_change [G]                         n=   2  exact 1.000  mrr 1.000
+  decompose [B]                                           n=  85  exact canonical 0.071
+  decompose [G]                                           n=  49  exact canonical 0.143
+  intermediate_anchor_hit                                 n= 523  anchor-hit 0.593
+saved results/v4_k2b4g16_all (391s)

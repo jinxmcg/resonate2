@@ -1,0 +1,65 @@
+{
+ "config": {
+  "path": "results/grow_1e9_moves/path.pt",
+  "programs": "results/places/found_programs.json",
+  "steps": 3000,
+  "seed": 0,
+  "out": "results/onemem",
+  "eval_only": false
+ },
+ "rows": 54,
+ "numbers_len1": 1.0,
+ "numbers_len2": 1.0,
+ "numbers_len3": 1.0,
+ "numbers_len4": 1.0,
+ "numbers_len5": 1.0,
+ "numbers_len6": 1.0,
+ "numbers_len7": 1.0,
+ "numbers_len8": 1.0,
+ "numbers_len9": 1.0,
+ "programs_2": 1.0,
+ "programs_4": 1.0,
+ "programs_6": 0.32333335280418396,
+ "programs_8": 0.0,
+ "promote_add": true,
+ "promote_sub": true,
+ "promote_cmp": true,
+ "promote_muld": true,
+ "promote_mul": true,
+ "exec_add": {
+  "1": 1.0,
+  "3": 1.0,
+  "5": 1.0,
+  "7": 1.0,
+  "reg": 1.0
+ },
+ "exec_sub": {
+  "1": 1.0,
+  "3": 1.0,
+  "5": 1.0,
+  "7": 1.0,
+  "reg": 1.0
+ },
+ "exec_cmp": {
+  "1": 1.0,
+  "3": 1.0,
+  "5": 1.0,
+  "7": 1.0,
+  "reg": 1.0
+ },
+ "exec_muld": {
+  "1": 1.0,
+  "3": 1.0,
+  "5": 1.0,
+  "7": 1.0,
+  "reg": 1.0
+ },
+ "exec_mul": {
+  "1": 1.0,
+  "3": 1.0,
+  "5": 1.0,
+  "7": 1.0,
+  "reg": 1.0
+ },
+ "new_name_row_readable_without_training": true
+}

@@ -1,0 +1,32 @@
+teacher traces: 29696 episodes, teacher exact on its own traces: add 1.000  cmp 1.000  (144s)
+imitation epoch 10/60  imitation loss 0.0591  lr 0.001  traces 116  elapsed 159s
+imitation epoch 20/60  imitation loss 0.0487  lr 0.001  traces 116  elapsed 174s
+imitation epoch 30/60  imitation loss 0.0239  lr 0.001  traces 116  elapsed 185s
+imitation epoch 40/60  imitation loss 0.0039  lr 0.001  traces 116  elapsed 199s
+imitation epoch 50/60  imitation loss 0.0028  lr 0.001  traces 116  elapsed 211s
+imitation epoch 60/60  imitation loss 0.0024  lr 0.001  traces 116  elapsed 222s
+dagger 1 epoch 10/20  imitation loss 0.0877  lr 0.001  traces 162  elapsed 378s
+dagger 1 epoch 20/20  imitation loss 0.0724  lr 0.001  traces 162  elapsed 409s
+dagger 2 epoch 10/20  imitation loss 0.0868  lr 0.001  traces 208  elapsed 527s
+dagger 2 epoch 20/20  imitation loss 0.0796  lr 0.001  traces 208  elapsed 552s
+dagger 3 epoch 10/20  imitation loss 0.0834  lr 0.001  traces 254  elapsed 675s
+dagger 3 epoch 20/20  imitation loss 0.0781  lr 0.001  traces 254  elapsed 716s
+add      1-digit: n=500  exact 0.188
+add      2-digit: n=500  exact 0.032
+add      3-digit: n=500  exact 0.002
+add      4-digit: n=500  exact 0.000
+add      5-digit (length never seen in training): n=500  exact 0.000
+add      6-digit (length never seen in training): n=500  exact 0.000
+add      7-digit (length never seen in training): n=408  exact 0.000
+add      8-digit (length never seen in training): n=400  exact 0.000
+add      9-digit (length never seen in training): n=346  exact 0.000
+compare  1-digit: n=500  exact 1.000
+compare  2-digit: n=500  exact 1.000
+compare  3-digit: n=500  exact 1.000
+compare  4-digit: n=500  exact 0.992
+compare  5-digit (length never seen in training): n=500  exact 0.920
+compare  6-digit (length never seen in training): n=470  exact 0.700
+compare  7-digit (length never seen in training): n=424  exact 0.557
+compare  8-digit (length never seen in training): n=360  exact 0.422
+compare  9-digit (length never seen in training): n=346  exact 0.355
+saved results/controller_dagger (772s)

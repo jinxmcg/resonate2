@@ -1,0 +1,152 @@
+{
+ "validation": {
+  "arithmetic_variation [B]": {
+   "n": 286,
+   "spot_decompose_exact": 0.0
+  },
+  "arithmetic_variation+operator_change [B]": {
+   "n": 2,
+   "spot_decompose_exact": 0.0
+  },
+  "grouping_change [B]": {
+   "n": 14,
+   "spot_decompose_exact": 0.0
+  },
+  "grouping_change [C_validation]": {
+   "n": 214,
+   "spot_decompose_exact": 0.0
+  },
+  "operator_change [C_validation]": {
+   "n": 26,
+   "spot_decompose_exact": 0.0
+  },
+  "place_value [B]": {
+   "n": 88,
+   "spot_decompose_exact": 0.0
+  },
+  "strict_unseen_addition [C_validation]": {
+   "n": 30,
+   "spot_decompose_exact": 0.0
+  },
+  "strict_unseen_addition+operator_change [C_validation]": {
+   "n": 2,
+   "spot_decompose_exact": 0.0
+  },
+  "strict_unseen_place_value [C_validation]": {
+   "n": 138,
+   "spot_decompose_exact": 0.0
+  },
+  "strict_unseen_place_value+grouping_change [C_validation]": {
+   "n": 2,
+   "spot_decompose_exact": 0.0
+  }
+ },
+ "test": {
+  "arithmetic_variation [B]": {
+   "n": 257,
+   "spot_decompose_exact": 0.0
+  },
+  "arithmetic_variation+operator_change [B]": {
+   "n": 3,
+   "spot_decompose_exact": 0.0
+  },
+  "grouping_change [B]": {
+   "n": 6,
+   "spot_decompose_exact": 0.0
+  },
+  "grouping_change [C_test]": {
+   "n": 174,
+   "spot_decompose_exact": 0.0
+  },
+  "operator_change [B]": {
+   "n": 2,
+   "spot_decompose_exact": 0.0
+  },
+  "operator_change [C_test]": {
+   "n": 99,
+   "spot_decompose_exact": 0.0
+  },
+  "place_value [B]": {
+   "n": 82,
+   "spot_decompose_exact": 0.0
+  },
+  "strict_unseen_addition [C_test]": {
+   "n": 45,
+   "spot_decompose_exact": 0.0
+  },
+  "strict_unseen_place_value [C_test]": {
+   "n": 144,
+   "spot_decompose_exact": 0.0
+  }
+ },
+ "train": {
+  "arithmetic_variation [A]": {
+   "n": 561,
+   "spot_decompose_exact": 0.0
+  },
+  "arithmetic_variation [G]": {
+   "n": 204,
+   "spot_decompose_exact": 0.0
+  },
+  "arithmetic_variation+operator_change [A]": {
+   "n": 2,
+   "spot_decompose_exact": 0.0
+  },
+  "arithmetic_variation+operator_change [G]": {
+   "n": 4,
+   "spot_decompose_exact": 0.0
+  },
+  "dense_basic [G]": {
+   "n": 203,
+   "spot_decompose_exact": 0.034482758620689655
+  },
+  "dense_basic+operator_change [G]": {
+   "n": 112,
+   "spot_decompose_exact": 0.03571428571428571
+  },
+  "dense_basic+place_value [G]": {
+   "n": 19,
+   "spot_decompose_exact": 0.0
+  },
+  "dense_basic+place_value+operator_change [G]": {
+   "n": 4,
+   "spot_decompose_exact": 0.0
+  },
+  "grouping_change [A]": {
+   "n": 16,
+   "spot_decompose_exact": 0.0
+  },
+  "grouping_change [G]": {
+   "n": 128,
+   "spot_decompose_exact": 0.0078125
+  },
+  "operator_change [A]": {
+   "n": 4,
+   "spot_decompose_exact": 0.0
+  },
+  "operator_change [G]": {
+   "n": 8,
+   "spot_decompose_exact": 0.0
+  },
+  "place_value [A]": {
+   "n": 174,
+   "spot_decompose_exact": 0.0
+  },
+  "place_value [G]": {
+   "n": 60,
+   "spot_decompose_exact": 0.016666666666666666
+  },
+  "place_value+arithmetic_variation [G]": {
+   "n": 6,
+   "spot_decompose_exact": 0.0
+  },
+  "place_value+arithmetic_variation+operator_change [G]": {
+   "n": 6,
+   "spot_decompose_exact": 0.0
+  },
+  "place_value+operator_change [G]": {
+   "n": 2,
+   "spot_decompose_exact": 0.0
+  }
+ }
+}

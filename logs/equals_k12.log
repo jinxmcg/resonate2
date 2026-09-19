@@ -1,0 +1,32 @@
+digit equations: 524 train, 131 held out (single place, carries included); numerals for the walk 20000
+step 1/4000  loss 2.2116  lr 0.003  tau 10.0  elapsed 1s  ETA 5531s
+step 250/4000  loss 0.0633  lr 0.003  tau 17.0  elapsed 47s  ETA 702s
+step 500/4000  loss 0.0378  lr 0.003  tau 22.1  elapsed 91s  ETA 638s
+step 750/4000  loss 0.0332  lr 0.003  tau 25.6  elapsed 135s  ETA 584s
+step 1000/4000  loss 0.0314  lr 0.003  tau 28.5  elapsed 179s  ETA 537s
+step 1250/4000  loss 0.0297  lr 0.003  tau 31.3  elapsed 226s  ETA 496s
+step 1500/4000  loss 0.0272  lr 0.003  tau 34.0  elapsed 275s  ETA 459s
+step 1750/4000  loss 0.0267  lr 0.003  tau 36.9  elapsed 322s  ETA 414s
+step 2000/4000  loss 0.0240  lr 0.003  tau 40.2  elapsed 370s  ETA 370s
+step 2250/4000  loss 0.0222  lr 0.003  tau 44.4  elapsed 419s  ETA 326s
+step 2500/4000  loss 0.0177  lr 0.003  tau 49.6  elapsed 464s  ETA 279s
+step 2750/4000  loss 0.0133  lr 0.003  tau 55.9  elapsed 509s  ETA 232s
+step 3000/4000  loss 0.0115  lr 0.003  tau 63.7  elapsed 556s  ETA 185s
+step 3250/4000  loss 0.0407  lr 0.003  tau 56.7  elapsed 601s  ETA 139s
+step 3500/4000  loss 0.0327  lr 0.003  tau 63.8  elapsed 646s  ETA 92s
+step 3750/4000  loss 0.0300  lr 0.003  tau 69.1  elapsed 691s  ETA 46s
+step 4000/4000  loss 0.0280  lr 0.003  tau 73.4  elapsed 735s  ETA 0s
+numeral chains walk back exactly: 1.000
+digit equations (trained)      n= 524  exact 0.252   no-carry 0.265   carry 0.234
+digit equations (held out)     n= 131  exact 0.023   no-carry 0.036   carry 0.000
+2-digit sums (never trained): exact 0.007   carries=0 0.003(n=368)  carries=1 0.013(n=232)
+3-digit sums (never trained): exact 0.002   carries=0 0.006(n=181)  carries=1 0.000(n=296)  carries=2 0.000(n=123)
+4-digit sums (never trained): exact 0.000   carries=0 0.000(n=125)  carries=1 0.000(n=209)  carries=2 0.000(n=191)  carries=3+ 0.000(n=75)
+5-digit sums (never trained): exact 0.000   carries=0 0.000(n=63)  carries=1 0.000(n=159)  carries=2 0.000(n=213)  carries=3+ 0.000(n=165)
+6-digit sums (never trained): exact 0.000   carries=0 0.000(n=23)  carries=1 0.000(n=118)  carries=2 0.000(n=182)  carries=3+ 0.000(n=277)
+7-digit sums (never trained): exact 0.000   carries=0 0.000(n=15)  carries=1 0.000(n=59)  carries=2 0.000(n=156)  carries=3+ 0.000(n=370)
+23 + 45 = 68:   read 10
+47 + 35 = 82:   read 10
+123456 + 111111 = 234567:   read 0
+999999 + 1 = 1000000:   read 0
+saved results/equals_k12 (736s)

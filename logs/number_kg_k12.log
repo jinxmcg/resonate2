@@ -1,0 +1,52 @@
+rows 10001 (dense kept 7006, deleted 2994, sparse 3000)  edges 74876  relations 8 (+reverses)
+step 1/4000  loss 18.7617  forward exact 0.000  mrr 0.001  lr 0.003  tau 10.0  elapsed 2s  ETA 6555s
+step 500/4000  loss 7.1637  forward exact 0.999  mrr 0.999  lr 0.003  tau 16.6  elapsed 70s  ETA 492s
+step 1000/4000  loss 7.1889  forward exact 1.000  mrr 1.000  lr 0.003  tau 17.5  elapsed 135s  ETA 404s
+step 1500/4000  loss 7.1287  forward exact 1.000  mrr 1.000  lr 0.003  tau 18.0  elapsed 204s  ETA 339s
+step 2000/4000  loss 7.1103  forward exact 1.000  mrr 1.000  lr 0.003  tau 18.2  elapsed 270s  ETA 270s
+step 2500/4000  loss 7.0976  forward exact 1.000  mrr 1.000  lr 0.003  tau 18.5  elapsed 369s  ETA 222s
+step 3000/4000  loss 7.1104  forward exact 1.000  mrr 1.000  lr 0.003  tau 18.7  elapsed 511s  ETA 170s
+step 3500/4000  loss 7.1269  forward exact 1.000  mrr 1.000  lr 0.003  tau 18.9  elapsed 653s  ETA 93s
+step 4000/4000  loss 7.0468  forward exact 1.000  mrr 1.000  lr 0.003  tau 19.1  elapsed 802s  ETA 0s
+unstored numbers, 2 digits: n=  28  AND-spot decodes exactly 1.000
+unstored numbers, 3 digits: n= 256  AND-spot decodes exactly 0.996
+unstored numbers, 4 digits: n=2710  AND-spot decodes exactly 1.000
+unstored numbers, 5 digits: n= 491  AND-spot decodes exactly 0.992
+unstored numbers, 6 digits: n= 500  AND-spot decodes exactly 0.994
+unstored numbers, 7 digits: n= 500  AND-spot decodes exactly 0.930
+stored numbers: decode from row 1.000, from their AND-spot 0.999
+control: random states decode as the intended number 0.000
+spots of 1000 unstored 4-digit numbers: nearest-other cosine 0.866
+a+b with 1-digit result: n=300  exact 0.650  (operands both unstored: 0.00)
+a+b with 2-digit result: n=300  exact 0.197  (operands both unstored: 0.03)
+a+b with 3-digit result: n=300  exact 0.043  (operands both unstored: 0.10)
+a+b with 4-digit result: n=300  exact 0.020  (operands both unstored: 0.10)
+a+b with 5-digit result: n=300  exact 0.000  (operands both unstored: 0.68)
+a+b with 6-digit result: n=300  exact 0.003  (operands both unstored: 0.96)
+a+b with 7-digit result: n=300  exact 0.000  (operands both unstored: 0.99)
+== dev_v1 validation
+  compose arithmetic_variation [B]                               n= 286  exact 0.192
+  compose arithmetic_variation+operator_change [B]               n=   2  exact 0.000
+  compose grouping_change [B]                                    n=  14  exact 0.000
+  compose grouping_change [C_validation]                         n= 214  exact 0.051
+  compose operator_change [C_validation]                         n=  26  exact 0.269
+  compose place_value [B]                                        n=  88  exact 0.091
+  compose strict_unseen_addition [C_validation]                  n= 138  exact 0.101
+  compose strict_unseen_addition+operator_change [C_validation]  n=   2  exact 0.500
+  compose strict_unseen_place_value [C_validation]               n= 138  exact 0.254
+  compose strict_unseen_place_value+grouping_change [C_validation] n=   2  exact 0.000
+  decompose directional_transfer [A]                             n=  37  exact 1.000
+  decompose strict_unseen_decomposition [C_validation]           n=  70  exact 1.000
+== dev_v1 test
+  compose arithmetic_variation [B]                               n= 257  exact 0.222
+  compose arithmetic_variation+operator_change [B]               n=   3  exact 0.667
+  compose grouping_change [B]                                    n=   6  exact 0.000
+  compose grouping_change [C_test]                               n= 174  exact 0.069
+  compose operator_change [B]                                    n=   2  exact 0.000
+  compose operator_change [C_test]                               n=  99  exact 0.222
+  compose place_value [B]                                        n=  82  exact 0.220
+  compose strict_unseen_addition [C_test]                        n= 189  exact 0.063
+  compose strict_unseen_place_value [C_test]                     n= 192  exact 0.203
+  decompose directional_transfer [A]                             n=  50  exact 1.000
+  decompose strict_unseen_decomposition [C_test]                 n=  96  exact 1.000
+saved results/number_kg_k12 (915s)

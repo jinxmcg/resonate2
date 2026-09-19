@@ -1,0 +1,36 @@
+step 1/3000  recon loss 0.7558  lr 0.003  tau 10.0  elapsed 4s  ETA 13221s
+step 250/3000  recon loss 0.0048  lr 0.003  tau 17.7  elapsed 26s  ETA 290s
+step 500/3000  recon loss 0.0013  lr 0.003  tau 21.4  elapsed 48s  ETA 239s
+step 750/3000  recon loss 0.0006  lr 0.003  tau 23.8  elapsed 70s  ETA 210s
+step 1000/3000  recon loss 0.0003  lr 0.003  tau 25.6  elapsed 93s  ETA 185s
+step 1250/3000  recon loss 0.0002  lr 0.003  tau 27.1  elapsed 115s  ETA 161s
+step 1500/3000  recon loss 0.0001  lr 0.003  tau 28.3  elapsed 138s  ETA 138s
+step 1750/3000  recon loss 0.0001  lr 0.003  tau 29.4  elapsed 160s  ETA 115s
+step 2000/3000  recon loss 0.0001  lr 0.003  tau 30.4  elapsed 183s  ETA 91s
+step 2250/3000  recon loss 0.0001  lr 0.003  tau 31.3  elapsed 206s  ETA 69s
+step 2500/3000  recon loss 0.0000  lr 0.003  tau 32.2  elapsed 228s  ETA 46s
+step 2750/3000  recon loss 0.0000  lr 0.003  tau 33.0  elapsed 251s  ETA 23s
+step 3000/3000  recon loss 0.0000  lr 0.003  tau 33.7  elapsed 273s  ETA 0s
+train              state light                 : the shining set is exactly the parts 0.000   precision of the top set 0.596
+train              one hop +^-1 then light     : the shining set is exactly the parts 0.021   precision of the top set 0.801
+train              one hop x^-1 then light     : the shining set is exactly the parts 0.001   precision of the top set 0.654
+train              +^-1 then x^-1 then light   : the shining set is exactly the parts 0.000   precision of the top set 0.640
+train              +^-1 light exact set by digit length: 4d 0.00  5d 0.00  6d 0.00  7d 0.02
+test (never seen)  state light                 : the shining set is exactly the parts 0.000   precision of the top set 0.599
+test (never seen)  one hop +^-1 then light     : the shining set is exactly the parts 0.021   precision of the top set 0.800
+test (never seen)  one hop x^-1 then light     : the shining set is exactly the parts 0.001   precision of the top set 0.655
+test (never seen)  +^-1 then x^-1 then light   : the shining set is exactly the parts 0.000   precision of the top set 0.639
+test (never seen)  +^-1 light exact set by digit length: 4d 0.00  5d 0.00  6d 0.00  7d 0.02
+train              reverse walk, one light per step: all 7 terms right 1.000   per step (units first) 1.00 1.00 1.00 1.00 1.00 1.00 1.00
+test (never seen)  reverse walk, one light per step: all 7 terms right 1.000   per step (units first) 1.00 1.00 1.00 1.00 1.00 1.00 1.00
+347: one +^-1 light, brightest nodes: 7(9.5), 10(-10.5), 1000000(-10.5), 1000(-10.6), 100(-10.7), 100000(-10.8)
+437: one +^-1 light, brightest nodes: 7(9.4), 10(-10.3), 1000000(-10.7), 1000(-10.7), 100(-10.8), 100000(-10.8)
+7: one +^-1 light, brightest nodes: 7(9.5), 1000000(-10.2), 10(-10.6), 100000(-10.6), 10000(-10.7), 1000(-10.8)
+1000000: one +^-1 light, brightest nodes: 0(10.2), 1000000(-10.2), 10(-10.3), 100000(-10.3), 10000(-10.4), 1000(-10.5)
+120123: one +^-1 light, brightest nodes: 3(9.8), 10(-10.2), 10000(-10.3), 100(-10.4), 100000(-10.7), 1000(-11.0)
+347 vs 437: cosine of the composed states 0.982
+347 vs 743: cosine of the composed states 0.506
+1234 vs 4321: cosine of the composed states 0.502
+5060 vs 6050: cosine of the composed states 0.983
+mean cosine: random number pairs 0.538   same digits permuted 0.597
+saved results/two_relations_k12_walk2 (275s)

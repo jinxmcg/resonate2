@@ -1,0 +1,30 @@
+BEFORE stage 2: '=' light held-out 1.000   x<y (untrained P, chance) 0.438   cos(n,n+1) -0.065
+step 1/3000  x<y loss 0.7064 exact 0.433   equation replay loss 0.00000   lr 0.003  t 10.0  elapsed 1s  ETA 3706s
+step 250/3000  x<y loss 0.5779 exact 0.648   equation replay loss 0.00087   lr 0.003  t 19.2  elapsed 5s  ETA 52s
+step 500/3000  x<y loss 0.5392 exact 0.687   equation replay loss 0.00084   lr 0.003  t 24.2  elapsed 10s  ETA 48s
+step 750/3000  x<y loss 0.5643 exact 0.688   equation replay loss 0.00077   lr 0.003  t 26.2  elapsed 13s  ETA 39s
+step 1000/3000  x<y loss 0.5417 exact 0.704   equation replay loss 0.00081   lr 0.003  t 26.3  elapsed 17s  ETA 33s
+step 1250/3000  x<y loss 0.5699 exact 0.687   equation replay loss 0.00083   lr 0.003  t 26.0  elapsed 21s  ETA 29s
+step 1500/3000  x<y loss 0.5663 exact 0.685   equation replay loss 0.00079   lr 0.003  t 25.9  elapsed 25s  ETA 25s
+step 1750/3000  x<y loss 0.5599 exact 0.691   equation replay loss 0.00070   lr 0.003  t 25.8  elapsed 29s  ETA 21s
+step 2000/3000  x<y loss 0.5499 exact 0.694   equation replay loss 0.00075   lr 0.003  t 25.3  elapsed 33s  ETA 16s
+step 2250/3000  x<y loss 0.5580 exact 0.680   equation replay loss 0.00079   lr 0.003  t 24.8  elapsed 37s  ETA 12s
+step 2500/3000  x<y loss 0.5602 exact 0.678   equation replay loss 0.00077   lr 0.003  t 25.0  elapsed 43s  ETA 9s
+step 2750/3000  x<y loss 0.5279 exact 0.721   equation replay loss 0.00073   lr 0.003  t 24.7  elapsed 46s  ETA 4s
+step 3000/3000  x<y loss 0.5484 exact 0.702   equation replay loss 0.00076   lr 0.003  t 24.6  elapsed 50s  ETA 0s
+AFTER stage 2:  '=' light held-out 1.000 (retention)   x<y on unseen pairs 0.701  by distance 10^0 1.000  10^1 0.870  10^2 0.496  10^3 0.511  10^4 0.472  10^5 0.514   cos(n,n+1) -0.065
+'=' light on unseen multi-digit sums (retention) 1.000
+digits read off a value by comparison lights (decomposition of a value): exact 0.000
+1-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=600)
+2-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=334)  carries=1 0.000(n=266)
+3-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=206)  carries=1 0.000(n=270)  carries=2 0.000(n=124)
+4-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=105)  carries=1 0.000(n=222)  carries=2 0.000(n=199)  carries=3+ 0.000(n=74)
+5-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=66)  carries=1 0.000(n=187)  carries=2 0.000(n=185)  carries=3+ 0.000(n=162)
+6-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=36)  carries=1 0.000(n=99)  carries=2 0.000(n=181)  carries=3+ 0.000(n=284)
+7-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=20)  carries=1 0.000(n=78)  carries=2 0.000(n=155)  carries=3+ 0.000(n=347)
+23 + 45 = 68:   read 9999897   walk 9999897   and  23 < 45? light says yes
+47 + 35 = 82:   read 9799894   walk 9799894   and  47 < 35? light says no
+123456 + 111111 = 234567:   read 5799950   walk 5799950   and  123456 < 111111? light says yes
+999999 + 1 = 1000000:   read 6999868   walk 6999868   and  999999 < 1? light says yes
+4999999 + 4999999 = 9999998:   read 7799890   walk 7799890   and  4999999 < 4999999? light says no
+saved results/order (51s)

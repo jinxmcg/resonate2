@@ -1,0 +1,16 @@
+{
+ "config": {
+  "k": 4,
+  "block": 4,
+  "steps": 2000,
+  "bag": "operands",
+  "buckets": "all",
+  "lr": 0.005,
+  "seed": 0,
+  "out": "results/bag_k4b4_operands"
+ },
+ "bags": 1492,
+ "pairs": 6888,
+ "rows_with_signal": 195,
+ "cos_vs_logdist_corr": -0.2680747509456551
+}

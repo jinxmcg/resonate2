@@ -1,0 +1,75 @@
+machine: 6 slots, 144 instructions
+hand-written add program on the machine (ground truth only): fitness 2.000 exact 1.000
+gen 1/300  best fitness 0.340 (exact 0.125)  mean 0.039  best-so-far 0.340  elapsed 14s  ETA 4162s
+   best: init [READ 3]  body [UNBIND 5,3, LOAD_X>4, SETC 3, WRITE 4]  stop-slot 3
+gen 10/300  best fitness 0.368 (exact 0.125)  mean 0.235  best-so-far 0.562  elapsed 93s  ETA 2709s
+   best: init []  body [BIND 4,2, BIND 2,1, LOAD_X>4, LOAD_Y>4, WRITE 4]  stop-slot 5
+gen 20/300  best fitness 0.215 (exact 0.042)  mean 0.163  best-so-far 0.562  elapsed 169s  ETA 2369s
+   best: init [READ 3]  body [SETC 4, LOAD_Y>4, LOAD_X>4, WRITE 4]  stop-slot 3
+gen 30/300  best fitness 0.111 (exact 0.000)  mean 0.093  best-so-far 0.562  elapsed 230s  ETA 2070s
+   best: init []  body [READN 1, BIND 3,5, COPY 4>1, BIND 2,1, UNBIND 4,0, LOAD_X>4, COPY 0>2, WRITE 4, BIND 0,1, UNBIND 3,5, COPY 4>2]  stop-slot 1
+gen 40/300  best fitness 0.278 (exact 0.125)  mean 0.226  best-so-far 0.562  elapsed 276s  ETA 1792s
+   best: init [BIND 4,5]  body [BIND 3,2, BIND 5,4, LOAD_X>4, LOAD_Y>4, SETD 3, WRITE 4]  stop-slot 1
+gen 50/300  best fitness 0.132 (exact 0.042)  mean 0.113  best-so-far 0.562  elapsed 324s  ETA 1620s
+   best: init [READ 0]  body [UNBIND 1,0, COPY 4>2, BIND 1,4, COPY 2>5, LOAD_X>4, BIND 0,1, COPY 4>5, COPY 1>2, READ 4, COPY 3>5, WRITE 4, SET 0<1]  stop-slot 0
+gen 60/300  best fitness 0.188 (exact 0.042)  mean 0.153  best-so-far 0.562  elapsed 375s  ETA 1501s
+   best: init [READ 0]  body [UNBIND 1,0, COPY 4>2, BIND 1,4, COPY 2>5, LOAD_X>4, BIND 0,1, COPY 4>5, COPY 1>2, READ 4, COPY 3>5, WRITE 4, SET 0<1]  stop-slot 0
+gen 70/300  best fitness 0.285 (exact 0.125)  mean 0.087  best-so-far 0.562  elapsed 426s  ETA 1398s
+   best: init []  body [BIND 5,1, COPY 2>5, UNBIND 3,1, LOAD_X>4, BIND 0,1, LOAD_Y>4, SETD 2, WRITE 4, READ 3]  stop-slot 1
+gen 80/300  best fitness 0.312 (exact 0.125)  mean 0.247  best-so-far 0.562  elapsed 479s  ETA 1318s
+   best: init []  body [LOAD_Y>5, LOAD_Y>4, UNBIND 3,1, LOAD_X>4, BIND 1,0, SET 1<1, SETD 2, WRITE 4, READ 3]  stop-slot 0
+gen 90/300  best fitness 0.438 (exact 0.167)  mean 0.364  best-so-far 0.562  elapsed 530s  ETA 1237s
+   best: init []  body [LOAD_Y>5, LOAD_Y>4, UNBIND 3,1, LOAD_X>4, BIND 1,0, SET 1<1, SETD 2, WRITE 4, READ 3]  stop-slot 0
+gen 100/300  best fitness 0.292 (exact 0.125)  mean 0.230  best-so-far 0.562  elapsed 580s  ETA 1160s
+   best: init []  body [BIND 2,3, COPY 1>3, LOAD_X>4, LOAD_Y>2, COPY 4>1, SET 1<1, SETD 2, WRITE 4, COPY 0>3, BIND 3,1, READ 3]  stop-slot 5
+gen 110/300  best fitness 0.097 (exact 0.042)  mean 0.047  best-so-far 0.562  elapsed 627s  ETA 1082s
+   best: init [UNBIND 0,3]  body [LOAD_X>4, LOAD_Y>2, COPY 2>4, UNBIND 5,2, UNBIND 2,0, WRITE 4, COPY 0>3, BIND 3,2, READ 3, BIND 5,0]  stop-slot 3
+gen 120/300  best fitness 0.174 (exact 0.042)  mean 0.140  best-so-far 0.562  elapsed 677s  ETA 1015s
+   best: init [READ 0]  body [LOAD_Y>2, LOAD_X>4, COPY 0>1, WRITE 1, BIND 3,2, SETD 2, UNBIND 5,2, UNBIND 2,0, WRITE 4]  stop-slot 3
+gen 130/300  best fitness 0.097 (exact 0.000)  mean 0.076  best-so-far 0.562  elapsed 726s  ETA 950s
+   best: init [UNBIND 3,0, UNBIND 5,0, SETD 0]  body [SET 0<0, READN 2, BIND 5,4, COPY 2>4, UNBIND 2,1, BIND 5,1, COPY 3>4, SET 3<1, LOAD_X>3, LOAD_X>3, WRITE 4]  stop-slot 4
+gen 140/300  best fitness 0.243 (exact 0.083)  mean 0.180  best-so-far 0.562  elapsed 775s  ETA 886s
+   best: init [BIND 5,4]  body [LOAD_Y>2, BIND 1,2, COPY 0>3, COPY 2>4, WRITE 2, READ 1, SETD 4, LOAD_X>4, WRITE 4, SET 0<0, BIND 5,1, BIND 3,2]  stop-slot 1
+gen 150/300  best fitness 0.153 (exact 0.042)  mean 0.132  best-so-far 0.562  elapsed 819s  ETA 819s
+   best: init []  body [LOAD_Y>2, BIND 1,4, BIND 3,5, READ 5, READ 5, SETD 4, LOAD_X>4, LOAD_Y>1, WRITE 4, SET 0<0, BIND 5,1, BIND 3,2]  stop-slot 5
+gen 160/300  best fitness 0.347 (exact 0.125)  mean 0.190  best-so-far 0.562  elapsed 866s  ETA 757s
+   best: init [LOAD_Y>4]  body [LOAD_Y>2, BIND 1,4, SET 0<0, UNBIND 1,0, LOAD_X>4, BIND 3,5, BIND 5,1, WRITE 4, LOAD_Y>1, UNBIND 1,5, READN 3]  stop-slot 3
+gen 170/300  best fitness 0.208 (exact 0.083)  mean 0.147  best-so-far 0.562  elapsed 910s  ETA 696s
+   best: init [LOAD_Y>4]  body [UNBIND 5,0, BIND 1,4, WRITE 4, UNBIND 1,0, LOAD_X>4, BIND 3,5, SET 0<0, COPY 1>3, UNBIND 1,5, READN 3]  stop-slot 0
+gen 180/300  best fitness 0.222 (exact 0.042)  mean 0.151  best-so-far 0.562  elapsed 954s  ETA 636s
+   best: init [LOAD_Y>4]  body [LOAD_Y>2, WRITE 4, BIND 5,1, LOAD_X>4, UNBIND 3,1, LOAD_X>0, BIND 3,5, UNBIND 1,0, SET 0<0, UNBIND 1,2, COPY 5>0, READN 3]  stop-slot 1
+gen 190/300  best fitness 0.306 (exact 0.083)  mean 0.073  best-so-far 0.562  elapsed 1001s  ETA 580s
+   best: init [UNBIND 5,1, LOAD_Y>4, BIND 2,4]  body [SET 1<1, BIND 1,4, UNBIND 1,5, BIND 3,2, COPY 5>0, WRITE 4, BIND 3,5, UNBIND 1,0, LOAD_X>4, COPY 1>3]  stop-slot 1
+gen 200/300  best fitness 0.479 (exact 0.208)  mean 0.258  best-so-far 0.562  elapsed 1050s  ETA 525s
+   best: init [SETC 1, UNBIND 5,1, LOAD_Y>4, BIND 2,4]  body [UNBIND 5,0, LOAD_Y>1, BIND 1,4, LOAD_Y>2, COPY 2>0, BIND 3,5, LOAD_X>0, BIND 2,4, WRITE 0, COPY 0>5, WRITE 4, COPY 0>5]  stop-slot 5
+gen 210/300  best fitness 0.194 (exact 0.083)  mean 0.163  best-so-far 0.562  elapsed 1101s  ETA 472s
+   best: init [SETC 1, UNBIND 5,1, LOAD_Y>4, SETC 3, BIND 2,4]  body [UNBIND 5,0, READ 3, BIND 0,3, COPY 0>5, BIND 3,5, LOAD_X>0, WRITE 0, COPY 0>5, UNBIND 1,5, BIND 2,0, BIND 3,5]  stop-slot 0
+gen 220/300  best fitness 0.208 (exact 0.083)  mean 0.181  best-so-far 0.562  elapsed 1154s  ETA 420s
+   best: init [READ 1, UNBIND 5,1, SETD 2, BIND 2,4]  body [READ 2, SET 4<1, COPY 2>0, UNBIND 5,2, COPY 3>0, COPY 4>5, LOAD_X>0, WRITE 0, COPY 0>5, COPY 2>5, READN 1]  stop-slot 0
+gen 230/300  best fitness 0.264 (exact 0.125)  mean 0.212  best-so-far 0.562  elapsed 1203s  ETA 366s
+   best: init [COPY 2>3, COPY 0>3, SETC 1, UNBIND 5,1, LOAD_Y>4, BIND 1,3, BIND 2,4]  body [READ 3, COPY 1>5, READN 4, LOAD_X>0, UNBIND 1,4, COPY 1>4, WRITE 0]  stop-slot 0
+gen 240/300  best fitness 0.285 (exact 0.083)  mean 0.240  best-so-far 0.562  elapsed 1291s  ETA 323s
+   best: init [COPY 2>3, COPY 0>3, LOAD_Y>0, UNBIND 5,1, LOAD_Y>4, BIND 1,3, BIND 2,4]  body [WRITE 0, READN 4, READ 3, COPY 1>5, LOAD_X>3, WRITE 4, LOAD_X>0, COPY 3>1, SET 4<0, COPY 1>2]  stop-slot 4
+gen 250/300  best fitness 0.403 (exact 0.167)  mean 0.363  best-so-far 0.562  elapsed 1338s  ETA 268s
+   best: init [COPY 2>3, COPY 0>3, LOAD_Y>0, UNBIND 5,1, LOAD_Y>4, BIND 1,3, BIND 2,4, LOAD_X>4]  body [WRITE 0, COPY 1>5, READ 3, COPY 1>5, UNBIND 1,2, SET 4<0, COPY 1>2, LOAD_X>0, READ 4]  stop-slot 2
+gen 260/300  best fitness 0.132 (exact 0.000)  mean 0.109  best-so-far 0.562  elapsed 1382s  ETA 213s
+   best: init [COPY 0>3, LOAD_Y>0, COPY 5>3, BIND 1,3, BIND 2,4, UNBIND 4,2]  body [COPY 1>5, COPY 1>2, COPY 1>5, UNBIND 2,0, SET 4<0, SET 0<1, WRITE 0, LOAD_X>0, READ 4, BIND 2,1]  stop-slot 5
+gen 270/300  best fitness 0.347 (exact 0.083)  mean 0.196  best-so-far 0.562  elapsed 1431s  ETA 159s
+   best: init [UNBIND 1,5, COPY 2>3, COPY 0>3, LOAD_Y>0, UNBIND 5,1, LOAD_Y>4, BIND 1,3, BIND 2,0, READN 0]  body [WRITE 0, COPY 0>4, READN 3, BIND 4,0, UNBIND 1,2, LOAD_X>0, SET 4<0, COPY 1>5, COPY 2>3, UNBIND 4,3]  stop-slot 2
+gen 280/300  best fitness 0.257 (exact 0.083)  mean 0.169  best-so-far 0.562  elapsed 1480s  ETA 106s
+   best: init [BIND 0,1, BIND 0,1, LOAD_Y>0, COPY 5>3, READN 4, BIND 1,3, BIND 2,4]  body [READN 0, UNBIND 2,0, BIND 1,2, BIND 2,1, COPY 1>5, COPY 1>5, LOAD_X>2, WRITE 0, UNBIND 4,5, LOAD_X>4, WRITE 2, UNBIND 1,0]  stop-slot 2
+gen 290/300  best fitness 0.250 (exact 0.083)  mean 0.189  best-so-far 0.562  elapsed 1531s  ETA 53s
+   best: init [BIND 0,1, BIND 4,3, LOAD_Y>0, COPY 5>3, READN 4, BIND 1,3, BIND 2,4]  body [LOAD_X>2, BIND 1,2, UNBIND 2,0, BIND 2,1, LOAD_X>2, COPY 1>5, UNBIND 5,4, WRITE 0, LOAD_X>5, BIND 5,1, UNBIND 1,0]  stop-slot 2
+gen 300/300  best fitness 0.208 (exact 0.083)  mean 0.103  best-so-far 0.562  elapsed 1581s  ETA 0s
+   best: init [BIND 0,1, BIND 0,1, LOAD_Y>0, COPY 5>3, READN 4, BIND 1,3, BIND 2,4, UNBIND 4,2]  body [READN 0, UNBIND 2,0, LOAD_X>2, COPY 2>0, COPY 1>5, SETC 3, BIND 2,1, WRITE 0, SET 3<1, UNBIND 1,0]  stop-slot 1
+winner on 1-digit add: n=300  exact 0.210
+winner on 2-digit add: n=148  exact 0.027
+winner on 3-digit add: n=106  exact 0.000
+winner on 4-digit add (never seen in the search): n= 81  exact 0.000
+winner on 5-digit add (never seen in the search): n= 56  exact 0.000
+winner on 6-digit add (never seen in the search): n= 52  exact 0.000
+winner on 7-digit add (never seen in the search): n= 50  exact 0.000
+winner on 8-digit add (never seen in the search): n= 36  exact 0.000
+winner on 9-digit add (never seen in the search): n= 34  exact 0.000
+winner: init [READ 3]  body [SET 2<0, LOAD_X>4, SETC 3, WRITE 4]  stop-slot 3
+saved results/discover_add_unseeded (1583s)

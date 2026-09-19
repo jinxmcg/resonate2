@@ -1,0 +1,50 @@
+BEFORE stage 2: '=' light held-out 1.000   x<y (untrained P, chance) 0.438   cos(n,n+1) -0.065
+step 1/8000  x<y loss 0.7064 exact 0.442   equation replay loss 0.00000   lr 0.01  t 9.9  elapsed 1s  ETA 10107s
+step 250/8000  x<y loss 0.5584 exact 0.686   equation replay loss 0.00300   lr 0.01  t 23.2  elapsed 6s  ETA 174s
+step 500/8000  x<y loss 0.5377 exact 0.702   equation replay loss 0.00253   lr 0.01  t 21.4  elapsed 14s  ETA 206s
+step 750/8000  x<y loss 0.5677 exact 0.683   equation replay loss 0.00248   lr 0.01  t 20.2  elapsed 22s  ETA 211s
+step 1000/8000  x<y loss 0.5423 exact 0.697   equation replay loss 0.00263   lr 0.01  t 18.9  elapsed 30s  ETA 208s
+step 1250/8000  x<y loss 0.5706 exact 0.694   equation replay loss 0.00278   lr 0.01  t 18.2  elapsed 37s  ETA 198s
+step 1500/8000  x<y loss 0.5673 exact 0.682   equation replay loss 0.00272   lr 0.01  t 16.9  elapsed 44s  ETA 190s
+step 1750/8000  x<y loss 0.5594 exact 0.690   equation replay loss 0.00248   lr 0.01  t 16.5  elapsed 50s  ETA 177s
+step 2000/8000  x<y loss 0.5514 exact 0.697   equation replay loss 0.00251   lr 0.01  t 15.4  elapsed 53s  ETA 160s
+step 2250/8000  x<y loss 0.5613 exact 0.680   equation replay loss 0.00254   lr 0.01  t 15.0  elapsed 58s  ETA 148s
+step 2500/8000  x<y loss 0.5593 exact 0.681   equation replay loss 0.00265   lr 0.01  t 14.6  elapsed 64s  ETA 140s
+step 2750/8000  x<y loss 0.5299 exact 0.716   equation replay loss 0.00241   lr 0.01  t 14.2  elapsed 70s  ETA 134s
+step 3000/8000  x<y loss 0.5478 exact 0.702   equation replay loss 0.00256   lr 0.01  t 13.7  elapsed 77s  ETA 128s
+step 3250/8000  x<y loss 0.5420 exact 0.721   equation replay loss 0.00266   lr 0.01  t 13.4  elapsed 83s  ETA 122s
+step 3500/8000  x<y loss 0.5641 exact 0.682   equation replay loss 0.00234   lr 0.01  t 12.6  elapsed 91s  ETA 117s
+step 3750/8000  x<y loss 0.5613 exact 0.672   equation replay loss 0.00232   lr 0.01  t 12.6  elapsed 98s  ETA 111s
+step 4000/8000  x<y loss 0.5463 exact 0.686   equation replay loss 0.00266   lr 0.01  t 12.2  elapsed 103s  ETA 103s
+step 4250/8000  x<y loss 0.5507 exact 0.693   equation replay loss 0.00249   lr 0.01  t 12.0  elapsed 108s  ETA 95s
+step 4500/8000  x<y loss 0.5365 exact 0.696   equation replay loss 0.00267   lr 0.01  t 11.2  elapsed 113s  ETA 88s
+step 4750/8000  x<y loss 0.5472 exact 0.693   equation replay loss 0.00274   lr 0.01  t 11.1  elapsed 117s  ETA 80s
+step 5000/8000  x<y loss 0.5473 exact 0.684   equation replay loss 0.00271   lr 0.01  t 10.9  elapsed 123s  ETA 74s
+step 5250/8000  x<y loss 0.5600 exact 0.685   equation replay loss 0.00310   lr 0.01  t 10.7  elapsed 131s  ETA 69s
+step 5500/8000  x<y loss 0.5567 exact 0.693   equation replay loss 0.00267   lr 0.01  t 10.2  elapsed 139s  ETA 63s
+step 5750/8000  x<y loss 0.5556 exact 0.689   equation replay loss 0.00366   lr 0.01  t 10.2  elapsed 144s  ETA 56s
+step 6000/8000  x<y loss 0.5529 exact 0.718   equation replay loss 0.00477   lr 0.01  t 10.3  elapsed 150s  ETA 50s
+step 6250/8000  x<y loss 0.5284 exact 0.727   equation replay loss 0.00401   lr 0.01  t 10.5  elapsed 157s  ETA 44s
+step 6500/8000  x<y loss 0.5307 exact 0.715   equation replay loss 0.00299   lr 0.01  t 10.2  elapsed 162s  ETA 37s
+step 6750/8000  x<y loss 0.5217 exact 0.727   equation replay loss 0.00303   lr 0.01  t 10.1  elapsed 165s  ETA 31s
+step 7000/8000  x<y loss 0.5239 exact 0.712   equation replay loss 0.00274   lr 0.01  t 9.7  elapsed 169s  ETA 24s
+step 7250/8000  x<y loss 0.5307 exact 0.726   equation replay loss 0.00286   lr 0.01  t 9.3  elapsed 174s  ETA 18s
+step 7500/8000  x<y loss 0.4951 exact 0.750   equation replay loss 0.00249   lr 0.01  t 9.4  elapsed 178s  ETA 12s
+step 7750/8000  x<y loss 0.5543 exact 0.693   equation replay loss 0.00245   lr 0.01  t 9.2  elapsed 182s  ETA 6s
+step 8000/8000  x<y loss 0.5237 exact 0.715   equation replay loss 0.00251   lr 0.01  t 9.4  elapsed 186s  ETA 0s
+AFTER stage 2:  '=' light held-out 1.000 (retention)   x<y on unseen pairs 0.719  by distance 10^0 1.000  10^1 0.957  10^2 0.509  10^3 0.493  10^4 0.508  10^5 0.489   cos(n,n+1) -0.065
+'=' light on unseen multi-digit sums (retention) 1.000
+digits read off a value by comparison lights (decomposition of a value): exact 0.000
+1-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=600)
+2-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=382)  carries=1 0.000(n=218)
+3-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=189)  carries=1 0.000(n=251)  carries=2 0.000(n=160)
+4-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=94)  carries=1 0.000(n=222)  carries=2 0.000(n=207)  carries=3+ 0.000(n=77)
+5-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=52)  carries=1 0.000(n=177)  carries=2 0.000(n=201)  carries=3+ 0.000(n=170)
+6-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=28)  carries=1 0.000(n=93)  carries=2 0.000(n=188)  carries=3+ 0.000(n=291)
+7-digit sums (never trained): value bound, digits read by comparison, path walked: exact 0.000   carries=0 0.000(n=21)  carries=1 0.000(n=71)  carries=2 0.000(n=169)  carries=3+ 0.000(n=339)
+23 + 45 = 68:   read 8999889   walk 8999889   and  23 < 45? light says yes
+47 + 35 = 82:   read 8899879   walk 8899879   and  47 < 35? light says no
+123456 + 111111 = 234567:   read 9978984   walk 9978984   and  123456 < 111111? light says yes
+999999 + 1 = 1000000:   read 7987931   walk 7987931   and  999999 < 1? light says yes
+4999999 + 4999999 = 9999998:   read 7899881   walk 7899881   and  4999999 < 4999999? light says yes
+saved results/order_lr (187s)

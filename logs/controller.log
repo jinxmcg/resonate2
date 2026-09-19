@@ -1,0 +1,32 @@
+teacher traces: 29696 episodes, teacher exact on its own traces: add 1.000  cmp 1.000  (161s)
+epoch 1/12  imitation loss 1.3451  lr 0.001  elapsed 162s  ETA 1782s
+epoch 2/12  imitation loss 0.5717  lr 0.001  elapsed 163s  ETA 816s
+epoch 3/12  imitation loss 0.2009  lr 0.001  elapsed 165s  ETA 495s
+epoch 4/12  imitation loss 0.1051  lr 0.001  elapsed 166s  ETA 333s
+epoch 5/12  imitation loss 0.1144  lr 0.001  elapsed 167s  ETA 234s
+epoch 6/12  imitation loss 0.1303  lr 0.001  elapsed 169s  ETA 169s
+epoch 7/12  imitation loss 0.0695  lr 0.001  elapsed 170s  ETA 121s
+epoch 8/12  imitation loss 0.0641  lr 0.001  elapsed 171s  ETA 86s
+epoch 9/12  imitation loss 0.0611  lr 0.001  elapsed 172s  ETA 57s
+epoch 10/12  imitation loss 0.0591  lr 0.001  elapsed 174s  ETA 35s
+epoch 11/12  imitation loss 0.0567  lr 0.001  elapsed 175s  ETA 16s
+epoch 12/12  imitation loss 0.0556  lr 0.001  elapsed 176s  ETA 0s
+add      1-digit: n=300  exact 1.000
+add      2-digit: n=148  exact 1.000
+add      3-digit: n= 92  exact 0.522
+add      4-digit: n= 81  exact 0.086
+add      5-digit (length never seen in training): n= 58  exact 0.207
+add      6-digit (length never seen in training): n= 48  exact 0.125
+add      7-digit (length never seen in training): n= 54  exact 0.019
+add      8-digit (length never seen in training): n= 46  exact 0.196
+add      9-digit (length never seen in training): n= 34  exact 0.912
+compare  1-digit: n=300  exact 0.320
+compare  2-digit: n=148  exact 0.419
+compare  3-digit: n=100  exact 0.460
+compare  4-digit: n= 65  exact 0.492
+compare  5-digit (length never seen in training): n= 52  exact 0.538
+compare  6-digit (length never seen in training): n= 46  exact 0.565
+compare  7-digit (length never seen in training): n= 35  exact 0.486
+compare  8-digit (length never seen in training): n= 39  exact 0.487
+compare  9-digit (length never seen in training): n= 30  exact 0.400
+saved results/controller (184s)

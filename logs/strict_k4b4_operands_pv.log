@@ -1,0 +1,17 @@
+M=16 block=4 gens=16  train records 586 in 10 shapes  buckets=dense_basic,place_value,decompose  frozen=True  reasoner params 14945  rows 221x16
+decomposition train records 134
+step 1/3000  loss 13.0481  train compose exact 0.000  decompose exact 0.000  lr 3.00e-03  tau 12.0  1s
+step 500/3000  loss 3.6938  train compose exact 0.169  decompose exact 0.007  lr 2.80e-03  tau 12.7  52s
+step 1000/3000  loss 3.0821  train compose exact 0.278  decompose exact 0.015  lr 2.25e-03  tau 20.4  98s
+step 1500/3000  loss 2.7995  train compose exact 0.372  decompose exact 0.015  lr 1.50e-03  tau 25.7  159s
+step 2000/3000  loss 2.6383  train compose exact 0.416  decompose exact 0.015  lr 7.50e-04  tau 27.9  233s
+step 2500/3000  loss 2.5498  train compose exact 0.428  decompose exact 0.015  lr 2.01e-04  tau 29.1  307s
+step 3000/3000  loss 2.5338  train compose exact 0.440  decompose exact 0.015  lr 0.00e+00  tau 29.3  381s
+/mnt/nvme990/latent/reasoning_ant/common.py:150: RuntimeWarning: Mean of empty slice.
+  same, diff = np.array(same), np.array(diff); thr = (same.mean() + diff.mean()) / 2
+/mnt/nvme990/latent/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py:145: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/mnt/nvme990/latent/reasoning_ant/common.py:151: RuntimeWarning: Mean of empty slice.
+  return {"n_same": len(same), "cos_same": float(same.mean()), "cos_diff": float(diff.mean()),
+/mnt/nvme990/latent/reasoning_ant/common.py:152: RuntimeWarning: Mean of empty slice.
+  "purity": float(((same > thr).mean() + (diff <= thr).mean()) / 2)}

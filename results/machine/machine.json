@@ -1,0 +1,95 @@
+{
+ "config": {
+  "path": "results/grow_1e9_moves/path.pt",
+  "value": "results/grow_1e9_moves/value.pt",
+  "order": "results/compare/digit_order.pt",
+  "slots": 4,
+  "train_max_digits": 4,
+  "traces": 30000,
+  "epochs": 60,
+  "dagger": 3,
+  "dagger_episodes": 6000,
+  "hidden": 256,
+  "seed": 0,
+  "out": "results/machine"
+ },
+ "actions": 97,
+ "add_len1": {
+  "n": 500,
+  "exact": 1.0
+ },
+ "add_len2": {
+  "n": 500,
+  "exact": 1.0
+ },
+ "add_len3": {
+  "n": 500,
+  "exact": 1.0
+ },
+ "add_len4": {
+  "n": 500,
+  "exact": 1.0
+ },
+ "add_len5": {
+  "n": 500,
+  "exact": 1.0
+ },
+ "add_len6": {
+  "n": 500,
+  "exact": 1.0
+ },
+ "add_len7": {
+  "n": 408,
+  "exact": 1.0
+ },
+ "add_len8": {
+  "n": 400,
+  "exact": 1.0
+ },
+ "add_len9": {
+  "n": 346,
+  "exact": 1.0
+ },
+ "compare_len1": {
+  "n": 500,
+  "exact": 1.0
+ },
+ "compare_len2": {
+  "n": 500,
+  "exact": 1.0
+ },
+ "compare_len3": {
+  "n": 500,
+  "exact": 1.0
+ },
+ "compare_len4": {
+  "n": 500,
+  "exact": 1.0
+ },
+ "compare_len5": {
+  "n": 500,
+  "exact": 1.0
+ },
+ "compare_len6": {
+  "n": 470,
+  "exact": 1.0
+ },
+ "compare_len7": {
+  "n": 424,
+  "exact": 1.0
+ },
+ "compare_len8": {
+  "n": 360,
+  "exact": 1.0
+ },
+ "compare_len9": {
+  "n": 346,
+  "exact": 1.0
+ },
+ "promotion": {
+  "n": 200,
+  "validated": 1.0,
+  "validated_and_correct": 1.0,
+  "correct_but_rejected": 0.0
+ }
+}

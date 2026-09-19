@@ -1,0 +1,9 @@
+memory step 1/3000  loss 10.7859  lr 3e-3  tau 10.0  elapsed 1s
+memory step 500/3000  loss 0.5483  lr 3e-3  tau 20.7  elapsed 18s
+memory step 1000/3000  loss 0.4788  lr 3e-3  tau 29.6  elapsed 37s
+memory step 1500/3000  loss 0.4501  lr 3e-3  tau 38.1  elapsed 54s
+memory step 2000/3000  loss 0.4146  lr 3e-3  tau 44.8  elapsed 71s
+memory step 2500/3000  loss 0.4383  lr 3e-3  tau 48.8  elapsed 88s
+memory step 3000/3000  loss 0.3732  lr 3e-3  tau 50.8  elapsed 103s
+stage 1 — sentence as one place, read back by walking, exact by length (train 2–9, fresh words): 2:1.000 3:1.000 4:1.000 5:0.996 6:0.970 7:0.916 8:0.846 9:0.650 10:0.472 11:0.254 12:0.086
+saved results/read (103s)

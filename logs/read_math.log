@@ -1,0 +1,48 @@
+places machine loaded: programs ['add', 'sub', 'cmp', 'muld', 'mul', 'subtract', 'multiply', 'compare']  M 144  (0s)
+language memory step 1/12000  loss 3.5759  lr 3.0e-03  tau 10.0  elapsed 1s
+language memory step 500/12000  loss 0.3598  lr 3.0e-03  tau 36.2  elapsed 35s
+language memory step 1000/12000  loss 0.2387  lr 2.9e-03  tau 65.7  elapsed 66s
+language memory step 1500/12000  loss 0.2336  lr 2.9e-03  tau 85.1  elapsed 97s
+language memory step 2000/12000  loss 0.2004  lr 2.8e-03  tau 93.8  elapsed 130s
+language memory step 2500/12000  loss 0.1735  lr 2.7e-03  tau 96.6  elapsed 160s
+language memory step 3000/12000  loss 0.1264  lr 2.6e-03  tau 98.2  elapsed 189s
+language memory step 3500/12000  loss 0.1093  lr 2.4e-03  tau 99.0  elapsed 220s
+language memory step 4000/12000  loss 0.1439  lr 2.3e-03  tau 100.0  elapsed 252s
+language memory step 4500/12000  loss 0.1115  lr 2.1e-03  tau 101.2  elapsed 285s
+language memory step 5000/12000  loss 0.1278  lr 1.9e-03  tau 100.6  elapsed 318s
+language memory step 5500/12000  loss 0.1199  lr 1.7e-03  tau 102.1  elapsed 352s
+language memory step 6000/12000  loss 0.1154  lr 1.5e-03  tau 101.5  elapsed 385s
+language memory step 6500/12000  loss 0.1163  lr 1.3e-03  tau 101.1  elapsed 416s
+language memory step 7000/12000  loss 0.0954  lr 1.1e-03  tau 102.7  elapsed 449s
+language memory step 7500/12000  loss 0.0909  lr 9.3e-04  tau 103.0  elapsed 481s
+language memory step 8000/12000  loss 0.1036  lr 7.5e-04  tau 103.2  elapsed 512s
+language memory step 8500/12000  loss 0.0958  lr 5.9e-04  tau 103.4  elapsed 543s
+language memory step 9000/12000  loss 0.0771  lr 4.4e-04  tau 103.3  elapsed 577s
+language memory step 9500/12000  loss 0.0781  lr 3.1e-04  tau 103.9  elapsed 610s
+language memory step 10000/12000  loss 0.1486  lr 2.0e-04  tau 104.2  elapsed 642s
+language memory step 10500/12000  loss 0.0596  lr 1.1e-04  tau 104.2  elapsed 675s
+language memory step 11000/12000  loss 0.0838  lr 5.1e-05  tau 104.3  elapsed 709s
+language memory step 11500/12000  loss 0.1057  lr 1.3e-05  tau 104.2  elapsed 742s
+language memory step 12000/12000  loss 0.1009  lr 0.0e+00  tau 104.2  elapsed 777s
+sentences as one place (stored words incl. digits, fresh words), read back by walking, exact by length (train 2–16): 2:1.000 3:1.000 4:1.000 5:1.000 6:0.998 7:1.000 8:0.977 9:0.977 10:0.972 11:0.957 12:0.915 13:0.895 14:0.857 15:0.740 16:0.692 17:0.602 18:0.377
+reading machine: 1715 instructions, 10 slots
+ground-truth reader on the machine, commands (0–2 fillers, 1–3 digits): exact 1.000
+ground-truth reader on the machine, definition + use (0–2 fillers, 1–3 digits): exact 1.000
+    add the 9 0 and 5 9 . -> 149  |  compare please 5 1 and 7 6 5 ? -> 10   (truth [149, 10] )
+    to W0 something , add it to itself . -> None  |  W0 please 7 . -> 14   (truth [None, 14] )
+    please multiply 4 1 3 by 7 9 . -> 32627  |  add the 2 and 5 2 . -> 54   (truth [32627, 54] )
+    to W0 something , multiply it by 2 . -> None  |  W0 the 1 2 . -> 24   (truth [None, 24] )
+    the add the 2 2 and 8 6 6 . -> 888  |  please add 4 6 8 and 3 9 3 . -> 861   (truth [888, 861] )
+    to W0 something , multiply it by 4 . -> None  |  W0 7 . -> 28   (truth [None, 28] )
+worked example: the multiply the 8 5 by 9 . | the compare the 5 4 0 and 1 2 8 ? -> [765, 11]
+worked example: multiply 7 5 by 2 8 6 . | add 9 and 9 9 . -> [21450, 108]
+worked example: to W0 something , add it to itself . | W0 1 6 . -> [None, 32]
+  gen 1  best exact 0.125 fitness 0.432  mean 0.188  elapsed 797s
+  gen 5  best exact 0.050 fitness 0.555  mean 0.475  elapsed 842s
+  gen 10  best exact 0.100 fitness 0.713  mean 0.568  elapsed 921s
+  gen 15  best exact 0.200 fitness 0.878  mean 0.803  elapsed 1003s
+  gen 20  best exact 0.300 fitness 1.055  mean 0.919  elapsed 1095s
+  gen 25  best exact 0.275 fitness 1.045  mean 0.934  elapsed 1202s
+  gen 30  best exact 0.225 fitness 0.920  mean 0.835  elapsed 1299s
+  gen 35  best exact 0.275 fitness 1.027  mean 0.957  elapsed 1410s
+  gen 40  best exact 0.200 fitness 0.872  mean 0.831  elapsed 1522s

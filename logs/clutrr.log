@@ -1,0 +1,23 @@
+memory step 1/3000  loss 18.3519  lr 0.003  tau 10.0  elapsed 1s
+memory step 500/3000  loss 0.0663  lr 0.003  tau 16.9  elapsed 8s
+memory step 1000/3000  loss 0.0196  lr 0.003  tau 19.2  elapsed 13s
+memory step 1500/3000  loss 0.0085  lr 0.003  tau 20.8  elapsed 17s
+memory step 2000/3000  loss 0.0049  lr 0.003  tau 22.1  elapsed 21s
+memory step 2500/3000  loss 0.0028  lr 0.003  tau 23.1  elapsed 25s
+memory step 3000/3000  loss 0.0019  lr 0.003  tau 24.1  elapsed 31s
+ground truth walk+compose on training chains (fresh names): exact 0.933
+ground truth on TEST by length (exact/abstain/wrong): 2: 1.00/0.00/0.00 (n=38)  3: 0.52/0.43/0.05 (n=105)  4: 0.72/0.25/0.03 (n=177)  5: 0.62/0.37/0.02 (n=131)  6: 0.49/0.51/0.00 (n=63)  7: 0.39/0.61/0.00 (n=61)  8: 0.26/0.74/0.00 (n=61)  9: 0.31/0.69/0.00 (n=45)  10: 0.28/0.72/0.00 (n=32)
+worked examples: 11 steps; 11 steps; 11 steps
+  gen 1  best 0.719  mean 0.034  elapsed 34s
+  gen 10  best 0.938  mean 0.353  elapsed 39s
+  gen 20  best 0.875  mean 0.303  elapsed 43s
+  gen 30  best 0.844  mean 0.305  elapsed 48s
+  gen 40  best 0.969  mean 0.495  elapsed 54s
+  gen 50  best 1.000  mean 0.401  elapsed 61s
+  gen 60  best 0.906  mean 0.404  elapsed 68s
+  gen 70  best 0.875  mean 0.327  elapsed 75s
+  gen 80  best 0.844  mean 0.369  elapsed 81s
+  gen 90  best 0.938  mean 0.441  elapsed 87s
+  gen 100  best 1.000  mean 0.412  elapsed 93s
+FOUND program on CLUTRR test (chain stories; train chains 2-3) by length — exact/abstain/wrong: 2: 1.00/0.00/0.00 (n=38)  3: 0.52/0.43/0.05 (n=105)  4: 0.72/0.25/0.03 (n=177)  5: 0.62/0.37/0.02 (n=131)  6: 0.49/0.51/0.00 (n=63)  7: 0.39/0.61/0.00 (n=61)  8: 0.26/0.74/0.00 (n=61)  9: 0.31/0.69/0.00 (n=45)  10: 0.28/0.72/0.00 (n=32)   overall exact 0.555
+saved results/clutrr (96s)

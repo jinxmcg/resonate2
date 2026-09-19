@@ -1,0 +1,13 @@
+ground truth add  on the places machine: exact by digits 1d 1.000 3d 1.000 5d 1.000 7d 1.000  (1s)
+ground truth sub  on the places machine: exact by digits 1d 1.000 3d 1.000 5d 1.000 7d 1.000  (1s)
+ground truth cmp  on the places machine: exact by digits 1d 1.000 3d 1.000 5d 1.000 7d 1.000  (1s)
+ground truth muld on the places machine: exact by digits 1d 1.000 3d 1.000 5d 1.000 7d 1.000  (2s)
+ground truth mul  on the places machine: exact by digits 1d 1.000 3d 1.000 5d 1.000 7d 1.000  (7s)
+resumed found programs: ['add', 'sub', 'cmp', 'muld']
+
+== mul: worked examples 7,4 (11 steps); 9,24 (15 steps); 1,909 (15 steps)   callable: ['add', 'sub', 'cmp', 'muld']
+  gen 1  best 1.601 (exact 0.708)  mean 0.451  elapsed 61s
+  found at generation 3: init [SET 2<0, COPY 0>4, LOAD 1>3, CALL muld 4,3>5, CALL add 2,5>2, SHIFT 4, LOAD 1>3, CALL muld 4,3>5]  body [CALL add 2,5>2, SHIFT 4, LOAD 1>3, CALL muld 4,3>5, SHIFT 4, ANSWER 2]  outro []  stop 3
+  mul winner on 1-9 digits (>3 never seen): 1d 1.000 2d 1.000 3d 1.000 4d 1.000 5d 0.813 6d 0.733 7d 0.580 8d 0.467 9d 0.507
+  retention: add 1.00/1.00/1.00  sub 1.00/1.00/1.00  cmp 1.00/1.00/1.00  muld 1.00/1.00/1.00
+saved results/places_mul (240s)

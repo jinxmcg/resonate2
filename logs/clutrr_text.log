@@ -1,0 +1,22 @@
+train: 9074 stories; path over extracted facts found for 0.681
+validation: 2020 stories; path over extracted facts found for 0.694
+test: 1146 stories; path over extracted facts found for 0.513; by hops: 2:0.66 3:0.70 4:0.63 5:0.53 6:0.50 7:0.44 8:0.46 9:0.39 10:0.39
+training on 6182 text paths (train stories with a recoverable path); validation 1401
+step 1/20000  loss 3.4754  exact 0.051  lr 3.00e-03  tau 10.0  elapsed 2s
+step 2000/20000  loss 0.6994  exact 0.770  lr 2.93e-03  tau 11.8  elapsed 35s
+step 4000/20000  loss 0.6332  exact 0.820  lr 2.71e-03  tau 12.9  elapsed 62s
+step 6000/20000  loss 0.6648  exact 0.785  lr 2.38e-03  tau 13.6  elapsed 96s
+step 8000/20000  loss 0.5709  exact 0.812  lr 1.96e-03  tau 14.2  elapsed 131s
+step 10000/20000  loss 0.5556  exact 0.805  lr 1.50e-03  tau 14.8  elapsed 157s
+step 12000/20000  loss 0.5413  exact 0.812  lr 1.04e-03  tau 15.3  elapsed 189s
+step 14000/20000  loss 0.5560  exact 0.812  lr 6.18e-04  tau 15.6  elapsed 222s
+step 16000/20000  loss 0.5435  exact 0.805  lr 2.86e-04  tau 16.0  elapsed 258s
+step 18000/20000  loss 0.4688  exact 0.824  lr 7.34e-05  tau 16.1  elapsed 294s
+step 20000/20000  loss 0.5423  exact 0.789  lr 0.00e+00  tau 16.2  elapsed 331s
+validation (stories with a path): exact 0.791; abstention margin threshold 0.232
+validation FROM TEXT — exact/abstain/wrong by hops: 2: 0.19/0.80/0.01 (n=1020)  3: 0.27/0.73/0.00 (n=1000)
+   overall: exact 0.231 abstain 0.762 wrong 0.007
+test FROM TEXT — exact/abstain/wrong by hops: 2: 0.21/0.79/0.00 (n=38)  3: 0.11/0.85/0.04 (n=105)  4: 0.19/0.76/0.05 (n=190)  5: 0.07/0.91/0.01 (n=174)  6: 0.05/0.93/0.02 (n=107)  7: 0.06/0.93/0.01 (n=144)  8: 0.05/0.93/0.02 (n=150)  9: 0.04/0.96/0.00 (n=119)  10: 0.02/0.98/0.00 (n=119)
+   overall: exact 0.084 abstain 0.896 wrong 0.020
+forward-then-reverse returns to the probe (cosine), per word: aunt:0.01 brother:0.09 daughter:0.08 daughter-in-law:0.00 father:0.03 father-in-law:-0.01 granddaughter:0.04 grandfather:0.04 grandmother:0.02 grandson:0.04 husband:0.07 mother:0.05 mother-in-law:0.02 nephew:0.09 niece:0.06 sister:0.10 son:0.12 son-in-law:0.02 uncle:0.05 wife:0.08
+saved results/clutrr_text (332s)

@@ -1,0 +1,33 @@
+step 1/4000  equation loss 0.8199  distinctness loss 0.0664  lr 0.01  t 10.1  elapsed 1s  ETA 4973s
+step 250/4000  equation loss 0.0727  distinctness loss 0.0003  lr 0.01  t 16.1  elapsed 6s  ETA 85s
+step 500/4000  equation loss 0.0027  distinctness loss 0.0001  lr 0.01  t 17.4  elapsed 9s  ETA 66s
+step 750/4000  equation loss 0.0001  distinctness loss 0.0000  lr 0.01  t 18.2  elapsed 14s  ETA 59s
+step 1000/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 18.9  elapsed 17s  ETA 52s
+step 1250/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 19.3  elapsed 22s  ETA 48s
+step 1500/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 19.7  elapsed 27s  ETA 45s
+step 1750/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 20.1  elapsed 31s  ETA 40s
+step 2000/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 20.4  elapsed 37s  ETA 37s
+step 2250/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 20.7  elapsed 41s  ETA 32s
+step 2500/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 21.0  elapsed 45s  ETA 27s
+step 2750/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 21.3  elapsed 50s  ETA 23s
+step 3000/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 21.5  elapsed 55s  ETA 18s
+step 3250/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 21.7  elapsed 59s  ETA 14s
+step 3500/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 22.0  elapsed 63s  ETA 9s
+step 3750/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 22.2  elapsed 67s  ETA 4s
+step 4000/4000  equation loss 0.0000  distinctness loss 0.0000  lr 0.01  t 22.4  elapsed 71s  ETA 0s
+anchor line check  v(d,k)(.)v(1,k) vs v(d+1,k): mean cosine 1.000
+digit equations (trained)      n= 524  '=' light points to the sum (vs neighbours) 1.000   cos(expression, numeral) 1.000
+digit equations (held out)     n= 131  '=' light points to the sum (vs neighbours) 1.000   cos(expression, numeral) 1.000
+digits read off a value by lights (no addition): exact 0.000
+1-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=600)
+2-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=348)  carries=1 0.000(n=252)
+3-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=198)  carries=1 0.000(n=261)  carries=2 0.000(n=141)
+4-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=103)  carries=1 0.000(n=218)  carries=2 0.000(n=194)  carries=3+ 0.000(n=85)
+5-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=67)  carries=1 0.000(n=164)  carries=2 0.000(n=174)  carries=3+ 0.000(n=195)
+6-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=18)  carries=1 0.000(n=119)  carries=2 0.000(n=147)  carries=3+ 0.000(n=316)
+7-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=14)  carries=1 0.000(n=81)  carries=2 0.000(n=158)  carries=3+ 0.000(n=347)
+23 + 45 = 68:   value read 6370173   path walk 6370173
+47 + 35 = 82:   value read 5720056   path walk 5720056
+123456 + 111111 = 234567:   value read 2338978   path walk 2338978
+999999 + 1 = 1000000:   value read 3987027   path walk 3987027
+saved results/two_part_learn (72s)

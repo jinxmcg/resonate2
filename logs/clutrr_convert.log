@@ -1,0 +1,30 @@
+stories train/val/test 9074/2020/1146; vocabulary 2055 (count >= 2; rest <unk>)  (1s)
+
+== rung 1: one hop (pairs within a sentence)
+  epoch 1/6  train loss 1.074 pair-acc 0.632  val loss 0.559 pair-acc 0.760  TEST facts (story-level): precision 0.296 recall 0.359  elapsed 19s
+  epoch 2/6  train loss 0.653 pair-acc 0.755  val loss 0.346 pair-acc 0.864  TEST facts (story-level): precision 0.314 recall 0.374  elapsed 36s
+  epoch 3/6  train loss 0.470 pair-acc 0.831  val loss 0.220 pair-acc 0.915  TEST facts (story-level): precision 0.289 recall 0.415  elapsed 51s
+  epoch 4/6  train loss 0.373 pair-acc 0.868  val loss 0.157 pair-acc 0.944  TEST facts (story-level): precision 0.278 recall 0.420  elapsed 67s
+  epoch 5/6  train loss 0.298 pair-acc 0.896  val loss 0.113 pair-acc 0.960  TEST facts (story-level): precision 0.288 recall 0.403  elapsed 84s
+  epoch 6/6  train loss 0.245 pair-acc 0.916  val loss 0.094 pair-acc 0.968  TEST facts (story-level): precision 0.286 recall 0.408  elapsed 100s
+  test facts, pairs within a sentence only: precision 0.548 recall 0.399; all pairs: precision 0.286 recall 0.408
+  end to end on TEST from text, converter facts: exact/abstain/wrong by hops 2: 0.11/0.89/0.00  3: 0.01/0.98/0.01  4: 0.01/0.98/0.02  5: 0.02/0.94/0.05  6: 0.04/0.94/0.02  7: 0.01/0.99/0.01  8: 0.01/0.97/0.01  9: 0.03/0.93/0.03  10: 0.02/0.95/0.03   overall 0.019/0.959/0.022
+  end to end on TEST from text, cue-reader facts: exact/abstain/wrong by hops 2: 0.00/1.00/0.00  3: 0.00/1.00/0.00  4: 0.00/1.00/0.00  5: 0.00/1.00/0.00  6: 0.00/1.00/0.00  7: 0.00/1.00/0.00  8: 0.00/1.00/0.00  9: 0.00/1.00/0.00  10: 0.00/1.00/0.00   overall 0.000/1.000/0.000
+  end to end on TEST from text, gold facts (ceiling): exact/abstain/wrong by hops 2: 1.00/0.00/0.00  3: 0.91/0.07/0.02  4: 0.99/0.00/0.01  5: 0.99/0.00/0.01  6: 0.99/0.00/0.01  7: 0.99/0.01/0.01  8: 0.97/0.02/0.01  9: 0.95/0.04/0.01  10: 0.97/0.02/0.01   overall 0.976/0.016/0.009
+
+== rung 2: whole stories (all pairs)
+  epoch 1/10  train loss 0.222 pair-acc 0.927  val loss 0.078 pair-acc 0.976  TEST facts (story-level): precision 0.472 recall 0.386  elapsed 126s
+  epoch 2/10  train loss 0.159 pair-acc 0.946  val loss 0.057 pair-acc 0.983  TEST facts (story-level): precision 0.452 recall 0.390  elapsed 146s
+  epoch 3/10  train loss 0.132 pair-acc 0.956  val loss 0.045 pair-acc 0.986  TEST facts (story-level): precision 0.479 recall 0.386  elapsed 163s
+  epoch 4/10  train loss 0.117 pair-acc 0.961  val loss 0.044 pair-acc 0.987  TEST facts (story-level): precision 0.488 recall 0.401  elapsed 180s
+  epoch 5/10  train loss 0.106 pair-acc 0.964  val loss 0.038 pair-acc 0.989  TEST facts (story-level): precision 0.456 recall 0.417  elapsed 196s
+  epoch 6/10  train loss 0.095 pair-acc 0.969  val loss 0.036 pair-acc 0.989  TEST facts (story-level): precision 0.463 recall 0.416  elapsed 213s
+  epoch 7/10  train loss 0.094 pair-acc 0.968  val loss 0.036 pair-acc 0.990  TEST facts (story-level): precision 0.465 recall 0.405  elapsed 229s
+  epoch 8/10  train loss 0.088 pair-acc 0.971  val loss 0.033 pair-acc 0.991  TEST facts (story-level): precision 0.473 recall 0.422  elapsed 247s
+  epoch 9/10  train loss 0.081 pair-acc 0.973  val loss 0.032 pair-acc 0.991  TEST facts (story-level): precision 0.465 recall 0.409  elapsed 263s
+  epoch 10/10  train loss 0.083 pair-acc 0.973  val loss 0.033 pair-acc 0.991  TEST facts (story-level): precision 0.457 recall 0.406  elapsed 282s
+  test facts, pairs within a sentence only: precision 0.565 recall 0.395; all pairs: precision 0.457 recall 0.406
+  end to end on TEST from text, converter facts: exact/abstain/wrong by hops 2: 0.05/0.92/0.03  3: 0.01/0.98/0.01  4: 0.04/0.93/0.03  5: 0.03/0.93/0.04  6: 0.04/0.95/0.01  7: 0.01/0.96/0.03  8: 0.02/0.89/0.09  9: 0.03/0.96/0.02  10: 0.03/0.94/0.03   overall 0.027/0.940/0.033
+  end to end on TEST from text, cue-reader facts: exact/abstain/wrong by hops 2: 0.00/1.00/0.00  3: 0.00/1.00/0.00  4: 0.00/1.00/0.00  5: 0.00/1.00/0.00  6: 0.00/1.00/0.00  7: 0.00/1.00/0.00  8: 0.00/1.00/0.00  9: 0.00/1.00/0.00  10: 0.00/1.00/0.00   overall 0.000/1.000/0.000
+  end to end on TEST from text, gold facts (ceiling): exact/abstain/wrong by hops 2: 1.00/0.00/0.00  3: 0.86/0.13/0.01  4: 0.99/0.00/0.01  5: 0.98/0.01/0.01  6: 0.99/0.00/0.01  7: 0.99/0.00/0.01  8: 0.97/0.02/0.01  9: 0.95/0.05/0.00  10: 0.98/0.01/0.01   overall 0.971/0.022/0.007
+saved results/clutrr_convert (287s)

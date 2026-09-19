@@ -1,0 +1,34 @@
+BEFORE continuation: numbers walk back exactly 1.000 (old rows and operators carried over; 36 symbol rows and 4 role relations added, random)
+step 1/3000  loss numbers 0.7979 programs 1.2770  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 44.6  elapsed 1s  ETA 3505s
+step 250/3000  loss numbers 0.0005 programs 0.0608  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 43.2  elapsed 19s  ETA 207s
+step 500/3000  loss numbers 0.0003 programs 0.0617  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 44.6  elapsed 38s  ETA 188s
+step 750/3000  loss numbers 0.0002 programs 0.0526  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 46.1  elapsed 59s  ETA 177s
+step 1000/3000  loss numbers 0.0001 programs 0.0048  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 47.6  elapsed 76s  ETA 152s
+step 1250/3000  loss numbers 0.0001 programs 0.0266  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 49.0  elapsed 92s  ETA 129s
+step 1500/3000  loss numbers 0.0001 programs 0.0207  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 50.5  elapsed 109s  ETA 109s
+step 1750/3000  loss numbers 0.0000 programs 0.0026  exact: numbers(9d) 1.000  programs(6 instr) 0.000  lr 0.001  tau 51.7  elapsed 127s  ETA 90s
+step 2000/3000  loss numbers 0.0000 programs 0.0001  exact: numbers(9d) 1.000  programs(6 instr) 0.005  lr 0.001  tau 52.8  elapsed 142s  ETA 71s
+step 2250/3000  loss numbers 0.0000 programs 0.0042  exact: numbers(9d) 1.000  programs(6 instr) 0.065  lr 0.001  tau 54.0  elapsed 159s  ETA 53s
+step 2500/3000  loss numbers 0.0000 programs 0.0175  exact: numbers(9d) 1.000  programs(6 instr) 0.095  lr 0.001  tau 55.0  elapsed 176s  ETA 35s
+step 2750/3000  loss numbers 0.0000 programs 0.0006  exact: numbers(9d) 1.000  programs(6 instr) 0.185  lr 0.001  tau 56.1  elapsed 195s  ETA 18s
+step 3000/3000  loss numbers 0.0000 programs 0.0018  exact: numbers(9d) 1.000  programs(6 instr) 0.285  lr 0.001  tau 57.3  elapsed 213s  ETA 0s
+numbers walk back exactly by digits: 1d 1.000 2d 1.000 3d 1.000 4d 1.000 5d 1.000 6d 1.000 7d 1.000 8d 1.000 9d 1.000
+random programs of 2 instructions: walk back exactly 1.000
+random programs of 4 instructions: walk back exactly 1.000
+random programs of 6 instructions: walk back exactly 0.323
+random programs of 8 instructions: walk back exactly 0.000
+program 'add' promoted into the one table as 3 pages; walked back -> DIFFERENT
+program 'sub' promoted into the one table as 3 pages; walked back -> DIFFERENT
+program 'cmp' promoted into the one table as 2 pages; walked back -> identical
+program 'muld' promoted into the one table as 5 pages; walked back -> DIFFERENT
+program 'mul' promoted into the one table as 5 pages; walked back -> DIFFERENT
+Traceback (most recent call last):
+  File "/mnt/nvme990/latent/reasoning_ant/onemem.py", line 107, in <module>
+    sys.argv = ["places", "--only-check", "--path", "results/onemem/path.pt"]; src = open(HERE / "places.py").read().split("# ------------------------------------------------------------------ 1. the machine")[0]; g = {}; exec(src, g)
+                                                                                                                                                                                                                              ^^^^^^^^^^^^
+  File "<string>", line 23, in <module>
+  File "/mnt/nvme990/latent/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 2581, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for ResonatE:
+	size mismatch for E: copying a param with shape torch.Size([54, 144]) from checkpoint, the shape in current model is torch.Size([18, 144]).
+	size mismatch for H: copying a param with shape torch.Size([12, 9, 16, 16]) from checkpoint, the shape in current model is torch.Size([4, 9, 16, 16]).

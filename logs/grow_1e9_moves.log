@@ -1,0 +1,49 @@
+path BEFORE continuation (2 new random rows, 9-term chains): walk-back exact by digits 1d 0.00 2d 0.00 3d 0.00 4d 0.00 5d 0.00 6d 0.00 7d 0.00 8d 0.05 9d 0.00
+path step 1/3000  walk loss 0.6162  lr 0.003  tau 33.6  elapsed 1s  ETA 3805s
+path step 250/3000  walk loss 0.0006  lr 0.003  tau 34.9  elapsed 29s  ETA 320s
+path step 500/3000  walk loss 0.0002  lr 0.003  tau 36.5  elapsed 57s  ETA 283s
+path step 750/3000  walk loss 0.0001  lr 0.003  tau 37.8  elapsed 84s  ETA 253s
+path step 1000/3000  walk loss 0.0001  lr 0.003  tau 38.9  elapsed 112s  ETA 224s
+path step 1250/3000  walk loss 0.0000  lr 0.003  tau 39.8  elapsed 140s  ETA 196s
+path step 1500/3000  walk loss 0.0000  lr 0.003  tau 40.6  elapsed 167s  ETA 167s
+path step 1750/3000  walk loss 0.0000  lr 0.003  tau 41.4  elapsed 195s  ETA 139s
+path step 2000/3000  walk loss 0.0000  lr 0.003  tau 42.1  elapsed 223s  ETA 111s
+path step 2250/3000  walk loss 0.0000  lr 0.003  tau 42.8  elapsed 251s  ETA 84s
+path step 2500/3000  walk loss 0.0000  lr 0.003  tau 43.4  elapsed 278s  ETA 56s
+path step 2750/3000  walk loss 0.0000  lr 0.003  tau 44.0  elapsed 306s  ETA 28s
+path step 3000/3000  walk loss 0.0000  lr 0.003  tau 44.6  elapsed 334s  ETA 0s
+path AFTER continuation: walk-back exact by digits 1d 1.000 2d 1.000 3d 1.000 4d 1.000 5d 1.000 6d 1.000 7d 1.000 8d 1.000 9d 1.000
+value BEFORE continuation: held-out equations satisfied by place p0 1.00 p1 1.00 p2 1.00 p3 1.00 p4 1.00 p5 1.00 p6 0.65 p7 0.15 p8 0.55
+value step 1/4000  equation loss 0.51279  distinctness 0.0664  lr 0.01  elapsed 334s  ETA 1335801s
+value step 250/4000  equation loss 0.02966  distinctness 0.0664  lr 0.01  elapsed 338s  ETA 5076s
+value step 500/4000  equation loss 0.00206  distinctness 0.0663  lr 0.01  elapsed 343s  ETA 2399s
+value step 750/4000  equation loss 0.00003  distinctness 0.0663  lr 0.01  elapsed 348s  ETA 1507s
+value step 1000/4000  equation loss 0.00000  distinctness 0.0662  lr 0.01  elapsed 352s  ETA 1057s
+value step 1250/4000  equation loss 0.00000  distinctness 0.0665  lr 0.01  elapsed 357s  ETA 785s
+value step 1500/4000  equation loss 0.00000  distinctness 0.0663  lr 0.01  elapsed 362s  ETA 603s
+value step 1750/4000  equation loss 0.00000  distinctness 0.0665  lr 0.01  elapsed 366s  ETA 471s
+value step 2000/4000  equation loss 0.00000  distinctness 0.0663  lr 0.01  elapsed 371s  ETA 371s
+value step 2250/4000  equation loss 0.00000  distinctness 0.0666  lr 0.01  elapsed 375s  ETA 292s
+value step 2500/4000  equation loss 0.00000  distinctness 0.0663  lr 0.01  elapsed 379s  ETA 228s
+value step 2750/4000  equation loss 0.00000  distinctness 0.0664  lr 0.01  elapsed 384s  ETA 175s
+value step 3000/4000  equation loss 0.00000  distinctness 0.0662  lr 0.01  elapsed 390s  ETA 130s
+value step 3250/4000  equation loss 0.00000  distinctness 0.0663  lr 0.01  elapsed 394s  ETA 91s
+value step 3500/4000  equation loss 0.00000  distinctness 0.0664  lr 0.01  elapsed 400s  ETA 57s
+value step 3750/4000  equation loss 0.00000  distinctness 0.0664  lr 0.01  elapsed 406s  ETA 27s
+value step 4000/4000  equation loss 0.00000  distinctness 0.0662  lr 0.01  elapsed 411s  ETA 0s
+value AFTER continuation: held-out equations satisfied by place p0 1.000 p1 1.000 p2 1.000 p3 1.000 p4 1.000 p5 1.000 p6 1.000 p7 1.000 p8 1.000
+1-digit sums (never trained): exact 1.000
+2-digit sums (never trained): exact 1.000
+3-digit sums (never trained): exact 1.000
+4-digit sums (never trained): exact 1.000
+5-digit sums (never trained): exact 1.000
+6-digit sums (never trained): exact 1.000
+7-digit sums (never trained): exact 1.000
+8-digit sums (never trained): exact 1.000
+9-digit sums (never trained): exact 1.000
+compare on unseen pairs below 10^9: exact 1.000   by distance 10^0 1.000  10^1 1.000  10^2 1.000  10^3 1.000  10^4 1.000  10^5 1.000  10^6 1.000  10^7 1.000
+123456789 + 876543211 = 1000000000: read 800000000   123456789 vs 876543211: x < y
+999999999 + 0 = 999999999: read 999999999   999999999 vs 0: x > y
+500000000 + 499999999 = 999999999: read 999999999   500000000 vs 499999999: x > y
+347 + 437 = 784: read 784   347 vs 437: x < y
+saved results/grow_1e9_moves (412s)

@@ -1,0 +1,57 @@
+step 1/3000  loss 6.4752 (count 6.309 unbind 0.166)  counting exact 0.053  lr 0.003  tau 10.0  elapsed 1s  ETA 4106s
+step 500/3000  loss 0.3797 (count 0.375 unbind 0.004)  counting exact 1.000  lr 0.003  tau 18.3  elapsed 33s  ETA 167s
+step 1000/3000  loss 0.3613 (count 0.360 unbind 0.001)  counting exact 1.000  lr 0.003  tau 23.8  elapsed 66s  ETA 131s
+step 1500/3000  loss 0.3580 (count 0.358 unbind 0.000)  counting exact 1.000  lr 0.003  tau 27.6  elapsed 98s  ETA 98s
+step 2000/3000  loss 0.3569 (count 0.357 unbind 0.000)  counting exact 1.000  lr 0.003  tau 30.5  elapsed 130s  ETA 65s
+step 2500/3000  loss 0.3566 (count 0.356 unbind 0.000)  counting exact 1.000  lr 0.003  tau 33.0  elapsed 159s  ETA 32s
+step 3000/3000  loss 0.3565 (count 0.356 unbind 0.000)  counting exact 1.000  lr 0.003  tau 35.1  elapsed 185s  ETA 0s
+absent-place threshold 0.263 (weakest present 0.285, strongest absent 0.240)
+construct grounding                    n=  221  decode exact 1.000  nearest-other cosine mean 0.679 max 0.804
+construct C_test (never seen)          n= 2000  decode exact 0.876  nearest-other cosine mean 0.781 max 0.895
+construct 10000-99999 (extrapolation)  n= 2000  decode exact 0.868  nearest-other cosine mean 0.801 max 1.000
+== validation
+  arithmetic_variation [B]                                n= 286  exact 0.150
+  arithmetic_variation+operator_change [B]                n=   2  exact 0.000
+  decompose [A]                                           n=  37  exact 1.000
+  decompose [C_validation]                                n=  70  exact 0.986
+  grouping_change [B]                                     n=  14  exact 0.000
+  grouping_change [C_validation]                          n= 214  exact 0.028
+  operator_change [C_validation]                          n=  26  exact 0.115
+  place_value [B]                                         n=  88  exact 0.011
+  strict_unseen_addition [C_validation]                   n= 138  exact 0.029
+  strict_unseen_addition+operator_change [C_validation]   n=   2  exact 0.500
+  strict_unseen_place_value [C_validation]                n= 138  exact 0.007
+  strict_unseen_place_value+grouping_change [C_validation] n=   2  exact 0.000
+== test
+  arithmetic_variation [B]                                n= 257  exact 0.156
+  arithmetic_variation+operator_change [B]                n=   3  exact 0.667
+  decompose [A]                                           n=  50  exact 1.000
+  decompose [C_test]                                      n=  96  exact 0.948
+  grouping_change [B]                                     n=   6  exact 0.000
+  grouping_change [C_test]                                n= 174  exact 0.006
+  operator_change [B]                                     n=   2  exact 0.000
+  operator_change [C_test]                                n=  99  exact 0.141
+  place_value [B]                                         n=  82  exact 0.037
+  strict_unseen_addition [C_test]                         n= 189  exact 0.026
+  strict_unseen_place_value [C_test]                      n= 192  exact 0.026
+== train
+  arithmetic_variation [A]                                n= 561  exact 0.144
+  arithmetic_variation [G]                                n= 204  exact 0.230
+  arithmetic_variation+operator_change [A]                n=   2  exact 0.000
+  arithmetic_variation+operator_change [G]                n=   4  exact 0.000
+  decompose [B]                                           n=  85  exact 1.000
+  decompose [G]                                           n=  49  exact 1.000
+  dense_basic [G]                                         n= 203  exact 0.350
+  dense_basic+operator_change [G]                         n= 112  exact 0.196
+  dense_basic+place_value [G]                             n=  19  exact 0.579
+  dense_basic+place_value+operator_change [G]             n=   4  exact 1.000
+  grouping_change [A]                                     n=  16  exact 0.000
+  grouping_change [G]                                     n= 128  exact 0.094
+  operator_change [A]                                     n=   4  exact 0.000
+  operator_change [G]                                     n=   8  exact 0.250
+  place_value [A]                                         n= 174  exact 0.023
+  place_value [G]                                         n=  60  exact 0.783
+  place_value+arithmetic_variation [G]                    n=   6  exact 1.000
+  place_value+arithmetic_variation+operator_change [G]    n=   6  exact 1.000
+  place_value+operator_change [G]                         n=   2  exact 1.000
+saved results/areas_k12_chain9 (424s)

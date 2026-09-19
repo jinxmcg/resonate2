@@ -1,0 +1,32 @@
+places machine loaded: programs ['add', 'sub', 'cmp', 'muld', 'mul', 'subtract', 'multiply', 'compare']  M 144  (0s)
+language memory loaded from results/read_math_k32/lm.pt
+sentences as one place (stored words incl. digits, fresh words), read back by walking, exact by length (train 2–20): 2:1.000 3:1.000 4:1.000 5:1.000 6:1.000 7:1.000 8:0.995 9:1.000 10:1.000 11:0.998 12:0.995 13:0.995 14:0.993 15:0.977 16:0.957 17:0.947 18:0.927 19:0.890 20:0.842 21:0.800 22:0.570
+reading machine: 1715 instructions, 10 slots
+ground-truth reader on the machine, commands (0–2 fillers, 1–3 digits): exact 1.000
+ground-truth reader on the machine, definition + use (0–2 fillers, 1–3 digits): exact 1.000
+    the subtract 8 4 from 7 8 5 . -> 701  |  compare 2 6 5 and 8 1 4 ? -> 10   (truth [701, 10] )
+    to W0 something , subtract 1 from it . -> None  |  please W0 3 5 2 . -> 351   (truth [None, 351] )
+    compare 7 and 2 ? -> 11  |  add the 7 and 8 1 4 . -> 821   (truth [11, 821] )
+    to W0 something , add it to itself . -> None  |  please W0 4 3 8 . -> 876   (truth [None, 876] )
+    please subtract 4 from 8 . -> 4  |  please subtract please 0 from 7 8 . -> 78   (truth [4, 78] )
+    to W0 something , add it to itself . -> None  |  please W0 the 6 1 4 . -> 1228   (truth [None, 1228] )
+worked example: please multiply the 5 3 3 by 5 5 6 . | the add please 2 and 3 7 6 . -> [296348, 378]
+worked example: multiply 3 6 by 6 2 . | multiply 7 7 1 by 5 . -> [2232, 3855]
+worked example: to W0 something , add 8 0 to it . | W0 2 . -> [None, 82]
+
+== rung 1: the command reader (two command episodes as worked examples)
+  commands gen 1  best exact 1.000 fitness 2.200  mean 0.059  elapsed 27s
+  commands found at generation 1: init []  body ['ISW 1,qmark>4', 'LOAD 0>1', 'ISPROG 1>4', 'CCOPY 4,1>2', 'ISDIG 1>4', 'ISW 1,it>4', 'ISW 1,itself>4', 'CWRITE 4,1', 'ISNEW 1>4', 'CCOPY 4,1>3', 'ISW 1,and>5', 'ISW 1,by>5', 'ISW 1,to>5', 'ISW 1,from>5', 'CNEWOP 5', 'ISW 1,from>6', 'ISW 1,dot>4', 'ISW 1,qmark>4']  outro ['CSWAP 6', 'CDEF 3,2', 'CALLW 2']  stop 4
+
+== rung 2: the definition reader, seeded with the command reader (one definition episode as worked example)
+  definitions gen 1  best exact 1.000 fitness 2.150  mean 0.830  elapsed 40s
+  definitions found at generation 1: init []  body ['ISW 1,qmark>4', 'LOAD 0>1', 'ISPROG 1>4', 'CCOPY 4,1>2', 'ISDIG 1>4', 'ISW 1,it>4', 'ISW 1,itself>4', 'CWRITE 4,1', 'ISNEW 1>4', 'CCOPY 4,1>3', 'ISW 1,and>5', 'ISW 1,by>5', 'ISW 1,to>5', 'ISW 1,from>5', 'CNEWOP 5', 'ISW 1,from>6', 'ISW 1,dot>4', 'ISW 1,qmark>4']  outro ['CSWAP 6', 'CDEF 3,2', 'CALLW 2']  stop 4
+  commands by number length 1..7 digits (>3 never shown): 1:1.00 2:1.00 3:1.00 4:1.00 5:1.00 6:1.00 7:1.00
+  commands by filler words 0..4 (>1 never shown): 0:1.00 1:1.00 2:1.00 3:1.00 4:1.00
+  definition + use by number length 1..7 (unseen names, bodies add/add k/subtract k/multiply k): 1:1.00 2:1.00 3:1.00 4:1.00 5:1.00 6:1.00 7:1.00
+  unknown command word ('W 12 and 7 .'): abstains 0.00
+    multiply the 3 8 7 by 9 0 4 . -> 349848  |  please compare 2 4 2 3 and 6 9 9 2 4 ? -> 10   (truth [349848, 10] )
+    to W0 something , multiply it by 2 . -> None  |  please W0 the 5 1 3 . -> 1026   (truth [None, 1026] )
+    subtract please 8 3 8 7 5 from 5 8 5 6 9 6 . -> 501821  |  multiply 3 0 0 by 5 0 5 . -> 151500   (truth [501821, 151500] )
+    to W0 something , multiply it by 7 . -> None  |  the W0 4 4 6 . -> 3122   (truth [None, 3122] )
+saved results/read_math_ladder (83s)

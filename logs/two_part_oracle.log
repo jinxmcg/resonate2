@@ -1,0 +1,16 @@
+anchor line check  v(d,k)(.)v(1,k) vs v(d+1,k): mean cosine 1.000
+digit equations (trained)      n= 524  '=' light points to the sum (vs neighbours) 1.000   cos(expression, numeral) 1.000
+digit equations (held out)     n= 131  '=' light points to the sum (vs neighbours) 1.000   cos(expression, numeral) 1.000
+digits read off a value by lights (no addition): exact 0.998
+1-digit sums (never trained): exact 1.000  (after rebuilding the path and walking back 1.000)   carries=0 1.000(n=600)
+2-digit sums (never trained): exact 1.000  (after rebuilding the path and walking back 1.000)   carries=0 1.000(n=361)  carries=1 1.000(n=239)
+3-digit sums (never trained): exact 0.998  (after rebuilding the path and walking back 0.998)   carries=0 0.995(n=206)  carries=1 1.000(n=256)  carries=2 1.000(n=138)
+4-digit sums (never trained): exact 1.000  (after rebuilding the path and walking back 1.000)   carries=0 1.000(n=102)  carries=1 1.000(n=235)  carries=2 1.000(n=183)  carries=3+ 1.000(n=80)
+5-digit sums (never trained): exact 1.000  (after rebuilding the path and walking back 1.000)   carries=0 1.000(n=62)  carries=1 1.000(n=170)  carries=2 1.000(n=199)  carries=3+ 1.000(n=169)
+6-digit sums (never trained): exact 0.993  (after rebuilding the path and walking back 0.993)   carries=0 0.966(n=29)  carries=1 1.000(n=107)  carries=2 0.988(n=170)  carries=3+ 0.997(n=294)
+7-digit sums (never trained): exact 0.998  (after rebuilding the path and walking back 0.998)   carries=0 1.000(n=21)  carries=1 1.000(n=60)  carries=2 0.992(n=133)  carries=3+ 1.000(n=386)
+23 + 45 = 68:   value read 68   path walk 68
+47 + 35 = 82:   value read 82   path walk 82
+123456 + 111111 = 234567:   value read 234567   path walk 234567
+999999 + 1 = 1000000:   value read 1000000   path walk 1000000
+saved results/two_part_oracle (2s)

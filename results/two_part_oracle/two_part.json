@@ -1,0 +1,148 @@
+{
+ "config": {
+  "mv": 64,
+  "steps": 4000,
+  "lr": 0.01,
+  "seed": 0,
+  "mode": "oracle",
+  "path": "results/two_relations_k12_walk2/memory.pt",
+  "out": "results/two_part_oracle"
+ },
+ "facts_train": 524,
+ "facts_test": 131,
+ "local_line_cos": 0.9996558119143758,
+ "digit equations (trained)": {
+  "n": 524,
+  "light_points_to_sum": 1.0,
+  "cos": 0.9998129441310432
+ },
+ "digit equations (held out)": {
+  "n": 131,
+  "light_points_to_sum": 1.0,
+  "cos": 0.9999196761437045
+ },
+ "value_read_exact": 0.998,
+ "sum_len1": {
+  "n": 600,
+  "exact": 1.0,
+  "exact_after_path_walk": 1.0,
+  "carries_0": {
+   "n": 600,
+   "exact": 1.0
+  }
+ },
+ "sum_len2": {
+  "n": 600,
+  "exact": 1.0,
+  "exact_after_path_walk": 1.0,
+  "carries_0": {
+   "n": 361,
+   "exact": 1.0
+  },
+  "carries_1": {
+   "n": 239,
+   "exact": 1.0
+  }
+ },
+ "sum_len3": {
+  "n": 600,
+  "exact": 0.9983333333333333,
+  "exact_after_path_walk": 0.9983333333333333,
+  "carries_0": {
+   "n": 206,
+   "exact": 0.9951456310679612
+  },
+  "carries_1": {
+   "n": 256,
+   "exact": 1.0
+  },
+  "carries_2": {
+   "n": 138,
+   "exact": 1.0
+  }
+ },
+ "sum_len4": {
+  "n": 600,
+  "exact": 1.0,
+  "exact_after_path_walk": 1.0,
+  "carries_0": {
+   "n": 102,
+   "exact": 1.0
+  },
+  "carries_1": {
+   "n": 235,
+   "exact": 1.0
+  },
+  "carries_2": {
+   "n": 183,
+   "exact": 1.0
+  },
+  "carries_3+": {
+   "n": 80,
+   "exact": 1.0
+  }
+ },
+ "sum_len5": {
+  "n": 600,
+  "exact": 1.0,
+  "exact_after_path_walk": 1.0,
+  "carries_0": {
+   "n": 62,
+   "exact": 1.0
+  },
+  "carries_1": {
+   "n": 170,
+   "exact": 1.0
+  },
+  "carries_2": {
+   "n": 199,
+   "exact": 1.0
+  },
+  "carries_3+": {
+   "n": 169,
+   "exact": 1.0
+  }
+ },
+ "sum_len6": {
+  "n": 600,
+  "exact": 0.9933333333333333,
+  "exact_after_path_walk": 0.9933333333333333,
+  "carries_0": {
+   "n": 29,
+   "exact": 0.9655172413793104
+  },
+  "carries_1": {
+   "n": 107,
+   "exact": 1.0
+  },
+  "carries_2": {
+   "n": 170,
+   "exact": 0.9882352941176471
+  },
+  "carries_3+": {
+   "n": 294,
+   "exact": 0.9965986394557823
+  }
+ },
+ "sum_len7": {
+  "n": 600,
+  "exact": 0.9983333333333333,
+  "exact_after_path_walk": 0.9983333333333333,
+  "carries_0": {
+   "n": 21,
+   "exact": 1.0
+  },
+  "carries_1": {
+   "n": 60,
+   "exact": 1.0
+  },
+  "carries_2": {
+   "n": 133,
+   "exact": 0.9924812030075187
+  },
+  "carries_3+": {
+   "n": 386,
+   "exact": 1.0
+  }
+ }
+}

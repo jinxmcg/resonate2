@@ -1,0 +1,72 @@
+{
+ "task": "sub",
+ "seeded": true,
+ "best": {
+  "init": [
+   "SET 2<0"
+  ],
+  "body": [
+   "LOAD_X>0",
+   "LOAD_Y>1",
+   "BIND 0,1",
+   "COPY 1>4",
+   "READ 0",
+   "SETD 3",
+   "SETC 2",
+   "WRITE 3"
+  ],
+  "stop": 2
+ },
+ "best_fitness_train": 0.5486111640930176,
+ "generations": 2,
+ "history": [
+  {
+   "gen": 1,
+   "best_f": 0.5,
+   "best_exact": 0.2083333432674408,
+   "mean_f": 0.2942708432674408
+  },
+  {
+   "gen": 2,
+   "best_f": 0.5486111640930176,
+   "best_exact": 0.2083333432674408,
+   "mean_f": 0.0737847313284874
+  }
+ ],
+ "verify_len1": {
+  "n": 300,
+  "exact": 0.2433333396911621
+ },
+ "verify_len2": {
+  "n": 116,
+  "exact": 0.03448275849223137
+ },
+ "verify_len3": {
+  "n": 78,
+  "exact": 0.0
+ },
+ "verify_len4": {
+  "n": 62,
+  "exact": 0.016129031777381897
+ },
+ "verify_len5": {
+  "n": 40,
+  "exact": 0.0
+ },
+ "verify_len6": {
+  "n": 44,
+  "exact": 0.0
+ },
+ "verify_len7": {
+  "n": 30,
+  "exact": 0.0
+ },
+ "verify_len8": {
+  "n": 26,
+  "exact": 0.0
+ },
+ "verify_len9": {
+  "n": 22,
+  "exact": 0.0
+ }
+}

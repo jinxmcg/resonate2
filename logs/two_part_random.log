@@ -1,0 +1,16 @@
+anchor line check  v(d,k)(.)v(1,k) vs v(d+1,k): mean cosine -0.002
+digit equations (trained)      n= 524  '=' light points to the sum (vs neighbours) 0.235   cos(expression, numeral) 0.187
+digit equations (held out)     n= 131  '=' light points to the sum (vs neighbours) 0.260   cos(expression, numeral) 0.237
+digits read off a value by lights (no addition): exact 0.000
+1-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=600)
+2-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=359)  carries=1 0.000(n=241)
+3-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=207)  carries=1 0.000(n=257)  carries=2 0.000(n=136)
+4-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=105)  carries=1 0.000(n=232)  carries=2 0.000(n=185)  carries=3+ 0.000(n=78)
+5-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=61)  carries=1 0.000(n=179)  carries=2 0.000(n=195)  carries=3+ 0.000(n=165)
+6-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=23)  carries=1 0.000(n=107)  carries=2 0.000(n=172)  carries=3+ 0.000(n=298)
+7-digit sums (never trained): exact 0.000  (after rebuilding the path and walking back 0.000)   carries=0 0.000(n=22)  carries=1 0.000(n=60)  carries=2 0.000(n=132)  carries=3+ 0.000(n=386)
+23 + 45 = 68:   value read 6183082   path walk 6183082
+47 + 35 = 82:   value read 6890681   path walk 6890681
+123456 + 111111 = 234567:   value read 7249726   path walk 7249726
+999999 + 1 = 1000000:   value read 8599058   path walk 8599058
+saved results/two_part_random (3s)

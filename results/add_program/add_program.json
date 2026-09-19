@@ -1,0 +1,214 @@
+{
+ "sum_len1": {
+  "n": 1000,
+  "exact": 1.0,
+  "carries_0": {
+   "n": 1000,
+   "exact": 1.0
+  }
+ },
+ "sum_len2": {
+  "n": 1000,
+  "exact": 1.0,
+  "carries_0": {
+   "n": 584,
+   "exact": 1.0
+  },
+  "carries_1": {
+   "n": 416,
+   "exact": 1.0
+  }
+ },
+ "sum_len3": {
+  "n": 1000,
+  "exact": 1.0,
+  "carries_0": {
+   "n": 323,
+   "exact": 1.0
+  },
+  "carries_1": {
+   "n": 446,
+   "exact": 1.0
+  },
+  "carries_2": {
+   "n": 231,
+   "exact": 1.0
+  }
+ },
+ "sum_len4": {
+  "n": 1000,
+  "exact": 1.0,
+  "carries_0": {
+   "n": 180,
+   "exact": 1.0
+  },
+  "carries_1": {
+   "n": 375,
+   "exact": 1.0
+  },
+  "carries_2": {
+   "n": 315,
+   "exact": 1.0
+  },
+  "carries_3+": {
+   "n": 130,
+   "exact": 1.0
+  }
+ },
+ "sum_len5": {
+  "n": 1000,
+  "exact": 1.0,
+  "carries_0": {
+   "n": 92,
+   "exact": 1.0
+  },
+  "carries_1": {
+   "n": 282,
+   "exact": 1.0
+  },
+  "carries_2": {
+   "n": 331,
+   "exact": 1.0
+  },
+  "carries_3+": {
+   "n": 295,
+   "exact": 1.0
+  }
+ },
+ "sum_len6": {
+  "n": 1000,
+  "exact": 1.0,
+  "carries_0": {
+   "n": 50,
+   "exact": 1.0
+  },
+  "carries_1": {
+   "n": 165,
+   "exact": 1.0
+  },
+  "carries_2": {
+   "n": 305,
+   "exact": 1.0
+  },
+  "carries_3+": {
+   "n": 480,
+   "exact": 1.0
+  }
+ },
+ "sum_len7": {
+  "n": 1000,
+  "exact": 1.0,
+  "carries_0": {
+   "n": 39,
+   "exact": 1.0
+  },
+  "carries_1": {
+   "n": 132,
+   "exact": 1.0
+  },
+  "carries_2": {
+   "n": 225,
+   "exact": 1.0
+  },
+  "carries_3+": {
+   "n": 604,
+   "exact": 1.0
+  }
+ },
+ "validation": {
+  "compose arithmetic_variation [B]": {
+   "n": 286,
+   "exact": 1.0
+  },
+  "compose arithmetic_variation+operator_change [B]": {
+   "n": 2,
+   "exact": 1.0
+  },
+  "compose grouping_change [B]": {
+   "n": 14,
+   "exact": 1.0
+  },
+  "compose grouping_change [C_validation]": {
+   "n": 214,
+   "exact": 1.0
+  },
+  "compose operator_change [C_validation]": {
+   "n": 26,
+   "exact": 1.0
+  },
+  "compose place_value [B]": {
+   "n": 88,
+   "exact": 1.0
+  },
+  "compose strict_unseen_addition [C_validation]": {
+   "n": 138,
+   "exact": 1.0
+  },
+  "compose strict_unseen_addition+operator_change [C_validation]": {
+   "n": 2,
+   "exact": 1.0
+  },
+  "compose strict_unseen_place_value [C_validation]": {
+   "n": 138,
+   "exact": 1.0
+  },
+  "compose strict_unseen_place_value+grouping_change [C_validation]": {
+   "n": 2,
+   "exact": 1.0
+  },
+  "decompose directional_transfer [A]": {
+   "n": 37,
+   "exact": 1.0
+  },
+  "decompose strict_unseen_decomposition [C_validation]": {
+   "n": 70,
+   "exact": 1.0
+  }
+ },
+ "test": {
+  "compose arithmetic_variation [B]": {
+   "n": 257,
+   "exact": 1.0
+  },
+  "compose arithmetic_variation+operator_change [B]": {
+   "n": 3,
+   "exact": 1.0
+  },
+  "compose grouping_change [B]": {
+   "n": 6,
+   "exact": 1.0
+  },
+  "compose grouping_change [C_test]": {
+   "n": 174,
+   "exact": 1.0
+  },
+  "compose operator_change [B]": {
+   "n": 2,
+   "exact": 1.0
+  },
+  "compose operator_change [C_test]": {
+   "n": 99,
+   "exact": 1.0
+  },
+  "compose place_value [B]": {
+   "n": 82,
+   "exact": 1.0
+  },
+  "compose strict_unseen_addition [C_test]": {
+   "n": 189,
+   "exact": 1.0
+  },
+  "compose strict_unseen_place_value [C_test]": {
+   "n": 192,
+   "exact": 1.0
+  },
+  "decompose directional_transfer [A]": {
+   "n": 50,
+   "exact": 1.0
+  },
+  "decompose strict_unseen_decomposition [C_test]": {
+   "n": 96,
+   "exact": 1.0
+  }
+ }
+}

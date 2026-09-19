@@ -1,0 +1,16 @@
+{
+ "config": {
+  "k": 8,
+  "block": 16,
+  "steps": 2000,
+  "bag": "equation",
+  "buckets": "all",
+  "lr": 0.005,
+  "seed": 0,
+  "out": "results/bag_k8b16_equation"
+ },
+ "bags": 1607,
+ "pairs": 14392,
+ "rows_with_signal": 221,
+ "cos_vs_logdist_corr": -0.3701861653515782
+}

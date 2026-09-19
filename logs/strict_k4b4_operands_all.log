@@ -1,0 +1,8 @@
+M=16 block=4 gens=16  train records 1513 in 12 shapes  buckets=all  frozen=True  reasoner params 14945  rows 221x16
+decomposition train records 134
+step 1/3000  loss 12.6260  train compose exact 0.003  decompose exact 0.000  lr 3.00e-03  tau 12.0  1s
+step 500/3000  loss 4.2717  train compose exact 0.102  decompose exact 0.000  lr 2.80e-03  tau 9.7  59s
+step 1000/3000  loss 3.5020  train compose exact 0.228  decompose exact 0.015  lr 2.25e-03  tau 14.6  116s
+step 1500/3000  loss 2.9723  train compose exact 0.321  decompose exact 0.022  lr 1.50e-03  tau 21.1  194s
+step 2000/3000  loss 2.6967  train compose exact 0.401  decompose exact 0.015  lr 7.50e-04  tau 25.3  278s
+step 2500/3000  loss 2.5668  train compose exact 0.428  decompose exact 0.015  lr 2.01e-04  tau 27.3  363s

@@ -1,0 +1,30 @@
+ground truth add  on the places machine: exact by digits 1d 1.000 3d 1.000 5d 1.000 7d 1.000  (2s)
+ground truth sub  on the places machine: exact by digits 1d 1.000 3d 1.000 5d 1.000 7d 1.000  (5s)
+ground truth cmp  on the places machine: exact by digits 1d 1.000 3d 1.000 5d 1.000 7d 1.000  (7s)
+ground truth muld on the places machine: exact by digits 1d 1.000 3d 1.000 5d 1.000 7d 1.000  (15s)
+ground truth mul  on the places machine: exact by digits 1d 1.000 3d 1.000 5d 1.000 7d 1.000  (76s)
+
+== add: worked examples 3,1 (9 steps); 1,59 (17 steps); 268,52 (25 steps)   callable: []
+  gen 1  best 2.000 (exact 1.000)  mean 0.617  elapsed 82s
+  found at generation 1: init [SET 2<0]  body [LOAD 0>3, LOAD 1>4, BIND 3,4, BIND 3,2, READ 3, SETD 5, SETC 2, WRITE 5]  outro []  stop 4
+  add winner on 1-9 digits (>3 never seen): 1d 1.000 2d 1.000 3d 1.000 4d 1.000 5d 1.000 6d 1.000 7d 1.000 8d 1.000 9d 1.000
+
+== sub: worked examples 328,143 (25 steps); 639,526 (25 steps); 687,590 (25 steps)   callable: ['add']
+  gen 1  best 2.000 (exact 1.000)  mean 0.815  elapsed 94s
+  found at generation 1: init [SET 2<0]  body [LOAD 0>3, LOAD 1>4, UNBIND 3,4, UNBIND 3,2, READN 3, SETD 5, SETC 2, WRITE 5]  outro []  stop 4
+  sub winner on 1-9 digits (>3 never seen): 1d 1.000 2d 1.000 3d 1.000 4d 1.000 5d 1.000 6d 1.000 7d 1.000 8d 1.000 9d 1.000
+  retention: add 1.00/1.00/0.98
+
+== cmp: worked examples 1,0 (6 steps); 4,5 (6 steps); 77,78 (9 steps)   callable: ['add', 'sub']
+  gen 1  best 2.000 (exact 1.000)  mean 0.673  elapsed 110s
+  found at generation 1: init [SET 2<0, SET 5<EQ]  body [LOAD 0>3, LOAD 1>4, ORDER 3,4>5]  outro [ANSWER 5]  stop 3
+  cmp winner on 1-9 digits (>3 never seen): 1d 1.000 2d 1.000 3d 1.000 4d 1.000 5d 1.000 6d 1.000 7d 1.000 8d 1.000 9d 1.000
+  retention: add 1.00/1.00/1.00  sub 1.00/1.00/1.00
+
+== muld: worked examples 187,2 (38 steps); 1,1 (14 steps); 21,7 (38 steps)   callable: ['add', 'sub', 'cmp']
+  gen 1  best 2.000 (exact 1.000)  mean 0.841  elapsed 132s
+  found at generation 1: init [SET 2<0, LOAD 1>4, LOAD 0>3, READMUL 3,4, SETD 5, SETC 3, BIND 5,2]  body [READ 5, SETD 5, SETC 2, BIND 2,3, READ 2, SETD 2, WRITE 5, LOAD 0>3, READMUL 3,4, SETD 5, SETC 3, BIND 5,2]  outro []  stop 1
+  muld winner on 1-9 digits (>3 never seen): 1d 1.000 2d 1.000 3d 1.000 4d 1.000 5d 1.000 6d 1.000 7d 1.000 8d 1.000 9d 1.000
+  retention: add 1.00/1.00/1.00  sub 1.00/1.00/1.00  cmp 1.00/1.00/1.00
+
+== mul: worked examples 8,89 (15 steps); 4,616 (19 steps); 8,6 (11 steps)   callable: ['add', 'sub', 'cmp', 'muld']

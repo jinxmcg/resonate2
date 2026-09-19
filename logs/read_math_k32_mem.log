@@ -1,0 +1,42 @@
+places machine loaded: programs ['add', 'sub', 'cmp', 'muld', 'mul', 'subtract', 'multiply', 'compare']  M 144  (0s)
+language memory step 1/15000  loss 3.5353  lr 3.0e-03  tau 10.0  elapsed 1s
+language memory step 500/15000  loss 0.3679  lr 3.0e-03  tau 37.9  elapsed 82s
+language memory step 1000/15000  loss 0.1628  lr 3.0e-03  tau 67.4  elapsed 160s
+language memory step 1500/15000  loss 0.1083  lr 2.9e-03  tau 95.5  elapsed 236s
+language memory step 2000/15000  loss 0.0977  lr 2.9e-03  tau 122.3  elapsed 314s
+language memory step 2500/15000  loss 0.0652  lr 2.8e-03  tau 144.2  elapsed 394s
+language memory step 3000/15000  loss 0.1004  lr 2.7e-03  tau 157.7  elapsed 475s
+language memory step 3500/15000  loss 0.0856  lr 2.6e-03  tau 167.4  elapsed 555s
+language memory step 4000/15000  loss 0.0727  lr 2.5e-03  tau 174.5  elapsed 637s
+language memory step 4500/15000  loss 0.0758  lr 2.4e-03  tau 177.0  elapsed 755s
+language memory step 5000/15000  loss 0.0727  lr 2.3e-03  tau 180.0  elapsed 895s
+language memory step 5500/15000  loss 0.0560  lr 2.1e-03  tau 181.0  elapsed 1024s
+language memory step 6000/15000  loss 0.0368  lr 2.0e-03  tau 182.1  elapsed 1114s
+language memory step 6500/15000  loss 0.0713  lr 1.8e-03  tau 184.2  elapsed 1190s
+language memory step 7000/15000  loss 0.0429  lr 1.7e-03  tau 185.2  elapsed 1265s
+language memory step 7500/15000  loss 0.0440  lr 1.5e-03  tau 186.3  elapsed 1339s
+language memory step 8000/15000  loss 0.0401  lr 1.3e-03  tau 184.8  elapsed 1415s
+language memory step 8500/15000  loss 0.0429  lr 1.2e-03  tau 186.5  elapsed 1491s
+language memory step 9000/15000  loss 0.0293  lr 1.0e-03  tau 188.2  elapsed 1568s
+language memory step 9500/15000  loss 0.0178  lr 8.9e-04  tau 188.8  elapsed 1646s
+language memory step 10000/15000  loss 0.0356  lr 7.5e-04  tau 190.9  elapsed 1722s
+language memory step 10500/15000  loss 0.0203  lr 6.2e-04  tau 189.2  elapsed 1796s
+language memory step 11000/15000  loss 0.0190  lr 5.0e-04  tau 191.1  elapsed 1872s
+language memory step 11500/15000  loss 0.0317  lr 3.9e-04  tau 192.2  elapsed 1947s
+language memory step 12000/15000  loss 0.0124  lr 2.9e-04  tau 194.1  elapsed 2021s
+language memory step 12500/15000  loss 0.0177  lr 2.0e-04  tau 193.0  elapsed 2095s
+language memory step 13000/15000  loss 0.0111  lr 1.3e-04  tau 193.4  elapsed 2169s
+language memory step 13500/15000  loss 0.0217  lr 7.3e-05  tau 194.0  elapsed 2244s
+language memory step 14000/15000  loss 0.0119  lr 3.3e-05  tau 194.1  elapsed 2318s
+language memory step 14500/15000  loss 0.0231  lr 8.2e-06  tau 194.2  elapsed 2393s
+language memory step 15000/15000  loss 0.0207  lr 0.0e+00  tau 194.2  elapsed 2468s
+sentences as one place (stored words incl. digits, fresh words), read back by walking, exact by length (train 2–20): 2:1.000 3:1.000 4:1.000 5:1.000 6:1.000 7:1.000 8:1.000 9:1.000 10:1.000 11:0.995 12:0.998 13:0.995 14:0.990 15:0.982 16:0.957 17:0.970 18:0.927 19:0.892 20:0.825 21:0.777 22:0.530
+reading machine: 1715 instructions, 10 slots
+ground-truth reader on the machine, commands (0–2 fillers, 1–3 digits): exact 0.992
+ground-truth reader on the machine, definition + use (0–2 fillers, 1–3 digits): exact 1.000
+    multiply please 6 by 4 9 . -> 294  |  please subtract 2 from 1 5 5 . -> 153   (truth [294, 153] )
+    to W0 something , add 3 to it . -> None  |  the W0 5 . -> 8   (truth [None, 8] )
+    multiply please 6 8 by 4 . -> 272  |  add please 2 6 and 7 2 . -> 98   (truth [272, 98] )
+    to W0 something , add it to itself . -> None  |  W0 please 5 2 4 . -> 1048   (truth [None, 1048] )
+    please subtract 3 from 9 . -> 6  |  subtract please 4 8 from 5 5 . -> 7   (truth [6, 7] )
+    to W0 something , subtract 2 1 from it . -> None  |  W0 please 2 1 . -> 0   (truth [None, 0] )

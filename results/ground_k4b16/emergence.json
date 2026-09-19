@@ -1,0 +1,65 @@
+{
+ "config": {
+  "k": 4,
+  "block": 16,
+  "steps": 4000,
+  "lr": 0.005,
+  "seed": 0,
+  "out": "results/ground_k4b16"
+ },
+ "rows": 221,
+ "relations": 245,
+ "train_facts": 1171,
+ "named_validation": {
+  "n": 288,
+  "with_operator": 263,
+  "exact": 0.0,
+  "mrr": 0.024894969537854195,
+  "exact_by_op": {
+   "add": 0.0,
+   "multiply": 0.0
+  }
+ },
+ "named_test": {
+  "n": 262,
+  "with_operator": 238,
+  "exact": 0.004201680887490511,
+  "mrr": 0.0244049783796072,
+  "exact_by_op": {
+   "add": 0.0045045045045045045,
+   "multiply": 0.0
+  }
+ },
+ "compose_2hop": {
+  "n": 4000,
+  "exact": 0.003750000149011612,
+  "mrr": 0.025522856041789055
+ },
+ "unnamed_validation": {
+  "n": 58,
+  "n_same": 57,
+  "cos_same": 0.06447027947165464,
+  "cos_diff": -0.015852306423516108,
+  "purity": 0.5388687235329703,
+  "control_operand_only": {
+   "n_same": 57,
+   "cos_same": 0.03086863105234347,
+   "cos_diff": 0.018388161628410733,
+   "purity": 0.5300967937084089
+  }
+ },
+ "unnamed_test": {
+  "n": 144,
+  "n_same": 144,
+  "cos_same": 0.10021060141217378,
+  "cos_diff": 0.005585487259344922,
+  "purity": 0.5625,
+  "control_operand_only": {
+   "n_same": 144,
+   "cos_same": 0.0447166937455121,
+   "cos_diff": 0.0748775439699077,
+   "purity": 0.4930555555555556
+  }
+ },
+ "dense_band_cos_vs_distance_corr": -0.07553547802568714
+}

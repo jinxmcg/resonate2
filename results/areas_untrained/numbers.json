@@ -1,0 +1,219 @@
+{
+ "config": {
+  "k": 8,
+  "block": 16,
+  "steps": 3000,
+  "lr": 0.003,
+  "seed": 0,
+  "count_to": 19,
+  "out": "results/areas_untrained",
+  "no_train": true
+ },
+ "rows": 10,
+ "operators": [
+  "S",
+  "T",
+  "H",
+  "K",
+  "X"
+ ],
+ "grounding_numerals": 221,
+ "threshold": {
+  "theta": 0.342677503824234,
+  "min_present": 0.32857057452201843,
+  "max_absent": 0.3567844331264496
+ },
+ "counting_exact": 0.05263157933950424,
+ "construct_grounding": {
+  "n": 221,
+  "decode_exact": 0.8235294117647058,
+  "nearest_other_cos_mean": 0.7192319631576538,
+  "nearest_other_cos_max": 0.8665462136268616
+ },
+ "construct_C_test (never seen)": {
+  "n": 2000,
+  "decode_exact": 0.7895,
+  "nearest_other_cos_mean": 0.7723171710968018,
+  "nearest_other_cos_max": 0.9164602160453796
+ },
+ "construct_10000-99999 (extrapolation)": {
+  "n": 2000,
+  "decode_exact": 0.766,
+  "nearest_other_cos_mean": 0.7795324325561523,
+  "nearest_other_cos_max": 1.0000003576278687
+ },
+ "validation": {
+  "arithmetic_variation [B]": {
+   "n": 286,
+   "exact": 0.11888111888111888
+  },
+  "arithmetic_variation+operator_change [B]": {
+   "n": 2,
+   "exact": 0.0
+  },
+  "decompose [A]": {
+   "n": 37,
+   "exact": 0.8918918918918919
+  },
+  "decompose [C_validation]": {
+   "n": 70,
+   "exact": 0.9428571428571428
+  },
+  "grouping_change [B]": {
+   "n": 14,
+   "exact": 0.0
+  },
+  "grouping_change [C_validation]": {
+   "n": 214,
+   "exact": 0.0
+  },
+  "operator_change [C_validation]": {
+   "n": 26,
+   "exact": 0.038461538461538464
+  },
+  "place_value [B]": {
+   "n": 88,
+   "exact": 0.0
+  },
+  "strict_unseen_addition [C_validation]": {
+   "n": 138,
+   "exact": 0.028985507246376812
+  },
+  "strict_unseen_addition+operator_change [C_validation]": {
+   "n": 2,
+   "exact": 0.0
+  },
+  "strict_unseen_place_value [C_validation]": {
+   "n": 138,
+   "exact": 0.0
+  },
+  "strict_unseen_place_value+grouping_change [C_validation]": {
+   "n": 2,
+   "exact": 0.0
+  }
+ },
+ "test": {
+  "arithmetic_variation [B]": {
+   "n": 257,
+   "exact": 0.11673151750972763
+  },
+  "arithmetic_variation+operator_change [B]": {
+   "n": 3,
+   "exact": 0.0
+  },
+  "decompose [A]": {
+   "n": 50,
+   "exact": 0.9
+  },
+  "decompose [C_test]": {
+   "n": 96,
+   "exact": 0.8333333333333334
+  },
+  "grouping_change [B]": {
+   "n": 6,
+   "exact": 0.0
+  },
+  "grouping_change [C_test]": {
+   "n": 174,
+   "exact": 0.0
+  },
+  "operator_change [B]": {
+   "n": 2,
+   "exact": 0.0
+  },
+  "operator_change [C_test]": {
+   "n": 99,
+   "exact": 0.0
+  },
+  "place_value [B]": {
+   "n": 82,
+   "exact": 0.0
+  },
+  "strict_unseen_addition [C_test]": {
+   "n": 189,
+   "exact": 0.005291005291005291
+  },
+  "strict_unseen_place_value [C_test]": {
+   "n": 192,
+   "exact": 0.0
+  }
+ },
+ "train": {
+  "arithmetic_variation [A]": {
+   "n": 561,
+   "exact": 0.11051693404634581
+  },
+  "arithmetic_variation [G]": {
+   "n": 204,
+   "exact": 0.014705882352941176
+  },
+  "arithmetic_variation+operator_change [A]": {
+   "n": 2,
+   "exact": 0.0
+  },
+  "arithmetic_variation+operator_change [G]": {
+   "n": 4,
+   "exact": 0.0
+  },
+  "decompose [B]": {
+   "n": 85,
+   "exact": 0.9294117647058824
+  },
+  "decompose [G]": {
+   "n": 49,
+   "exact": 0.5102040816326531
+  },
+  "dense_basic [G]": {
+   "n": 203,
+   "exact": 0.270935960591133
+  },
+  "dense_basic+operator_change [G]": {
+   "n": 112,
+   "exact": 0.044642857142857144
+  },
+  "dense_basic+place_value [G]": {
+   "n": 19,
+   "exact": 0.5789473684210527
+  },
+  "dense_basic+place_value+operator_change [G]": {
+   "n": 4,
+   "exact": 0.0
+  },
+  "grouping_change [A]": {
+   "n": 16,
+   "exact": 0.0
+  },
+  "grouping_change [G]": {
+   "n": 128,
+   "exact": 0.0390625
+  },
+  "operator_change [A]": {
+   "n": 4,
+   "exact": 0.0
+  },
+  "operator_change [G]": {
+   "n": 8,
+   "exact": 0.0
+  },
+  "place_value [A]": {
+   "n": 174,
+   "exact": 0.0
+  },
+  "place_value [G]": {
+   "n": 60,
+   "exact": 0.11666666666666667
+  },
+  "place_value+arithmetic_variation [G]": {
+   "n": 6,
+   "exact": 0.0
+  },
+  "place_value+arithmetic_variation+operator_change [G]": {
+   "n": 6,
+   "exact": 0.0
+  },
+  "place_value+operator_change [G]": {
+   "n": 2,
+   "exact": 0.0
+  }
+ }
+}

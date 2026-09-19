@@ -1,0 +1,44 @@
+step 1/6000  walk loss 0.7282  max len 8  exact@8 0.000  lr 0.001  tau 10.0  elapsed 1s  ETA 7165s
+step 250/6000  walk loss 0.0897  max len 14  exact@14 0.000  lr 0.001  tau 11.2  elapsed 10s  ETA 221s
+step 500/6000  walk loss 0.0851  max len 20  exact@20 0.000  lr 0.001  tau 13.7  elapsed 19s  ETA 207s
+step 750/6000  walk loss 0.0208  max len 26  exact@26 0.000  lr 0.001  tau 16.4  elapsed 31s  ETA 218s
+step 1000/6000  walk loss 0.0087  max len 32  exact@32 0.000  lr 0.001  tau 19.0  elapsed 47s  ETA 236s
+step 1250/6000  walk loss 0.0380  max len 38  exact@38 0.000  lr 0.001  tau 21.1  elapsed 64s  ETA 243s
+step 1500/6000  walk loss 0.0468  max len 44  exact@44 0.000  lr 0.001  tau 23.1  elapsed 88s  ETA 263s
+step 1750/6000  walk loss 0.0818  max len 50  exact@50 0.000  lr 0.001  tau 24.9  elapsed 113s  ETA 273s
+step 2000/6000  walk loss 0.0231  max len 56  exact@56 0.000  lr 0.001  tau 26.6  elapsed 139s  ETA 278s
+step 2250/6000  walk loss 0.0736  max len 63  exact@63 0.000  lr 0.001  tau 28.2  elapsed 170s  ETA 284s
+step 2500/6000  walk loss 0.0023  max len 69  exact@69 0.000  lr 0.001  tau 29.5  elapsed 202s  ETA 283s
+step 2750/6000  walk loss 0.1248  max len 75  exact@75 0.000  lr 0.001  tau 31.0  elapsed 236s  ETA 279s
+step 3000/6000  walk loss 0.0021  max len 81  exact@81 0.000  lr 0.001  tau 32.6  elapsed 276s  ETA 276s
+step 3250/6000  walk loss 0.0398  max len 87  exact@87 0.000  lr 0.001  tau 34.1  elapsed 318s  ETA 269s
+step 3500/6000  walk loss 0.0548  max len 93  exact@93 0.000  lr 0.001  tau 35.5  elapsed 366s  ETA 261s
+step 3750/6000  walk loss 0.0893  max len 96  exact@96 0.000  lr 0.001  tau 36.9  elapsed 413s  ETA 248s
+step 4000/6000  walk loss 0.0512  max len 96  exact@96 0.000  lr 0.001  tau 38.4  elapsed 461s  ETA 231s
+step 4250/6000  walk loss 0.0010  max len 96  exact@96 0.000  lr 0.001  tau 40.2  elapsed 511s  ETA 210s
+step 4500/6000  walk loss 0.0031  max len 96  exact@96 0.000  lr 0.001  tau 41.7  elapsed 557s  ETA 186s
+step 4750/6000  walk loss 0.0803  max len 96  exact@96 0.000  lr 0.001  tau 43.1  elapsed 605s  ETA 159s
+step 5000/6000  walk loss 0.0007  max len 96  exact@96 0.000  lr 0.001  tau 45.0  elapsed 650s  ETA 130s
+step 5250/6000  walk loss 0.0864  max len 96  exact@96 0.000  lr 0.001  tau 46.5  elapsed 696s  ETA 99s
+step 5500/6000  walk loss 0.0527  max len 96  exact@96 0.000  lr 0.001  tau 48.4  elapsed 743s  ETA 68s
+step 5750/6000  walk loss 0.0039  max len 96  exact@96 0.000  lr 0.001  tau 50.1  elapsed 789s  ETA 34s
+step 6000/6000  walk loss 0.0809  max len 96  exact@96 0.000  lr 0.001  tau 52.0  elapsed 833s  ETA 0s
+random symbol chains of 8 terms: walk back exactly 1.000
+random symbol chains of 32 terms: walk back exactly 0.000
+random symbol chains of 64 terms: walk back exactly 0.000
+random symbol chains of 96 terms: walk back exactly 0.000
+random symbol chains of 128 terms (longer than trained): walk back exactly 0.000
+program 'add': 52 terms as one place; promoted; walked back from memory -> DIFFERENT
+program 'sub': 52 terms as one place; promoted; walked back from memory -> DIFFERENT
+program 'cmp': 40 terms as one place; promoted; walked back from memory -> DIFFERENT
+Traceback (most recent call last):
+  File "/mnt/nvme990/latent/reasoning_ant/progmem.py", line 113, in <module>
+    back = [SYM[i] for i in walk_back(z, len(syms))[0].tolist()]; p2 = symbols_to_program(back, p["kind"]); ok = (p2["init"], p2["body"], p2["outro"], p2["stop"]) == (p["init"], p["body"], p["outro"], p["stop"])
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/nvme990/latent/reasoning_ant/progmem.py", line 84, in symbols_to_program
+    for tag, v in decode_terms(syms):
+                  ^^^^^^^^^^^^^^^^^^
+  File "/mnt/nvme990/latent/reasoning_ant/progmem.py", line 65, in decode_terms
+    if op == "STOP": out.append(("STOP", int(g[1][1]))); i += 4; continue
+                                         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'E'
