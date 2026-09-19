@@ -59,7 +59,7 @@ def chain(W, mask):
         has = mask[:, j]; step = hop(W[:, j], NEXT) if acc is None else hop(cnorm(acc + W[:, j]), NEXT); acc = step if acc is None else torch.where(has[:, None], step, acc)
     return acc
 def light(z, cand, cmask):
-    sc = torch.real((z[:, None, :] * cand.conj()).sum(-1)); sc[~cmask] = -1e9; return sc
+    sc = torch.real(torch.einsum("bm,bcm->bc", z, cand.conj())); sc[~cmask] = -1e9; return sc                        # no (rows x candidates x width) intermediate
 def random_tokens(B, Lmax=20, Lmin=2):
     fresh = cnorm(torch.randn(B, NF, LM, dtype=torch.complex64, device=dev)); cand = torch.cat([E()[None].expand(B, -1, -1), fresh], 1); cmask = torch.ones(B, V + NF, dtype=torch.bool, device=dev)
     L = torch.tensor(rng.integers(Lmin, Lmax + 1, B), device=dev); w = rng.integers(0, V + NF, (B, Lmax))

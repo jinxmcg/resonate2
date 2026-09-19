@@ -3,11 +3,11 @@ new words become fresh rows. Definitions persist for the session, so 'to double 
 by 'double 34324 .' works across lines. Usage:  python say.py "add 3421 and 57 ." "to double something , add it to itself ." "double 34324 ."
                                       python say.py            (interactive)"""
 import sys, json, re, torch
-ARGS = [x for x in sys.argv[1:]]; sys.argv = ["read_math.py", "--lm-resume", "results/read_math_k32/lm.pt", "--lk", "32", "--check-only"]
+ARGS = [x for x in sys.argv[1:]]; sys.argv = ["read_math.py", "--lm-resume", "results/read_math_k32_runs/lm.pt", "--lk", "32", "--check-only"]
 src = open("read_math.py").read(); src = src[:src.index("with torch.no_grad():\n    for kinds, label in")]
 g = {"__name__": "__main__"}; exec(compile(src, "read_math.py", "exec"), g)
 V, VOCAB, vid, NF, LM, M, E, chain, cnorm, dev, execute, answers_of, State, LT, GT, EQ = [g[k] for k in ("V", "VOCAB", "vid", "NF", "LM", "M", "E", "chain", "cnorm", "dev", "execute", "answers_of", "State", "LT", "GT", "EQ")]
-READER = json.load(open("results/read_math_ladder/read_math.json"))["reader"]["program"]
+READER = json.load(open("results/read_math_k32_runs/read_math.json"))["reader"]["program"]
 LABELS = {}                                                                                                          # every found program is callable by its label; unary ones (found from worked examples) take the sentence's number
 for n_, p_ in json.load(open("results/places/found_programs.json")).items():
     if n_ not in g["PROGRAMS"]: g["PROGRAMS"][n_] = p_
