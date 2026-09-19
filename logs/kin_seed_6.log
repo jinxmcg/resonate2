@@ -1,0 +1,26 @@
+step 1/20000  loss 3.3542  exact 0.078  lr 3.00e-03  tau 10.0  elapsed 1s
+step 1000/20000  loss 0.0060  exact 1.000  lr 2.98e-03  tau 18.9  elapsed 26s
+step 2000/20000  loss 0.0199  exact 0.992  lr 2.93e-03  tau 20.2  elapsed 53s
+step 3000/20000  loss 0.0254  exact 0.988  lr 2.84e-03  tau 20.5  elapsed 81s
+step 4000/20000  loss 0.0186  exact 0.992  lr 2.71e-03  tau 20.1  elapsed 107s
+step 5000/20000  loss 0.0089  exact 0.996  lr 2.56e-03  tau 20.0  elapsed 133s
+step 6000/20000  loss 0.0091  exact 0.996  lr 2.38e-03  tau 19.8  elapsed 161s
+step 7000/20000  loss 0.0039  exact 1.000  lr 2.18e-03  tau 19.9  elapsed 183s
+step 8000/20000  loss 0.0187  exact 0.988  lr 1.96e-03  tau 20.1  elapsed 207s
+step 9000/20000  loss 0.0063  exact 0.996  lr 1.73e-03  tau 20.6  elapsed 235s
+step 10000/20000  loss 0.0092  exact 0.996  lr 1.50e-03  tau 20.7  elapsed 260s
+step 11000/20000  loss 0.0216  exact 0.988  lr 1.27e-03  tau 21.2  elapsed 285s
+step 12000/20000  loss 0.0044  exact 1.000  lr 1.04e-03  tau 21.6  elapsed 311s
+step 13000/20000  loss 0.0040  exact 1.000  lr 8.19e-04  tau 21.2  elapsed 337s
+step 14000/20000  loss 0.0011  exact 1.000  lr 6.18e-04  tau 21.5  elapsed 367s
+step 15000/20000  loss 0.0002  exact 1.000  lr 4.39e-04  tau 21.4  elapsed 391s
+step 16000/20000  loss 0.0021  exact 1.000  lr 2.86e-04  tau 21.6  elapsed 417s
+step 17000/20000  loss 0.0206  exact 0.980  lr 1.63e-04  tau 21.9  elapsed 446s
+step 18000/20000  loss 0.0056  exact 0.996  lr 7.34e-05  tau 22.0  elapsed 472s
+step 19000/20000  loss 0.0094  exact 0.996  lr 1.85e-05  tau 22.1  elapsed 499s
+step 20000/20000  loss 0.0056  exact 0.996  lr 0.00e+00  tau 22.1  elapsed 520s
+validation: exact 0.996; abstention margin threshold 0.047 (95th pct of wrong-answer margins)
+validation chain stories — exact/abstain/wrong by length: 2: 1.00/0.00/0.00 (n=1020)  3: 0.98/0.01/0.00 (n=1000)
+test chain stories — exact/abstain/wrong by length: 2: 1.00/0.00/0.00 (n=38)  3: 0.86/0.13/0.01 (n=105)  4: 0.99/0.00/0.01 (n=190)  5: 0.99/0.00/0.01 (n=174)  6: 0.98/0.01/0.01 (n=107)  7: 0.99/0.01/0.00 (n=144)  8: 1.00/0.00/0.00 (n=150)  9: 0.98/0.02/0.00 (n=119)  10: 1.00/0.00/0.00 (n=119)
+emergent algebra: 62/62 training length-2 compositions reproduced by operator products
+saved results/kin_seeds/s6 (522s)

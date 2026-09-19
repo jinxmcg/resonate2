@@ -18,8 +18,18 @@ the target word's operator lands. Test stories of 2–10 hops, all 1,146 of them
 
 | hops | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |---|---|---|---|---|---|---|---|---|---|
-| exact | 1.00 | 0.86 | 0.99 | 0.99 | 0.99 | 0.99 | 0.99 | 0.94 | **0.99** |
-| wrong | 0.00 | 0.00 | 0.00 | 0.01 | 0.01 | 0.01 | 0.00 | 0.00 | 0.00 |
+| exact, seed 0 | 1.00 | 0.86 | 0.99 | 0.99 | 0.99 | 0.99 | 0.99 | 0.94 | **0.99** |
+| wrong, seed 0 | 0.00 | 0.00 | 0.00 | 0.01 | 0.01 | 0.01 | 0.00 | 0.00 | 0.00 |
+| exact, ten seeds | 1.000 ± .000 | 0.893 ± .039 | 0.995 ± .000 | 0.989 ± .000 | 0.982 ± .005 | 0.985 ± .009 | 0.992 ± .008 | 0.976 ± .013 | **0.988 ± .008** |
+| wrong, ten seeds | 0.000 | 0.022 ± .023 | 0.004 ± .002 | 0.009 ± .003 | 0.012 ± .006 | 0.006 ± .006 | 0.001 ± .004 | 0.004 ± .004 | 0.003 ± .006 |
+
+Ten seeds (`kin_seeds.sh`, `results/kin_seeds/`, `logs/kin_seed_*.log`; ten-hop exact per seed 0.992 0.983 0.983 0.983
+1.000 0.992 1.000 0.992 0.983 0.975). Every remaining miss is a chain with two logically valid answers (*wife → son →
+grandmother* is a mother or a mother-in-law; *… → daughter → sister* a daughter or a niece) and the model's two top
+words are those two, 0.00–0.05 apart — kinship is one-to-many and the benchmark labels one member. We tried a
+second, set-valued scorer by simulating families (`kin_valid.py`) and dropped it: CLUTRR's own rules differ from
+real-world kinship in places (a wife's sister is labelled *sister*; there are no in-law siblings), so a second ground
+truth would be ours, not the benchmark's.
 
 The rest abstains, and the abstentions are the benchmark's own ambiguities (all fifteen at length 3 are the chain
 *wife → son → grandmother*, labelled *mother* ten times and *mother-in-law* five). Best published on this split at ten
