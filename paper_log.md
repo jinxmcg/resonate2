@@ -467,3 +467,25 @@ named), and one where the named callable is itself a found program (triple via d
 Same evening: iseven from two examples in 7 s (README Part 25b) — parity as a light over the digit rows (ten given
 facts) + a three-move program found by observation; exact to 13 digits. The chapter's two archetypes: accumulate by a
 named function (digitsum), classify by a region (iseven).
+
+### 2026-09-19 — plan (not started): solving equations by rewriting, not enumeration
+User's correction: x² + y² + 3 = 7 is not solved by trying x and y; it is solved by rewriting — identities and
+inverse operations applied until the unknown stands alone. In this memory that is:
+- an **equation as a chain** of terms, with `=` the light (Part 5's lesson made literal): both sides are places;
+- **rewrite steps as programs**, each taught by a worked example the way digitsum was: "both sides minus 3"
+  (`sub` is `add`'s inverse — a library call), "x² + 2xy + y² is (x + y)²" (an identity: a pattern over the chain), "the
+  square root of a square is the number" (an inverse taught as a lookup: squares of 0–9, then by digits);
+- the **observer** records a solution as events on the equation chain (this term moved, this side simplified), and
+  the generalisation test is an equation of the same form with numbers never shown.
+Prerequisites now in the library from worked examples: square, check (the evaluation side). Owed before the rewrite
+work: a representation of an equation with an unknown (a fresh row for `x`, a place it can be bound to), and the
+inverse of square. Evaluation compounds already (square → check exact on big numbers); solving is the next design.
+
+### 2026-09-19 — seeds: paused, resumable
+Paused to free the GPU. Done: CLUTRR ×10 (0.988 ± 0.008). Digit chain: seeds with results in `results/seeds/digits_s*`
+(the rest resume). Queued and resumable with `./seeds_resume.sh` (skips finished seeds): digit chain to 10, places
+curriculum ×5, stories ×10, language ×3, then observer tasks (digitsum, iseven, square) ×10 without relabelling.
+Aggregation: `kin_seeds_table.py` for CLUTRR; a matching table script for the rest is owed when they finish.
+Same night: square and check found by observation (README Part 25c); check is the evaluation of x² + y² + 3 = 7 as a
+verdict program — EQ at (2,0)/(0,2). Owed: two-operand labels in the language layer (check by name), the rewriting
+design for solving.

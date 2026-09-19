@@ -893,3 +893,20 @@ Labelled `iseven` automatically; by name through the language layer: `iseven 123
 The generalisation is over numbers (the units digit is the first the chain gives, whatever the length); the ten digit
 facts are the given vocabulary, as "9 > 8" was. Put next to digit-sum this is the pair the write-up needs: an operation
 taught as *reuse of a named function*, and a property taught as *a region read by a light*.
+
+## Part 25c — towards x² + y² + 3 = 7: the evaluation side by observation (2026-09-19)
+
+The ladder the user set: what must be known before an equation can be solved. The evaluation side compounds from
+worked examples with nothing hand-written: **square** from `square(7) = 7 × 7 = 49` and `square(12) = 144` (the
+observer derives *copy, then call `mul` on the copy* — the same value twice), found at generation 1, exact to 6-digit
+inputs (12-digit squares); then **check** from three worked examples written out in one breath — *check(2, 0): 2 × 2 =
+4, 0 × 0 = 0, 4 + 0 = 4, 4 + 3 = 7, 7 = 7 → yes* — with `square` the only program named (intermediate names like
+"sum of squares" are not taught as callables; they are the expression). Found at generation 1: `square x, square y,
+add, SET 3, add, SET 7, cmp → verdict`; exact on all single-digit pairs and the regression set, EQ exactly at (2, 0)
+and (0, 2). Two observer additions on the way: two-operand examples, and calls to unary programs.
+Search discipline (user): examples start at one digit and grow with generations; no ad-hoc caps. What a runaway
+candidate costs is now understood (a body that squares every cycle: 15 nested 14-digit multiplies, ~1–2 s each) and
+is paid, not hidden.
+**Solving** is the open design, and it is *rewriting*, not enumeration (paper_log): the equation as a chain with `=`
+the light, inverse operations and identities as programs taught by example, the unknown a fresh row. Owed before it:
+the inverse of square as a lookup, and an equation representation with an unknown.

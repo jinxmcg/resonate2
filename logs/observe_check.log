@@ -1,0 +1,41 @@
+digit order on the chain's rows: 45/45 facts
+parity light on the digit rows: 10/10 facts
+observer: alphabet 738 (named callables ['add', 'cmp', 'square'] + plumbing), examples shown [2, 0, 1, 1, 0, 2]
+
+== playing check(2, 0) = 12
+  event ('call1', 'square'): 5 derived moves realise it, beam keeps 5, first ['CALL square 0,1>0']   [11s]
+  event ('call1', 'square'): 37 derived moves realise it, beam keeps 8, first ['CALL square 1,0>1']   [17s]
+  event ('add', 4, 0): 134 derived moves realise it, beam keeps 8, first ['CALL add 0,1>0']   [23s]
+  event ('value', 3): 28 derived moves realise it, beam keeps 8, first ['SET 2<3']   [26s]
+  event ('add', 4, 3): 120 derived moves realise it, beam keeps 8, first ['CALL add 0,2>0']   [33s]
+  event ('value', 7): 20 derived moves realise it, beam keeps 8, first ['SET 3<7']   [36s]
+  event ('cmp', 7, 7): 60 derived moves realise it, beam keeps 8, first ['CALL cmp 0,3>0']   [42s]
+  event ('answer', 12): 8 derived moves realise it, beam keeps 8, first ['ANSWER 0']   [46s]
+  trace (8 moves): ['CALL square 0,1>0', 'CALL square 1,0>1', 'CALL add 0,1>0', 'SET 2<3', 'CALL add 0,2>0', 'SET 3<7', 'CALL cmp 0,3>0', 'ANSWER 0']
+
+== playing check(1, 1) = 10
+  event ('call1', 'square'): 10 derived moves realise it, beam keeps 8, first ['CALL square 1,0>1']   [11s]
+  event ('call1', 'square'): 164 derived moves realise it, beam keeps 8, first ['CALL square 1,0>1']   [17s]
+  event ('add', 1, 1): 204 derived moves realise it, beam keeps 8, first ['CALL add 0,1>0']   [25s]
+  event ('value', 3): 28 derived moves realise it, beam keeps 8, first ['SET 2<3']   [29s]
+  event ('add', 2, 3): 80 derived moves realise it, beam keeps 8, first ['CALL add 0,2>0']   [35s]
+  event ('value', 7): 20 derived moves realise it, beam keeps 8, first ['SET 3<7']   [39s]
+  event ('cmp', 5, 7): 60 derived moves realise it, beam keeps 8, first ['CALL cmp 0,3>0']   [45s]
+  event ('answer', 10): 4 derived moves realise it, beam keeps 4, first ['ANSWER 0']   [49s]
+  trace (8 moves): ['CALL square 1,0>1', 'CALL square 1,0>1', 'CALL add 0,1>0', 'SET 2<3', 'CALL add 0,2>0', 'SET 3<7', 'CALL cmp 0,3>0', 'ANSWER 0']
+
+== playing check(0, 2) = 12
+  event ('call1', 'square'): 5 derived moves realise it, beam keeps 5, first ['CALL square 0,1>0']   [0s]
+  event ('call1', 'square'): 37 derived moves realise it, beam keeps 8, first ['CALL square 1,0>1']   [2s]
+  event ('add', 0, 4): 104 derived moves realise it, beam keeps 8, first ['CALL add 0,1>0']   [7s]
+  event ('value', 3): 28 derived moves realise it, beam keeps 8, first ['SET 2<3']   [10s]
+  event ('add', 4, 3): 120 derived moves realise it, beam keeps 8, first ['CALL add 0,2>0']   [16s]
+  event ('value', 7): 20 derived moves realise it, beam keeps 8, first ['SET 3<7']   [20s]
+  event ('cmp', 7, 7): 60 derived moves realise it, beam keeps 8, first ['CALL cmp 0,3>0']   [26s]
+  event ('answer', 12): 8 derived moves realise it, beam keeps 8, first ['ANSWER 0']   [30s]
+  trace (8 moves): ['CALL square 0,1>0', 'CALL square 1,0>1', 'CALL add 0,1>0', 'SET 2<3', 'CALL add 0,2>0', 'SET 3<7', 'CALL cmp 0,3>0', 'ANSWER 0']
+  search gen 1/60  (1-digit examples)  best 2.000 (exact 1.000)  mean 1.327  candidates 150  [293s]
+  FOUND at generation 1 (150 candidates): init [CALL square 0,1>0]  body [CALL square 1,0>1, CALL add 0,1>0, SET 2<3, CALL add 0,2>0, SET 3<7, CALL cmp 0,3>0]  outro [ANSWER 0]  stop 4
+  check by digits (>3 never shown): 1d 1.000 regression 1.000
+  labelled 'check' in the library (9 programs); callable by name from now on
+saved (898s)

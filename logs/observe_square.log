@@ -1,0 +1,18 @@
+digit order on the chain's rows: 45/45 facts
+parity light on the digit rows: 10/10 facts
+observer: alphabet 378 (named callables ['mul'] + plumbing), examples shown [7, 12]
+
+== playing square(7) = 49
+  event ('mul', 7, 7): 20 derived moves realise it, beam keeps 8, first ['CALL mul 0,2>0']   [11s]
+  event ('answer', 49): 8 derived moves realise it, beam keeps 8, first ['ANSWER 0']   [13s]
+  trace (3 moves): ['COPY 0>2', 'CALL mul 0,2>0', 'ANSWER 0']
+
+== playing square(12) = 144
+  event ('mul', 12, 12): 20 derived moves realise it, beam keeps 8, first ['CALL mul 0,2>0']   [11s]
+  event ('answer', 144): 8 derived moves realise it, beam keeps 8, first ['ANSWER 0']   [13s]
+  trace (3 moves): ['COPY 0>2', 'CALL mul 0,2>0', 'ANSWER 0']
+  search gen 1/60  (1-digit examples)  best 2.000 (exact 1.000)  mean 0.888  candidates 150  [152s]
+  FOUND at generation 1 (150 candidates): init [COPY 0>2, CALL mul 0,2>0]  body [ANSWER 0]  outro []  stop 2
+  square by digits (>3 never shown): 1d 1.000 2d 1.000 3d 1.000 4d 1.000 6d 1.000 regression 1.000
+  labelled 'square' in the library (8 programs); callable by name from now on
+saved (240s)

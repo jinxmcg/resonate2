@@ -61,7 +61,7 @@ def instruction_set():
     pairs = [(s, t) for s in range(K) for t in range(K) if s != t]; triples = [(s, t, u) for s, t in pairs for u in range(K) if u != s and u != t]
     ins = [f"LOAD {s}>{t}" for s, t in pairs] + [f"BIND {s},{t}" for s, t in pairs] + [f"UNBIND {s},{t}" for s, t in pairs] + [f"SHIFT {s}" for s in range(K)] \
         + [f"READ {s}" for s in range(K)] + [f"READN {s}" for s in range(K)] + [f"READ2 {s}" for s in range(K)] + [f"READMUL {s},{t}" for s, t in pairs] + [f"ORDER {s},{t}>{u}" for s, t, u in triples] + [f"PARITY {s}>{t}" for s, t in pairs] \
-        + [f"SETD {s}" for s in range(K)] + [f"SETC {s}" for s in range(K)] + [f"SET {s}<0" for s in range(K)] + [f"SET {s}<1" for s in range(K)] + [f"SET {s}<EQ" for s in range(K)] + [f"COPY {s}>{t}" for s, t in pairs] \
+        + [f"SETD {s}" for s in range(K)] + [f"SETC {s}" for s in range(K)] + [f"SET {s}<{d}" for s in range(K) for d in range(10)] + [f"SET {s}<EQ" for s in range(K)] + [f"COPY {s}>{t}" for s, t in pairs] \
         + [f"WRITE {s}" for s in range(K)] + [f"ANSWER {s}" for s in range(K)]
     for name in PROGRAMS: ins += [f"CALL {name} {s},{t}>{u}" for s, t in pairs for u in range(K)]                 # a call may write its result back into an operand slot (accumulators)
     return ins
