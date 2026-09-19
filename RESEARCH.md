@@ -876,3 +876,20 @@ is the program's structure; reading it off the machine costs seconds where searc
 observer is the controller's stance (read lights, choose moves) applied to *learning*, not just execution; (3) what is
 still given: the event grammar for each task (what counts as "the digit appears", "add happens") — the teacher's
 vocabulary — and the acceptance test. What is not: the program, the loop, the slots, the stop rule.
+
+## Part 25b — odd / even: a region, taught in two examples (2026-09-19)
+
+Parity is not an accumulation; it is a *region* of the digit rows. Two given parts, each of the same kind as before:
+a **parity light** — one template fitted to the ten facts "d is even / odd" on the memory's digit rows (as the digit-
+order light was fitted to the 45 facts "d < d′", Part 8; the rows carry no parity structure, so all ten must be given,
+which takes seconds) — and a `PARITY s>t` read that writes EVEN / ODD as `ORDER` writes LT / GT. Then the observer, two
+worked examples: *iseven(124): the last digit is 4; 4 is even; even* and *iseven(37): … odd*.
+
+| shown | trace | found | exact on |
+|---|---|---|---|
+| `iseven(124)`, `iseven(37)` | `LOAD 0>2, PARITY 2>3, ANSWER 3` — 2 s each | generation 1, 150 candidates, 7 s in all | 1–13 digits, regression (0, 1, 10, 11, 10¹², 2468, 13579): 1.000 |
+
+Labelled `iseven` automatically; by name through the language layer: `iseven 12346 .` → even, `iseven 1234567 .` → odd.
+The generalisation is over numbers (the units digit is the first the chain gives, whatever the length); the ten digit
+facts are the given vocabulary, as "9 > 8" was. Put next to digit-sum this is the pair the write-up needs: an operation
+taught as *reuse of a named function*, and a property taught as *a region read by a light*.

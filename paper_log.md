@@ -464,3 +464,6 @@ candidates. Labelled 'digitsum' in the library; callable by name from a sentence
 chapter's centrepiece: worked example → trace → program, values as variables and named operations as functions; the
 given parts are the event vocabulary and the acceptance test. Owed: a second task (e.g. product of digits: multiply
 named), and one where the named callable is itself a found program (triple via double) to show the library compounds.
+Same evening: iseven from two examples in 7 s (README Part 25b) — parity as a light over the digit rows (ten given
+facts) + a three-move program found by observation; exact to 13 digits. The chapter's two archetypes: accumulate by a
+named function (digitsum), classify by a region (iseven).

@@ -1,0 +1,20 @@
+digit order on the chain's rows: 45/45 facts
+parity light on the digit rows: 10/10 facts
+observer: alphabet 150 (named callables [] + plumbing), examples shown [124, 37]
+
+== playing iseven(124) = 13
+  event ('digit', 4): 4 derived moves realise it, beam keeps 4, first ['LOAD 0>2']   [0s]
+  event ('parity', 13): 12 derived moves realise it, beam keeps 8, first ['PARITY 2>3']   [1s]
+  event ('answer', 13): 8 derived moves realise it, beam keeps 8, first ['ANSWER 3']   [2s]
+  trace (3 moves): ['LOAD 0>2', 'PARITY 2>3', 'ANSWER 3']
+
+== playing iseven(37) = 14
+  event ('digit', 7): 4 derived moves realise it, beam keeps 4, first ['LOAD 0>2']   [0s]
+  event ('parity', 14): 12 derived moves realise it, beam keeps 8, first ['PARITY 2>3']   [1s]
+  event ('answer', 14): 8 derived moves realise it, beam keeps 8, first ['ANSWER 3']   [2s]
+  trace (3 moves): ['LOAD 0>2', 'PARITY 2>3', 'ANSWER 3']
+  search gen 1/60  best 2.000 (exact 1.000)  mean 1.169  candidates 150  [7s]
+  FOUND at generation 1 (150 candidates): init [LOAD 0>2]  body [PARITY 2>3]  outro [ANSWER 3]  stop 3
+  iseven by digits (>3 never shown): 1d 1.000 2d 1.000 3d 1.000 4d 1.000 6d 1.000 8d 1.000 12d 1.000 13d 1.000 regression 1.000
+  labelled 'iseven' in the library (7 programs); callable by name from now on
+saved (16s)

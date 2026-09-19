@@ -1,0 +1,48 @@
+{
+ "target": "iseven",
+ "shown": [
+  124,
+  37
+ ],
+ "alphabet": 150,
+ "traces": {
+  "124": [
+   "LOAD 0>2",
+   "PARITY 2>3",
+   "ANSWER 3"
+  ],
+  "37": [
+   "LOAD 0>2",
+   "PARITY 2>3",
+   "ANSWER 3"
+  ]
+ },
+ "found": true,
+ "generation": 1,
+ "candidates": 150,
+ "program": {
+  "kind": "verdict",
+  "init": [
+   "LOAD 0>2"
+  ],
+  "body": [
+   "PARITY 2>3"
+  ],
+  "outro": [
+   "ANSWER 3"
+  ],
+  "stop": 3
+ },
+ "verify": {
+  "1": 1.0,
+  "2": 1.0,
+  "3": 1.0,
+  "4": 1.0,
+  "6": 1.0,
+  "8": 1.0,
+  "12": 1.0,
+  "13": 1.0,
+  "reg": 1.0
+ },
+ "name": "iseven"
+}

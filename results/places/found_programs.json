@@ -119,5 +119,24 @@
    90,
    5
   ]
+ },
+ "iseven": {
+  "kind": "verdict",
+  "init": [
+   "LOAD 0>2"
+  ],
+  "body": [
+   "PARITY 2>3"
+  ],
+  "outro": [
+   "ANSWER 3"
+  ],
+  "stop": 3,
+  "arity": 1,
+  "named_by": "worked example",
+  "shown": [
+   124,
+   37
+  ]
  }
 }

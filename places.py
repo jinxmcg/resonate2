@@ -45,12 +45,22 @@ vk = torch.load(HERE / a.value, map_location=dev, weights_only=False); phi = vk[
 def vnum(n): return V[n % 10, 0] * (V[n // 10, 1] if n >= 10 else ONE)
 LINE = torch.stack([vnum(s) for s in range(20)]); LINE2 = torch.stack([vnum(s) for s in range(100)]); NLINE = torch.stack([(V[1, 1].conj() if s == -10 else V[-s, 0].conj() if s < 0 else V[s, 0]) for s in range(-10, 10)])
 MULKEY = torch.stack([V[d, 0] * V[e, 1] for d in range(10) for e in range(10)]); MULVAL = torch.tensor([d * e for d in range(10) for e in range(10)], device=dev)
-Q = torch.load(HERE / a.order, map_location=dev, weights_only=False)["Q"]; SDIG = torch.real(Er[:10] @ Q.conj()); LT, GT, EQ = 10, 11, 12
-PROGRAMS = {}                                                                                      # found programs, callable by later ones
+Q = torch.load(HERE / a.order, map_location=dev, weights_only=False)["Q"]; SDIG = torch.real(Er[:10] @ Q.conj()); LT, GT, EQ = 10, 11, 12; EVEN, ODD = 13, 14
+# the parity light (given, like the digit-order facts): one template fitted to the ten facts 'd is even / odd' on this memory's digit rows
+Pp = torch.nn.Parameter(torch.randn(M, 2, device=dev) * 0.1); popt = torch.optim.Adam([Pp], lr=3e-2); PSIGN = torch.tensor([1.0 if d % 2 == 0 else -1.0 for d in range(10)], device=dev)
+for _ in range(600): sp_ = torch.real(Er[:10] @ torch.view_as_complex(Pp).conj()); ploss = torch.nn.functional.softplus(-sp_ * PSIGN * 10).mean(); popt.zero_grad(); ploss.backward(); popt.step()
+SPAR = torch.real(Er[:10] @ torch.view_as_complex(Pp).conj()).detach(); print(f"parity light on the digit rows: {int(((SPAR > 0) == (PSIGN > 0)).sum())}/10 facts", flush=True)
+CALL_MEMO = {}                                                                                     # (program, x, y) -> its result
+class Library(dict):
+    """the found programs, callable by name; any (re)definition forgets the remembered call results"""
+    def __setitem__(self, k, v): CALL_MEMO.clear(); super().__setitem__(k, v)
+    def update(self, *a_, **k_): CALL_MEMO.clear(); super().update(*a_, **k_)
+    def clear(self): CALL_MEMO.clear(); super().clear()
+PROGRAMS = Library()                                                                               # found programs, callable by later ones
 def instruction_set():
     pairs = [(s, t) for s in range(K) for t in range(K) if s != t]; triples = [(s, t, u) for s, t in pairs for u in range(K) if u != s and u != t]
     ins = [f"LOAD {s}>{t}" for s, t in pairs] + [f"BIND {s},{t}" for s, t in pairs] + [f"UNBIND {s},{t}" for s, t in pairs] + [f"SHIFT {s}" for s in range(K)] \
-        + [f"READ {s}" for s in range(K)] + [f"READN {s}" for s in range(K)] + [f"READ2 {s}" for s in range(K)] + [f"READMUL {s},{t}" for s, t in pairs] + [f"ORDER {s},{t}>{u}" for s, t, u in triples] \
+        + [f"READ {s}" for s in range(K)] + [f"READN {s}" for s in range(K)] + [f"READ2 {s}" for s in range(K)] + [f"READMUL {s},{t}" for s, t in pairs] + [f"ORDER {s},{t}>{u}" for s, t, u in triples] + [f"PARITY {s}>{t}" for s, t in pairs] \
         + [f"SETD {s}" for s in range(K)] + [f"SETC {s}" for s in range(K)] + [f"SET {s}<0" for s in range(K)] + [f"SET {s}<1" for s in range(K)] + [f"SET {s}<EQ" for s in range(K)] + [f"COPY {s}>{t}" for s, t in pairs] \
         + [f"WRITE {s}" for s in range(K)] + [f"ANSWER {s}" for s in range(K)]
     for name in PROGRAMS: ins += [f"CALL {name} {s},{t}>{u}" for s, t in pairs for u in range(K)]                 # a call may write its result back into an operand slot (accumulators)
@@ -123,6 +133,9 @@ def execute(progs, xs, ys, depth=0, max_cycles=NP + 1):
             elif op == "ORDER":
                 s, tt, u = nums; ds, dt = SDIG[pl.sym[:, s].clamp(min=0, max=9)], SDIG[pl.sym[:, tt].clamp(min=0, max=9)]; lt = mk & (ds < dt - 1e-4); gt = mk & (ds > dt + 1e-4)
                 pl.sym[lt, u] = LT; pl.sym[gt, u] = GT; pl.walkable[lt | gt, u] = False
+            elif op == "PARITY":
+                s, tt = nums; d = pl.sym[:, s]; ok = mk & (d >= 0) & (d <= 9) & ~pl.walkable[:, s]; ev = SPAR[d.clamp(min=0, max=9)] > 0
+                pl.sym[ok, tt] = torch.where(ev, torch.full_like(d, EVEN), torch.full_like(d, ODD))[ok]; pl.walkable[ok, tt] = False
             elif op == "CALL": calls.setdefault(sub, []).append((mk, *nums))
             elif op == "SHIFT": s, = nums; idx = mk.nonzero().flatten(); pl.put_number(idx, s, [min(v * 10, MAXN - 1) for v in pl.number_of(idx, s)])
             elif op in ("READ", "READ2", "READN"):
@@ -143,12 +156,17 @@ def execute(progs, xs, ys, depth=0, max_cycles=NP + 1):
                 if len(idx) == 0: continue
                 idx_all.append(idx); xs_ += pl.number_of(idx, s); ys_ += pl.number_of(idx, tt); us += [u] * len(idx)
             if not idx_all: continue
-            idx_all = torch.cat(idx_all); sub_pl = execute([PROGRAMS[sub]], xs_, ys_, depth + 1)
-            if PROGRAMS[sub]["kind"] == "number":
-                res = [min(v, MAXN - 1) for v in sub_pl.result()]
+            idx_all = torch.cat(idx_all); kind = PROGRAMS[sub]["kind"]
+            # a called program is an exact function of its operand values: remember what it returned (CALL_MEMO) and run only the calls not seen before
+            todo = sorted({(x, y) for x, y in zip(xs_, ys_) if (sub, x, y) not in CALL_MEMO})
+            if todo:
+                sub_pl = execute([PROGRAMS[sub]], [x for x, y in todo], [y for x, y in todo], depth + 1); vals = [min(v, MAXN - 1) for v in sub_pl.result()] if kind == "number" else sub_pl.answer.tolist()
+                for (x, y), v in zip(todo, vals): CALL_MEMO[(sub, x, y)] = v
+            res = [CALL_MEMO[(sub, x, y)] for x, y in zip(xs_, ys_)]
+            if kind == "number":
                 for u in set(us): sel = torch.tensor([i for i, uu in enumerate(us) if uu == u], device=dev); pl.put_number(idx_all[sel], u, [res[i] for i in sel.tolist()])
             else:
-                for u in set(us): sel = torch.tensor([i for i, uu in enumerate(us) if uu == u], device=dev); pl.sym[idx_all[sel], u] = sub_pl.answer[sel]; pl.walkable[idx_all[sel], u] = False
+                for u in set(us): sel = torch.tensor([i for i, uu in enumerate(us) if uu == u], device=dev); pl.sym[idx_all[sel], u] = torch.tensor([res[i] for i in sel.tolist()], device=dev); pl.walkable[idx_all[sel], u] = False
     for t in range(maxlen):
         ins = code[:, t]; active = ~loop_done & (ins >= 0)
         if cstart[:, t].any():

@@ -40,7 +40,11 @@ MULKEY = torch.stack([V[d, 0] * V[e, 1] for d in range(10) for e in range(10)]);
 Qp = torch.nn.Parameter(torch.randn(M, 2, device=dev) * 0.1); qopt = torch.optim.Adam([Qp], lr=3e-2); pairs_ = [(d, e) for d in range(10) for e in range(d + 1, 10)]
 for _ in range(600):
     s_ = torch.real(Er[:10] @ torch.view_as_complex(Qp).conj()); qloss = torch.nn.functional.softplus(-(s_[[e for d, e in pairs_]] - s_[[d for d, e in pairs_]]) * 10).mean(); qopt.zero_grad(); qloss.backward(); qopt.step()
-SDIG = torch.real(Er[:10] @ torch.view_as_complex(Qp).conj()).detach(); print(f"digit order on the chain's rows: {int(sum((SDIG[e] > SDIG[d]).item() for d, e in pairs_))}/45 facts", flush=True); LT, GT, EQ = 10, 11, 12
+SDIG = torch.real(Er[:10] @ torch.view_as_complex(Qp).conj()).detach(); print(f"digit order on the chain's rows: {int(sum((SDIG[e] > SDIG[d]).item() for d, e in pairs_))}/45 facts", flush=True); LT, GT, EQ = 10, 11, 12; EVEN, ODD = 13, 14
+# the parity light (given, like the digit-order facts): one template fitted to the ten facts 'd is even / odd' on this memory's digit rows
+Pp = torch.nn.Parameter(torch.randn(M, 2, device=dev) * 0.1); popt = torch.optim.Adam([Pp], lr=3e-2); PSIGN = torch.tensor([1.0 if d % 2 == 0 else -1.0 for d in range(10)], device=dev)
+for _ in range(600): sp_ = torch.real(Er[:10] @ torch.view_as_complex(Pp).conj()); ploss = torch.nn.functional.softplus(-sp_ * PSIGN * 10).mean(); popt.zero_grad(); ploss.backward(); popt.step()
+SPAR = torch.real(Er[:10] @ torch.view_as_complex(Pp).conj()).detach(); print(f"parity light on the digit rows: {int(((SPAR > 0) == (PSIGN > 0)).sum())}/10 facts", flush=True)
 CALL_MEMO = {}                                                                                     # (program, x, y) -> its result
 class Library(dict):
     """the found programs, callable by name; any (re)definition forgets the remembered call results"""
@@ -52,7 +56,7 @@ _INS_CACHE = {}
 def instruction_set():
     pairs = [(s, t) for s in range(K) for t in range(K) if s != t]; triples = [(s, t, u) for s, t in pairs for u in range(K) if u != s and u != t]
     ins = [f"LOAD {s}>{t}" for s, t in pairs] + [f"NUM {s}>{t}" for s, t in pairs] + [f"BIND {s},{t}" for s, t in pairs] + [f"UNBIND {s},{t}" for s, t in pairs] + [f"SHIFT {s}" for s in range(K)] \
-        + [f"READ {s}" for s in range(K)] + [f"READN {s}" for s in range(K)] + [f"READ2 {s}" for s in range(K)] + [f"READMUL {s},{t}" for s, t in pairs] + [f"ORDER {s},{t}>{u}" for s, t, u in triples] \
+        + [f"READ {s}" for s in range(K)] + [f"READN {s}" for s in range(K)] + [f"READ2 {s}" for s in range(K)] + [f"READMUL {s},{t}" for s, t in pairs] + [f"ORDER {s},{t}>{u}" for s, t, u in triples] + [f"PARITY {s}>{t}" for s, t in pairs] \
         + [f"SETD {s}" for s in range(K)] + [f"SETC {s}" for s in range(K)] + [f"SET {s}<0" for s in range(K)] + [f"SET {s}<1" for s in range(K)] + [f"SET {s}<EQ" for s in range(K)] + [f"COPY {s}>{t}" for s, t in pairs] \
         + [f"WRITE {s}" for s in range(K)] + [f"ANSWER {s}" for s in range(K)]
     for name in PROGRAMS: ins += [f"CALL {name} {s},{t}>{u}" for s, t in pairs for u in range(K)]                 # a call may write its result back into an operand slot (accumulators)
@@ -143,6 +147,9 @@ def execute(progs, xs, ys, depth=0, max_cycles=NP + 1, probe=None, track=False):
             elif op == "ORDER":
                 ds, dt = SDIG[pl.sym[idx, a0].clamp(min=0, max=9)], SDIG[pl.sym[idx, a1].clamp(min=0, max=9)]; lt = ds < dt - 1e-4; gt = ds > dt + 1e-4
                 pl.sym[idx[lt], a2[lt]] = LT; pl.sym[idx[gt], a2[gt]] = GT; pl.walkable[idx[lt | gt], a2[lt | gt]] = False
+            elif op == "PARITY":                                                                                     # the units digit's region: even or odd, by the parity light
+                d = pl.sym[idx, a0]; ok = (d >= 0) & (d <= 9) & ~pl.walkable[idx, a0]; r_ = idx[ok]; ev = SPAR[d[ok]] > 0
+                pl.sym[r_, a1[ok]] = torch.where(ev, torch.full_like(d[ok], EVEN), torch.full_like(d[ok], ODD)); pl.walkable[r_, a1[ok]] = False
             elif op == "CALL":
                 for iid in torch.unique(ins[idx]).tolist(): _, nums, sub, _ = PARSED[iid]; calls.setdefault(sub, []).append((active & (ins == iid), *nums))
             elif op == "SHIFT": pl.path[idx, a0] = phop(cnorm(pl.path[idx, a0] + Er[0][None]), NEXT)                                                              # x10 = append a zero

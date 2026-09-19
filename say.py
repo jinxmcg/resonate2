@@ -38,7 +38,7 @@ class Session:
         ep = Ep(); ep.B = 1; ep.cand = torch.cat([E()[None], self.fresh[None]], 1); ep.cmask = torch.ones(1, V + NF, dtype=torch.bool, device=dev); ep.sents = [[ids]]
         wid = torch.tensor([ids], device=dev); mask = torch.ones(1, len(ids), dtype=torch.bool, device=dev); ep.z = [chain(ep.cand[0][wid], mask)]
         with torch.no_grad(): calls, ops, bnp = execute([READER], ep, 0, self.st); out = answers_of(calls, ops, ep, bnp, self.st)[0]
-        name = {LT: "smaller", GT: "bigger", EQ: "equal"}.get(out, out) if isinstance(out, int) and out in (LT, GT, EQ) else out
+        name = {LT: "smaller", GT: "bigger", EQ: "equal", 13: "even", 14: "odd"}.get(out, out) if isinstance(out, int) and out in (LT, GT, EQ, 13, 14) else out
         dn = int(self.st.def_name[0]); new_def = dn >= V and dn not in self.defs
         if new_def: self.defs[dn] = (self.st.def_cmd[0], self.st.def_ops[0])
         return " ".join(toks), ("(no answer — " + (f"defined {self.fresh_words[dn - V]} = {self.st.def_cmd[0]} {self.st.def_ops[0]}" if new_def else "nothing called") + ")") if out is None else name

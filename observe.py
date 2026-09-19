@@ -13,12 +13,13 @@ import sys, json, time, numpy as np, torch
 ARGS = sys.argv[1:]; VALUED = ("--target", "--examples-shown", "--name"); FLAGS = ()
 sys.argv = [sys.argv[0]] + [x for i, x in enumerate(ARGS) if x not in VALUED and (i == 0 or ARGS[i - 1] not in VALUED)]
 def opt(name, default=None): return ARGS[ARGS.index(name) + 1] if name in ARGS else default
-TARGET = opt("--target", "sumd"); SHOWN = [int(v) for v in opt("--examples-shown", "123,90,5").split(",")]; NAME = opt("--name", {"sumd": "digitsum", "double": "double", "triple": "triple"}.get(TARGET, TARGET))   # the word the worked example uses: the program's label
+TARGET = opt("--target", "sumd"); SHOWN = [int(v) for v in opt("--examples-shown", "123,90,5").split(",")]; NAME = opt("--name", {"sumd": "digitsum", "double": "double", "triple": "triple", "iseven": "iseven"}.get(TARGET, TARGET))   # the word the worked example uses: the program's label
 src = open(__file__.replace("observe.py", "digits.py")).read(); src = src[:src.index("# ------------------------------------------------------------------ the five found programs")]
 g = {"__name__": "digits"}; exec(compile(src, "digits.py", "exec"), g); globals().update({k: v for k, v in g.items() if not k.startswith("__")})
 found = json.load(open(HERE / "results/places/found_programs.json")); PROGRAMS.update(found)
 def digitsum(x): return sum(int(c) for c in str(x))
-TASKS = {"sumd": lambda x, y: digitsum(x), "double": lambda x, y: 2 * x, "triple": lambda x, y: 3 * x}
+TASKS = {"sumd": lambda x, y: digitsum(x), "double": lambda x, y: 2 * x, "triple": lambda x, y: 3 * x, "iseven": lambda x, y: EVEN if x % 2 == 0 else ODD}
+KIND = "verdict" if TARGET == "iseven" else "number"
 def events(x):
     """the worked example as events, in the machine's reading order (units first)"""
     ds = [int(c) for c in str(x)][::-1]
@@ -26,9 +27,10 @@ def events(x):
         ev = [("value", 0)]; tot = 0
         for d in ds: ev += [("digit", d), ("call", "add", tot, d, tot + d)]; tot += d
         return ev + [("answer", tot)]
+    if TARGET == "iseven": code = EVEN if x % 2 == 0 else ODD; return [("digit", ds[0]), ("parity", code), ("answer", code)]   # 'the last digit is 4; 4 is even; even'
     if TARGET == "double": return [("call", "add", x, x, 2 * x), ("answer", 2 * x)]
     if TARGET == "triple": return [("call", "add", x, x, 2 * x), ("call", "add", 2 * x, x, 3 * x), ("answer", 3 * x)]
-NAMED = sorted({e[1] for x in SHOWN for e in events(x) if e[0] == "call"}); PLUMB = ("LOAD", "NUM", "COPY", "SET", "SHIFT", "ANSWER")
+NAMED = sorted({e[1] for x in SHOWN for e in events(x) if e[0] == "call"}); PLUMB = ("LOAD", "NUM", "COPY", "SET", "SHIFT", "ANSWER", "PARITY")
 ALPHA = [n for n in instruction_set() if n.split()[0] in PLUMB or (n.split()[0] == "CALL" and n.split()[1] in NAMED)]
 PREP = [n for n in ALPHA if n.split()[0] in ("NUM", "COPY", "SET", "LOAD", "SHIFT")]
 print(f"observer: alphabet {len(ALPHA)} (named callables {NAMED} + plumbing), examples shown {SHOWN}", flush=True)
@@ -42,11 +44,13 @@ def realised(pl, ev, rows):
             wk = pl.walkable[rows, s_]
             if wk.any(): nums = torch.tensor(pl.number_of(rows[wk], s_), device=dev); out[wk.nonzero().flatten()] |= nums == ev[1]
     elif kind == "call": out = torch.tensor([((ev[1], ev[2], ev[3]) in pl.calls_seen[r]) or ((ev[1], ev[3], ev[2]) in pl.calls_seen[r]) for r in rows.tolist()], device=dev)
+    elif kind == "parity": out = (pl.sym[rows] == ev[1]).any(1)
+    elif kind == "answer" and KIND == "verdict": out = pl.answer[rows] == ev[1]
     elif kind == "answer": res = pl.result(); out = torch.tensor([res[i] == ev[1] and int(pl.ans_slot[r]) >= 0 for i, r in enumerate(rows.tolist())], device=dev)
     return out
 def run_prefixes(prefixes, x):
     """execute each prefix (as an init-only program) on x; returns the Places state"""
-    progs = [{"kind": "number", "init": list(pf), "body": [], "outro": [], "stop": 0} for pf in prefixes]
+    progs = [{"kind": KIND, "init": list(pf), "body": [], "outro": [], "stop": 0} for pf in prefixes]
     return execute(progs, [x], [47], track=True)                                                                   # a non-zero second operand: no free zero in a slot
 def slots_of(pl, r=0):
     """what each slot holds, by the lights: ('num', value) for a walkable place, ('dig', d) for a digit tag, None if empty"""
@@ -54,6 +58,7 @@ def slots_of(pl, r=0):
     for s_ in range(K):
         if bool(pl.walkable[r, s_]): out.append(("num", pl.number_of(torch.tensor([r], device=dev), s_)[0]))
         elif 0 <= int(pl.sym[r, s_]) <= 9: out.append(("dig", int(pl.sym[r, s_])))
+        elif int(pl.sym[r, s_]) >= 10: out.append(("sym", int(pl.sym[r, s_])))
         else: out.append(None)
     return out
 def derive(pl, ev, prefer):
@@ -72,6 +77,7 @@ def derive(pl, ev, prefer):
         else: pairs = [(u, v) for u in A for v in B if u != v] + [(v, u) for u in A for v in B if u != v]
         outs = lambda u, v: [u, v] + free                                                                            # the result replaces an operand (a running total) or takes a free slot
         return [[f"CALL {name} {u},{v}>{w}"] for u, v in pairs for w in outs(u, v)]
+    if ev[0] == "parity": return [[f"PARITY {s_}>{u}"] for s_ in range(K) if st[s_] is not None and st[s_][0] == "dig" for u in free]
     if ev[0] == "answer": return [[f"ANSWER {s_}"] for s_ in holds(ev[1])]
     return []
 def observe(x, prefer, beam=8):
@@ -93,7 +99,7 @@ def observe(x, prefer, beam=8):
         beams = uniq[:beam]; prefer[ev[0]] = tuple(beams[0][-1:]); print(f"  event {ev[:2] if ev[0] != 'call' else ev[1:4]}: {len(survivors)} derived moves realise it, beam keeps {len(beams)}, first {beams[0][-1:]}   [{time.time()-t0:.0f}s]", flush=True)
     return beams[0]
 def show(p): return f"init [{', '.join(p['init'])}]  body [{', '.join(p['body'])}]  outro [{', '.join(p['outro'])}]  stop {p['stop']}"
-TRUTH[TARGET] = ({"kind": "number"}, TASKS[TARGET]); REGRESSION[TARGET] = {"sumd": [(0, 7), (9, 0), (99, 3), (999999999, 0), (1000000000, 5), (123456789, 0), (909090909090, 1), (999999999999, 0), (9999999999999, 2), (8888888888888, 0)], "double": [(0, 3), (5, 0), (99, 99), (999999, 1)], "triple": [(0, 9), (4, 0), (99, 1), (333333, 5)]}[TARGET]
+TRUTH[TARGET] = ({"kind": KIND}, TASKS[TARGET]); REGRESSION[TARGET] = {"iseven": [(0, 3), (1, 0), (10, 5), (11, 2), (999999999999, 1), (1000000000000, 4), (2468, 0), (13579, 7)], "sumd": [(0, 7), (9, 0), (99, 3), (999999999, 0), (1000000000, 5), (123456789, 0), (909090909090, 1), (999999999999, 0), (9999999999999, 2), (8888888888888, 0)], "double": [(0, 3), (5, 0), (99, 99), (999999, 1)], "triple": [(0, 9), (4, 0), (99, 1), (333333, 5)]}[TARGET]
 _sample = sample
 def sample(n, max_digits, task):
     if task != TARGET: return _sample(n, max_digits, task)
@@ -109,7 +115,7 @@ demos = [tr for tr in traces.values() if tr]
 def from_demo():
     tr = demos[rng.integers(len(demos))]; blen = int(rng.integers(1, 9)); start = int(rng.integers(0, max(1, len(tr) - blen + 1))); body = tr[start:start + blen]
     init = tr[:start][-int(rng.integers(0, 6)):] if start > 0 and rng.random() < 0.8 else []; outro = tr[start + blen:][-int(rng.integers(0, 4)):] if rng.random() < 0.8 else []
-    return {"kind": "number", "init": list(init), "body": list(body) or [tr[0]], "outro": list(outro), "stop": int(rng.integers(0, K))}
+    return {"kind": KIND, "init": list(init), "body": list(body) or [tr[0]], "outro": list(outro), "stop": int(rng.integers(0, K))}
 def mutate(p):
     q = {k: (list(v) if isinstance(v, list) else v) for k, v in p.items()}; part = rng.choice(["body", "body", "init", "outro"]); seq = q[part]; r = rng.random(); pool = [m for tr in demos for m in tr]
     if r < 0.4 and seq: seq[rng.integers(len(seq))] = pool[rng.integers(len(pool))]
@@ -141,6 +147,6 @@ if demos:
         print(f"  {TARGET} by digits (>3 never shown): " + " ".join(f"{L}d {e:.3f}" if L != "reg" else f"regression {e:.3f}" for L, e in v.items()), flush=True)
         res.update({"found": found_p is not None, "generation": gen, "candidates": gen * 150, "program": prog, "verify": v, "name": NAME})
         if found_p is not None:                                                                                     # accepted -> labelled in the library, automatically: from here on it is a call, not a search
-            lib = json.load(open(HERE / "results/places/found_programs.json")); lib[NAME] = {**prog, "kind": "number", "arity": 1, "named_by": "worked example", "shown": SHOWN}
+            lib = json.load(open(HERE / "results/places/found_programs.json")); lib[NAME] = {**prog, "kind": KIND, "arity": 1, "named_by": "worked example", "shown": SHOWN}
             json.dump(lib, open(HERE / "results/places/found_programs.json", "w"), indent=1); print(f"  labelled '{NAME}' in the library ({len(lib)} programs); callable by name from now on", flush=True)
 (HERE / "results/observe").mkdir(parents=True, exist_ok=True); save_json(res, HERE / f"results/observe/{TARGET}.json"); print(f"saved ({time.time()-t0:.0f}s)", flush=True)
