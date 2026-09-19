@@ -11,7 +11,7 @@ The argument for the write-up is in [`paper_log.md`](paper_log.md). What was opt
 
 ## The two results people ask about first
 
-**CLUTRR from the graph, 0.99 at ten hops** (`kinship_ops.py`, `results/kin_full_k8/`, `logs/kin_full_k8.log`).
+**CLUTRR from the graph, 0.99 at ten hops** (wrong: ≤ 1.2 % at 4–10 hops and 2.2 % ± 2.3 at three hops over ten seeds — see the table; every "1.000" in this repository is sampled exactness on n cases per length plus a regression set, not a proof over all numbers) (`kinship_ops.py`, `results/kin_full_k8/`, `logs/kin_full_k8.log`).
 Twenty kinship words become twenty ResonatE operators on 64-dimensional places (k = 8, four 16×16 blocks per word,
 ~20k complex parameters). A training story of 2–3 hops says only: the product of the chain's operators must land where
 the target word's operator lands. Test stories of 2–10 hops, all 1,146 of them:
@@ -24,7 +24,8 @@ the target word's operator lands. Test stories of 2–10 hops, all 1,146 of them
 | wrong, ten seeds | 0.000 | 0.022 ± .023 | 0.004 ± .002 | 0.009 ± .003 | 0.012 ± .006 | 0.006 ± .006 | 0.001 ± .004 | 0.004 ± .004 | 0.003 ± .006 |
 
 Ten seeds (`kin_seeds.sh`, `results/kin_seeds/`, `logs/kin_seed_*.log`; ten-hop exact per seed 0.992 0.983 0.983 0.983
-1.000 0.992 1.000 0.992 0.983 0.975). Every remaining miss is a chain with two logically valid answers (*wife → son →
+1.000 0.992 1.000 0.992 0.983 0.975). Note the wrong rate at three hops, 0.022 ± 0.023 over seeds: seed 0 abstained on the
+ambiguous chain, other seeds answer it one way or the other. Every remaining miss is a chain with two logically valid answers (*wife → son →
 grandmother* is a mother or a mother-in-law; *… → daughter → sister* a daughter or a niece) and the model's two top
 words are those two, 0.00–0.05 apart — kinship is one-to-many and the benchmark labels one member. We tried a
 second, set-valued scorer by simulating families (`kin_valid.py`) and dropped it: CLUTRR's own rules differ from
@@ -45,7 +46,7 @@ python kinship_ops.py --k 8 --steps 4000 --probes 64 --shuffle-targets --out res
 
 **Arithmetic from three worked examples, then in words** (`places.py`, `onemem.py`, `read_math.py`, `say.py`).
 Eighteen stored rows (digits, place anchors) and two moves hold every number below a billion as a place you walk to
-(grown to a trillion by continuation in 513 s: `grow.py --np 12`, `results/grow_1e12/`); add, sub, cmp, muld, mul are
+(grown to a trillion by continuation in 513 s: `grow.py --np 12`, `results/grow_1e12/`; and, without place rows, the digit chain `digit_chain.py` — note that the published k = 12 chain checkpoint misreads runs of nines from 9 digits, the k = 20 checkpoint used for the program results does not, and the trainer now samples runs); add, sub, cmp, muld, mul are
 programs over lights found from three worked examples each, exact at 1–9 digits, stored as pages in the same table —
 and, unchanged, exact at 1–12 digits on the trillion table (`results/places_1e12_found.json`); and a reader found the same way takes commands and definitions:
 
