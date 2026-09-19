@@ -3,7 +3,7 @@
 Code, results and logs behind [resonate.page/resonate2](https://resonate.page/resonate2/): the ResonatE knowledge-graph
 memory of [jinxmcg/resonate](https://github.com/jinxmcg/resonate) — unit-norm rows, block-diagonal relation operators,
 **unchanged** — asked to hold numbers it never stored, to learn arithmetic from three worked examples, to take
-instructions in words, and to reason over kinship chains it has never seen. One seed, one GTX 1080 Ti, negatives kept.
+instructions in words, and to reason over kinship chains it has never seen. One GTX 1080 Ti, negatives kept; ten seeds on the CLUTRR headline, one seed elsewhere.
 
 The full research record, part by part with every table and every negative, is in [`RESEARCH.md`](RESEARCH.md).
 The argument for the write-up is in [`paper_log.md`](paper_log.md). What was optimised and what was not is in
@@ -77,9 +77,9 @@ PyTorch 2.6 with CUDA was used; the runs assume a GPU. The Part-1 experiments (`
 
 ## What is and is not established
 
-One seed throughout. The machine's primitives and the word→program aliases are ours; the programs are found, the
+Ten seeds on the CLUTRR headline, one seed on the arithmetic and program-search tables. The machine's primitives and the word→program aliases are ours; the programs are found, the
 instruction set is not; "found at generation 1" means the search selected the program from worked traces. Owed:
-seeds on the headline tables, NPI-style and VSA baselines on the same tasks, a real-graph result. From raw text CLUTRR
+seeds on the arithmetic tables, NPI-style and VSA baselines on the same tasks, a real-graph result. From raw text CLUTRR
 is a negative (0.08 exact, 0.90 abstain) whose cause is located in the benchmark's fact form (`RESEARCH.md`, Part 21b).
 
 MIT license.
