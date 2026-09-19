@@ -375,3 +375,31 @@ one holographic memory. Held-out scenes: recognise → retrieve → execute exac
 variants explored — chance 2 %. Real solved tasks: an exact program in 0.1 s on 10 of 113 by retrieval alone; the dream router lifts
 recognition of the solving family to 49 % top-3 given only the demos; gate 8/8. The kid was shown gravity on many scenes; now, seeing
 things settle, it reaches for gravity first — and keeps alignment and shift in hand, never declaring. 113 solved, 4 wrong ever.
+
+### 2026-09-19 — ARC: hierarchical retrieval with learned signatures; recognition finds 16 of 113 solved tasks by itself
+A flat effect-memory broke when the procedure space grew from 135 to 492 (top-3 30 % → 5 %): no hand signature discriminates that
+many. The fix was the same discipline that fixed the field prior — learn the reader: a bundle over (signature ⊛ label) with the field
+subset chosen by leave-one-out on the dreams, and a hierarchy: family first, then the procedure within the family, then the variants.
+Over the full space: family 72 %, procedure 57 %, with exploration 67 % on held-out dreams; on the real solved tasks recognition alone
+finds an exact program on 16 of 113 in under a second each. The dreams label themselves; the readers pick what to look at; the
+procedures are the same executable objects the arithmetic calls by name. 113 solved, 4 wrong ever.
+
+### 2026-09-19 — seeds on the CLUTRR headline
+Ten seeds, k = 8, 20k steps: exact at ten hops 0.988 ± 0.008 (0.975–1.000), wrong 0.003 ± 0.006; all lengths in
+`results/kin_seeds/summary.json`. Every miss in seed 0 (30 stories) is a two-valid-answer chain with the two words
+0.00–0.05 apart. A set-valued scorer by family simulation was tried and dropped: CLUTRR's kinship differs from
+real-world kinship (wife's sister = "sister"), so it would be a second ground truth of our own making. Code and results
+public at github.com/jinxmcg/resonate2; the page carries the ten-seed rows.
+
+### 2026-09-19 — ARC: the memory grows from its own solves; the solve-predicting reader does not yet work
+The loop the user asked for runs unattended over the training set: recognise by effect, explore, and every gated solve leaves its stage
+skeletons — constants as slots, the select kept — as named procedures whose effects are bound in the memory, so the next puzzle that
+shows the effect retrieves the block and fills it from its own demos. Two negatives recorded plainly: recognition alone finds 17 of
+1,000 (fast confirmation of what search finds, not new coverage), and a reader trained to predict WHETHER a retrieved family will solve
+is uninformative on the real distribution — 78 positives among 9,700 pairs, a one-field bundle. What it needs is what only more solves
+give. 113 solved, 4 wrong ever.
+
+### 2026-09-19 — 10¹² by continuation
+513 s, three new anchors, everything 1.000 at 1–12 digits, and the five found programs execute unchanged on the new
+table (mul limited by range at 12 digits). For the paper: the growth claim (Part 10) and the program-generalisation
+claim (Part 14) compose — knowledge added by continuation is immediately usable by programs found before it existed.

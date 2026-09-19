@@ -1,0 +1,48 @@
+path BEFORE continuation (2 new random rows, 9-term chains): walk-back exact by digits 1d 0.00 2d 0.00 3d 0.00 4d 0.00 5d 0.00 6d 0.00 7d 0.00 8d 0.00 9d 0.00 10d 0.00 11d 0.00 12d 0.00
+path step 1/3000  walk loss 0.6662  lr 0.003  tau 44.5  elapsed 2s  ETA 4649s
+path step 250/3000  walk loss 0.0014  lr 0.003  tau 46.3  elapsed 40s  ETA 440s
+path step 500/3000  walk loss 0.0003  lr 0.003  tau 48.7  elapsed 77s  ETA 383s
+path step 750/3000  walk loss 0.0001  lr 0.003  tau 50.3  elapsed 114s  ETA 341s
+path step 1000/3000  walk loss 0.0001  lr 0.003  tau 51.5  elapsed 151s  ETA 302s
+path step 1250/3000  walk loss 0.0000  lr 0.003  tau 52.4  elapsed 187s  ETA 262s
+path step 1500/3000  walk loss 0.0000  lr 0.003  tau 53.3  elapsed 223s  ETA 223s
+path step 1750/3000  walk loss 0.0000  lr 0.003  tau 54.1  elapsed 259s  ETA 185s
+path step 2000/3000  walk loss 0.0000  lr 0.003  tau 54.9  elapsed 296s  ETA 148s
+path step 2250/3000  walk loss 0.0000  lr 0.003  tau 55.6  elapsed 332s  ETA 111s
+path step 2500/3000  walk loss 0.0000  lr 0.003  tau 56.2  elapsed 369s  ETA 74s
+path step 2750/3000  walk loss 0.0000  lr 0.003  tau 56.9  elapsed 405s  ETA 37s
+path step 3000/3000  walk loss 0.0000  lr 0.003  tau 57.5  elapsed 440s  ETA 0s
+path AFTER continuation: walk-back exact by digits 1d 1.000 2d 1.000 3d 1.000 4d 1.000 5d 1.000 6d 1.000 7d 1.000 8d 1.000 9d 1.000 10d 1.000 11d 1.000 12d 1.000
+value BEFORE continuation: held-out equations satisfied by place p0 1.00 p1 1.00 p2 1.00 p3 1.00 p4 1.00 p5 1.00 p6 1.00 p7 1.00 p8 0.63 p9 0.25 p10 0.18 p11 0.21
+value step 1/3000  equation loss 0.55642  distinctness 0.0664  lr 0.01  elapsed 441s  ETA 1321348s
+value step 250/3000  equation loss 0.03271  distinctness 0.0662  lr 0.01  elapsed 446s  ETA 4903s
+value step 500/3000  equation loss 0.00146  distinctness 0.0662  lr 0.01  elapsed 451s  ETA 2257s
+value step 750/3000  equation loss 0.00003  distinctness 0.0664  lr 0.01  elapsed 458s  ETA 1373s
+value step 1000/3000  equation loss 0.00000  distinctness 0.0664  lr 0.01  elapsed 464s  ETA 927s
+value step 1250/3000  equation loss 0.00000  distinctness 0.0663  lr 0.01  elapsed 470s  ETA 658s
+value step 1500/3000  equation loss 0.00000  distinctness 0.0663  lr 0.01  elapsed 475s  ETA 475s
+value step 1750/3000  equation loss 0.00000  distinctness 0.0663  lr 0.01  elapsed 481s  ETA 343s
+value step 2000/3000  equation loss 0.00000  distinctness 0.0664  lr 0.01  elapsed 487s  ETA 243s
+value step 2250/3000  equation loss 0.00000  distinctness 0.0665  lr 0.01  elapsed 492s  ETA 164s
+value step 2500/3000  equation loss 0.00000  distinctness 0.0662  lr 0.01  elapsed 498s  ETA 100s
+value step 2750/3000  equation loss 0.00000  distinctness 0.0663  lr 0.01  elapsed 503s  ETA 46s
+value step 3000/3000  equation loss 0.00000  distinctness 0.0664  lr 0.01  elapsed 511s  ETA 0s
+value AFTER continuation: held-out equations satisfied by place p0 1.000 p1 1.000 p2 1.000 p3 1.000 p4 1.000 p5 1.000 p6 1.000 p7 1.000 p8 1.000 p9 1.000 p10 1.000 p11 1.000
+1-digit sums (never trained): exact 1.000
+2-digit sums (never trained): exact 1.000
+3-digit sums (never trained): exact 1.000
+4-digit sums (never trained): exact 1.000
+5-digit sums (never trained): exact 1.000
+6-digit sums (never trained): exact 1.000
+7-digit sums (never trained): exact 1.000
+8-digit sums (never trained): exact 1.000
+9-digit sums (never trained): exact 1.000
+10-digit sums (never trained): exact 1.000
+11-digit sums (never trained): exact 1.000
+12-digit sums (never trained): exact 1.000
+compare on unseen pairs below 10^12: exact 0.721   by distance 10^0 0.652  10^1 0.704  10^10 0.731  10^2 0.768  10^3 0.708  10^4 0.729  10^5 0.763  10^6 0.779  10^7 0.727  10^8 0.731  10^9 0.706
+123456789 + 876543211 = 1000000000: read 1000000000   123456789 vs 876543211: x < y
+999999999 + 0 = 999999999: read 999999999   999999999 vs 0: x > y
+500000000 + 499999999 = 999999999: read 999999999   500000000 vs 499999999: x < y
+347 + 437 = 784: read 784   347 vs 437: x < y
+saved results/grow_1e12 (513s)

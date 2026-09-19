@@ -744,3 +744,25 @@ facts it is 0.12.) The consequence is architectural, not lexical: the reasoner m
 the text gives it, which needs exact inverses in the operators — blocks kept unitary by parametrisation so the reverse
 hop is the inverse (free reverse hops learned nothing; the adjoint drifted to cosine ≈ 0.5). That is the next
 experiment on this line, on the graph task first.
+
+# Part 22 — to a trillion by continuation; the found programs unchanged (2026-09-19, `grow.py --np 12`)
+
+The Part-10 recipe once more: from the 10⁹ table (18 rows), three new place anchors (10⁹, 10¹⁰, 10¹¹), 30 new value
+anchors, operators and old rows learning with old numbers replayed; 3,000 + 3,000 steps, **513 s**. Before the
+continuation every chain reads 0.00 (three new leading-zero terms push every old term deeper — the fixed-length chain's
+known cost); after it:
+
+| 10¹² table | 1–12 digits |
+|---|---|
+| walk-back on unseen numbers | 1.000 at every length |
+| value code, held-out equations by place | 1.000 at every place |
+| never-trained sums | 1.000 at every length |
+| comparison, 6,000 unseen pairs, distances 1 … 10¹¹ | 1.000 (digit-order template re-fitted: 4 s, 45 facts) |
+| **the five found programs of Part 14, unchanged** | add / sub / cmp / muld 1.000 at 1–12 digits; mul 1.000 to 11 digits, 0.933 at 12 (products beyond the table's range) |
+
+The programs were found on the 10⁹ table from three-digit examples; they reference slots and moves, never the table's
+width, and run exactly on numbers three places longer than the table they were found on could hold. The only thing that
+had to be re-fitted was the ten-symbol digit-order light (`Q`), because the digit rows moved during the continuation;
+`places.py` and `compare.py` now take the number of places from the checkpoint. 10¹⁵ is the same step again. The
+unbounded version — a number as a chain of its digits under one repeated move, no place rows — is Part 23's candidate;
+its ceiling would be the depth at which the walk stays exact rather than a row count.

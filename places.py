@@ -18,9 +18,10 @@ from common import *
 ap = argparse.ArgumentParser(); ap.add_argument("--path", default="results/grow_1e9_moves/path.pt"); ap.add_argument("--value", default="results/grow_1e9_moves/value.pt"); ap.add_argument("--order", default="results/compare/digit_order.pt")
 ap.add_argument("--slots", type=int, default=6); ap.add_argument("--pop", type=int, default=200); ap.add_argument("--gens", type=int, default=150); ap.add_argument("--examples", type=int, default=24); ap.add_argument("--max-digits", type=int, default=3)
 ap.add_argument("--seed", type=int, default=0); ap.add_argument("--out", default="results/places"); ap.add_argument("--only-check", action="store_true"); ap.add_argument("--resume-programs", default=""); ap.add_argument("--only", default="")
-a = ap.parse_args(); torch.manual_seed(a.seed); rng = np.random.default_rng(a.seed); dev = torch.device("cuda"); t0 = time.time(); NP = 9; K = a.slots; MAXN = 10 ** NP
+a = ap.parse_args(); torch.manual_seed(a.seed); rng = np.random.default_rng(a.seed); dev = torch.device("cuda"); t0 = time.time(); K = a.slots
+pk = torch.load(HERE / a.path, map_location=dev, weights_only=False); pcfg = pk["config"]; NP = int(pcfg.get("np", 9)); MAXN = 10 ** NP                                    # the number of places comes from the table
 NODES = [str(d) for d in range(10)] + [str(10 ** k) for k in range(1, NP)]; nid = {n: i for i, n in enumerate(NODES)}; PLUS, TIMES = 0, 1; NR = 2
-pk = torch.load(HERE / a.path, map_location=dev, weights_only=False); pcfg = pk["config"]; NR = pk["model"]["H"].shape[0] // 2                      # the table may hold more rows/relations than the number part (one memory)
+NR = pk["model"]["H"].shape[0] // 2                      # the table may hold more rows/relations than the number part (one memory)
 pmodel = ResonatE(pk["model"]["E"].shape[0], 2 * NR, k=pcfg["k"], block=True, block_size=pcfg["block"]).to(dev); pmodel.load_state_dict(pk["model"]); pmodel.eval(); pmodel.requires_grad_(False)
 ANCH = torch.tensor([nid["0"]] + [nid[str(10 ** k)] for k in range(1, NP)], device=dev); Er = cnorm(pmodel.E).detach(); M = Er.shape[1]
 def phop(z, r): return pmodel.hop(z, torch.full((z.shape[0],), r, device=dev, dtype=torch.long))

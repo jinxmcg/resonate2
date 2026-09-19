@@ -44,9 +44,10 @@ python kinship_ops.py --k 8 --steps 4000 --probes 64 --shuffle-targets --out res
 ```
 
 **Arithmetic from three worked examples, then in words** (`places.py`, `onemem.py`, `read_math.py`, `say.py`).
-Eighteen stored rows (digits, place anchors) and two moves hold every number below a billion as a place you walk to;
-add, sub, cmp, muld, mul are programs over lights found from three worked examples each, exact at 1–9 digits, stored
-as pages in the same table; and a reader found the same way takes commands and definitions:
+Eighteen stored rows (digits, place anchors) and two moves hold every number below a billion as a place you walk to
+(grown to a trillion by continuation in 513 s: `grow.py --np 12`, `results/grow_1e12/`); add, sub, cmp, muld, mul are
+programs over lights found from three worked examples each, exact at 1–9 digits, stored as pages in the same table —
+and, unchanged, exact at 1–12 digits on the trillion table (`results/places_1e12_found.json`); and a reader found the same way takes commands and definitions:
 
 ```
 python say.py "add 3421 and 57 ." "to double something , add it to itself ." "double 34324 ."
