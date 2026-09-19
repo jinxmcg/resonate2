@@ -865,7 +865,7 @@ all-nines regression cases. No rule folds the loop.
 
 The found program: init `SET 2<0`; body `LOAD 0>3, CALL add 2,3>2`; outro `ANSWER 2`. It was then **labelled**
 `digitsum` in the library — a write — and answers by name through the language layer: `digitsum 12346 .` → 16,
-`digitsum 999999999 .` → 72 where 81 is right — the program is exact on both machines (81 on the anchored table directly); the *reader* drops a digit at 9-digit numerals, one past the length it was verified to (7). The label step is automatic: the observer writes an accepted program into the library under the worked example's word, and the language layer labels every library program on load. The brute-force arm of Part 24 on the same task (named
+`digitsum 999999999 .` → 72 where 81 is right — the program is exact on both machines (81 on the anchored table directly); the *sentence memory* misreads a numeral that is a run of one digit (4444444, 999999999) one token short — Part 23b's weakness again, now in the language memory, whose training strings had no runs either; numerals with distinct digits read exactly to 8 digits (`digitsum 12345678 .` → 36). Fix as before: runs in the training strings; the memory is being retrained and the reader re-found on it. The label step is automatic: the observer writes an accepted program into the library under the worked example's word, and the language layer labels every library program on load. The brute-force arm of Part 24 on the same task (named
 callables + plumbing, proposer, worked-example credit) was at 7,800 candidates without a find when stopped.
 
 What was learned on the way, each a closed leak in the machine: an empty slot read as the number 0 in a call (now a

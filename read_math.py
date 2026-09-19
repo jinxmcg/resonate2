@@ -62,7 +62,10 @@ def light(z, cand, cmask):
     sc = torch.real((z[:, None, :] * cand.conj()).sum(-1)); sc[~cmask] = -1e9; return sc
 def random_tokens(B, Lmax=20, Lmin=2):
     fresh = cnorm(torch.randn(B, NF, LM, dtype=torch.complex64, device=dev)); cand = torch.cat([E()[None].expand(B, -1, -1), fresh], 1); cmask = torch.ones(B, V + NF, dtype=torch.bool, device=dev)
-    L = torch.tensor(rng.integers(Lmin, Lmax + 1, B), device=dev); wid = torch.tensor(rng.integers(0, V + NF, (B, Lmax)), device=dev); mask = torch.arange(Lmax, device=dev)[None] < L[:, None]
+    L = torch.tensor(rng.integers(Lmin, Lmax + 1, B), device=dev); w = rng.integers(0, V + NF, (B, Lmax))
+    runs = rng.random(B) < 0.15                                                                                      # runs of one token (a numeral like 4444444) never arise from random strings: a memory trained without them misreads them (Part 23b)
+    for b in np.nonzero(runs)[0]: r0 = int(rng.integers(0, Lmax)); r1 = int(rng.integers(r0 + 2, Lmax + 1)) if r0 + 2 <= Lmax else Lmax; w[b, r0:r1] = rng.integers(0, 10)
+    wid = torch.tensor(w, device=dev); mask = torch.arange(Lmax, device=dev)[None] < L[:, None]
     return cand, cmask, wid, mask
 opt = torch.optim.Adam(lm.parameters(), lr=3e-3); sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, a.steps)
 if a.lm_resume: lm.load_state_dict(torch.load(HERE / a.lm_resume, map_location=dev)["lm"]); a.steps = 0; print(f"language memory loaded from {a.lm_resume}", flush=True)
